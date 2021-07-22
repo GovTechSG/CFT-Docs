@@ -19,7 +19,7 @@ Onboarding to CFT sandbox is a simple process.
 2. Once we receive the request, we will email the sandbox credentials to the email address provided in the form.
 3. Start testing with [OpenAPI specifications](https://docs.developer.gov.sg/docs/cft-rest-api-documentation/) or call the APIs from applications.
 
----
+
 
 ## Ready for Production?
 [Sign up for a CFT production](https://form.gov.sg/#!/603cff5e399059001248f7d4/preview) to start transferring files on your live applications.
