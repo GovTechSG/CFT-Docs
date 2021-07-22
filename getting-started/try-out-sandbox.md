@@ -1,22 +1,18 @@
 # Try out CFT Sandbox
 
 ## The Sandbox Environment
-> **Cloud File Transfer (CFT) sandbox is a test environment that is almost identical to our production environment except that it supports only internet to internet transfers. It offers you a space to run file transfers with dummy files, test the API fully, and get a feel of the file transfer process before applying for a production account.**
->
+Cloud File Transfer (CFT) sandbox is a test environment that is almost identical to our production environment except that it supports only internet to internet transfers. It offers you a space to run file transfers with dummy files, test the API fully, and get a feel of the file transfer process before applying for a production account.
 
----
-## Requirements
-* Provide Webhook URL, if file transfer notification is required.
 
----
+
 
 
 
 
 ![Display CFT](./images/CFT.png)
 
----
-## How to sign up for CFT sandbox access
+
+## How to access CFT sandbox
 
 Onboarding to CFT sandbox is a simple process.
 1. Fill up the [onboarding form.](https://form.gov.sg/#!/60a4cca76179d60012cdacac/preview)
