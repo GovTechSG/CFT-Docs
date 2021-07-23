@@ -9,6 +9,7 @@ Cloud File Transfer (CFT) sandbox is a test environment that is almost identical
 
 
 
+
 ![Display CFT](./images/CFT.png)
 
 
