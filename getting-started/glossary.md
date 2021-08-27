@@ -29,6 +29,9 @@ A public identifier for applications. Required to generate an authorization toke
 ## Cloud File Transfer \(CFT\)
 A lightweight, fully managed, API-driven service that allows agencies or businesses to transfer files easily, securely and efficiently at scale.
 
+## Content Disarm and Reconstruct \(CDR\)
+
+
 ## JWT
 JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object.
 
