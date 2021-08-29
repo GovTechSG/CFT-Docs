@@ -1,6 +1,6 @@
 # INTRODUCTION
 
-**Cloud File Transfer (CFT)** [sandbox][glossary.md] is a test environment that is almost identical to our production environment except that it supports only internet to internet transfers.
+**Cloud File Transfer (CFT)** [sandbox](glossary.md) is a test environment that is almost identical to our production environment except that it supports only internet to internet transfers.
 
 In the following sections you will learn how to use APIs in the sandbox to send and receive files. \(Includes resource information on each of the API endpoints, request headers, response schema, sample request and response payloads!\)
 
@@ -17,23 +17,24 @@ We will send you an email with your API credentials and account information.
 ## Sandbox Credentials
 Refer to your welcome email for the following information:
 
-- [API Key][glossary.md]
-- [Client Id and Secret][glossary.md]
-- [API Gateway Id][glossary.md]
+- [API Key](glossary.md)
+- [Client Id and Secret](glossary.md)
+- [API Gateway Id](glossary.md)
 - Sandbox (Internet).postman_environment.json*
 - CFT API v1.postman_collection.json*
-* Requires Postman application to be installed.
+*Requires Postman application to be installed.
 
 ## Setup Test Environment
 We recommend Postman for its user-friendly, simple interface. It supports most HTTP methods and several status codes for you to verify your response.
 
 ### 1. Install Postman Application
-Download and install [Postman.][www.postman.com]
+Download and install [Postman.](www.postman.com)
 
 ### 2. Import CFT API v1 Collection and Sandbox Environment
-- Click **Collections -> Import -> Folder -> \"CFT API v1.postman_collection.json\"**
-- Click **Environment -> Import -> Folder -> \"Sandbox (Internet).postman_environment.json\"**
-Refer Sandbox Credentials.
+- Click **Collections -> Import -> Folder -> \"CFT API v1.postman_collection.json\*"**
+- Click **Environment -> Import -> Folder -> \"Sandbox (Internet).postman_environment.json\*"**
+
+*See Sandbox Credentials
 
 ## REST APIs
 The REST APIs are implemented using HTTP Protocol.
@@ -44,10 +45,9 @@ See image below to understand API usage during the file transfer process.
 
 ## Start File Transfers
 
-### 2. Send Files
-#### 2.1 Authenticate
+### 1. Sender
 
-### 1. Authentication
+#### 1.1 Authentication
 Before you can start using APIs to send and receive files, you will need to authenticate yourself. You can do this by invoking the **(GET JWT(KeyCloak)) API** and providing your sandbox credentials. This API supports OAuth protocol. 
 
 ![Display Step1](./images/Sandbox_Auth.png)
@@ -101,14 +101,7 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 ##### 1.3.2 Sample Response Payload
 |Code             |Response
 |-----------------|-----------------------------
-|200              |
-```
-{ 
-    "authorization_token": “authorizationtoken”,
-    "expires_in": 1800,
-    "token_type": "Bearer"
-    }
-```
+|200              |```{"authorization_token": “authorizationtoken”, "expires_in": 1800, "token_type": "Bearer"}```
 
 #### 2.2 Create Transaction
 Use this API to receive a secure URL to upload your files. Provide the authorization token (obtained earlier), name of the files to be uploaded (required), and their md5Checksum (optional)*.
