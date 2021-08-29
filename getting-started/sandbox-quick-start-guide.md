@@ -45,6 +45,8 @@ See image below to understand API usage during the file transfer process.
 
 ## Sender
 
+To upload files to CFT server proceed as follows: 
+
 ### 1 Authentication
 Before you can start using APIs to send and receive files, you will need to authenticate yourself. You can do this by invoking the **(GET JWT(KeyCloak)) API** and providing your sandbox credentials. This API supports OAuth protocol. 
 
@@ -339,6 +341,8 @@ After the scan and transfer is complete, files will be available for download. C
 
 
 ## Receiver
+
+To download files follow the steps shown below:
 
 ### 1 Authentication 
 Refer steps given above.
