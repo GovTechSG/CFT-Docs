@@ -44,6 +44,9 @@ See image below to understand API usage during the file transfer process.
 
 ## Start File Transfers
 
+### 2. Send Files
+#### 2.1 Authenticate
+
 ### 1. Authentication
 Before you can start using APIs to send and receive files, you will need to authenticate yourself. You can do this by invoking the **(GET JWT(KeyCloak)) API** and providing your sandbox credentials. This API supports OAuth protocol. 
 
@@ -106,10 +109,6 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
     "token_type": "Bearer"
     }
 ```
-
-### 2. Send Files
-#### 2.1 Authenticate
-Obtain authorization token.
 
 #### 2.2 Create Transaction
 Use this API to receive a secure URL to upload your files. Provide the authorization token (obtained earlier), name of the files to be uploaded (required), and their md5Checksum (optional)*.
