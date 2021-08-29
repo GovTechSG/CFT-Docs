@@ -43,11 +43,9 @@ See image below to understand API usage during the file transfer process.
 
 ![Display API](./images/Sandbox_API_usage.png)
 
-## Start File Transfers
+## Sender
 
-### 1. Sender
-
-#### 1.1 Authentication
+### 1 Authentication
 Before you can start using APIs to send and receive files, you will need to authenticate yourself. You can do this by invoking the **(GET JWT(KeyCloak)) API** and providing your sandbox credentials. This API supports OAuth protocol. 
 
 ![Display Step1](./images/Sandbox_Auth.png)
@@ -60,13 +58,13 @@ This token is required to:
 - Scan and transfer files
 - Download files
 
-#### 1.1 Resource Information
+#### 1.1 Resource information
 |Method      |POST
 |------------|---------------------------
 |URL         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/auth
 |What it does|Provides a short-lived authorization token to call CFT APIs
 
-#### 1.2 Request
+#### 1.2 HTTP request
 ##### 1.2.1 Headers* 
 |Name             |Type     |Purpose                                  
 |------------     |---------|------------                             
@@ -79,7 +77,7 @@ This token is required to:
 ****API Gateway Id needs to be physically entered if not hardcoded by Postman.**
 
 
-##### 1.2.2 Sample Request
+##### 1.2.2 Sample request
 You can direcly invoke the APIs in the collection or use cURL commands as shown below:
 
 ```
@@ -89,7 +87,7 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 --header 'Authorization: Basic [Client Id and Secret]' 
 ```
 
-#### 1.3 Response
+#### 1.3 HTTP response
 ##### 1.3.1 JSON schema
 |Name                    |Type     
 |------------            |---------
@@ -98,12 +96,18 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 |token_type              |String
 
 
-##### 1.3.2 Sample Response Payload
-|Code             |Response
-|-----------------|-----------------------------
-|200              |```{"authorization_token": “authorizationtoken”, "expires_in": 1800, "token_type": "Bearer"}```
+##### 1.3.2 Sample response payload
 
-#### 2.2 Create Transaction
+```
+{
+  "authorization_token": “authorizationtoken”, 
+  "expires_in": 1800, 
+  "token_type": "Bearer"
+}
+
+```
+
+### 2 Create transaction
 Use this API to receive a secure URL to upload your files. Provide the authorization token (obtained earlier), name of the files to be uploaded (required), and their md5Checksum (optional)*.
 
 You will receive a "transaction_id" and a secure URL valid for 30 minutes.
@@ -114,28 +118,28 @@ openssl md5 -binary \[fileName\] | base64
 
 ![Display Step2](./images/Sandbox_CreateTran1.png)
 
-##### 2.2.1 Resource Information
+#### 2.1 Resource information
 |Method      |POST
 |------------|----------------------------------------------------------------------
 |URL         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions
 |What it does|Creates a transaction and returns secured URLs to upload files
 
-##### 2.2.2 Request
-###### 2.2.2.1 Headers
+#### 2.2 HTTP request
+##### 2.2.1 Headers
 |Name                |Type     |Purpose                                  
 |------------        |---------|------------                             
 |x-api-key           |String   |API Key assigned to an individual project
 |authorization_token |String   |Authorization token
 |x-apigw-api-id      |String   |API Gateway Id
 
-###### 2.2.2.2 JSON schema 
+##### 2.2.2 JSON schema 
 |Name             |Type             |Purpose
 |------------     |---------        |---------
 |fileDetails      |JSON array       |fileDetails JSON schema 
 |fileName         |String           |file names to be uploaded with extension
 |md5Checksum      |String           |md5checksum of the file
 
-###### 2.2.2.3 Sample Request Payload
+##### 2.2.3 Sample request payload
 ```
 curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions' \
 --header  'Authorization: [authorization_token]' \
@@ -152,8 +156,8 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 }'
 ```
 
-##### 2.2.3 Response
-###### 2.2.3.1 JSON schema
+#### 2.3 HTTP response
+##### 2.3.1 JSON schema
 |Name           |Type                    
 |------------   |---------              
 |projectId      |String                 
@@ -161,18 +165,15 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 |filesCount     |Integer                
 |uploadUrls     |uploadUrls JSON schema
 
-###### 2.2.3.2 uploadUrls JSON schema
+##### 2.3.2 uploadUrls JSON schema
 |Name           |Type                    
 |------------   |---------              
 |fileName       |String                 
 |uploadUrl      |String                 
 |validFor       |String                 
 
-###### 2.2.3.3 Sample Response Payload
+##### 2.3.3 Sample Response Payload
 
-|Code             |Response
-|-----------------|-----------------------------
-|200              |
 ```
 { 
     "projectId": "projectId",
@@ -189,8 +190,8 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 ```
     
 
-#### 2.3 Upload File
-Upload your file to the URL obtained in the previous step. (Step 2.2)
+### 3 Upload file
+Upload your file to the URL obtained in the previous section. (Section 2 - Create transaction)
 ```
 curl --location --request PUT '[uploadUrl]' \
 --header 'Content-MD5: [md5Checksum]' \
@@ -199,7 +200,7 @@ curl --location --request PUT '[uploadUrl]' \
 ```
 ![Display Step3](./images/Sandbox_fileupload.jpg)
 
-#### 2.4. View Transaction Status
+### 4 View transaction status
 To know if the file has been successfully uploaded, invoke the **\(Transaction Status API\).** Provide your authorization_token in the request body.
 
 \(Important: If there is more than one file, all files need to be uploaded before you call the Transaction Status API.\)
@@ -208,21 +209,21 @@ You will receive a status of the transaction including the uploaded files.
 
 ![Display Step4](./images/Sandbox_transtatus.jpg)
 
-##### 2.4.1 Resource Information
+#### 4.1 Resource information
 |Method      |GET
 |------------|-----------------------------------------
 |URL         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{transactionid}/status
 |What it does|Returns the status of all files uploaded in a transaction
 
-##### 2.4.2 Request
-###### 2.4.2.1 Headers
+#### 4.2 HTTP request
+##### 4.2.1 Headers
 |Name                |Type     |Purpose                                  
 |------------        |---------|------------                             
 |x-api-key           |String   |API Key assigned to an individual project
 |authorization_token |String   |Authorization token
 |x-apigw-api-id      |String   |API Gateway Id
 
-###### 2.4.2.2 Sample Request Payload
+##### 4.2.2 Sample Request Payload
 ```
 curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{{session_id}}/status' \
 --header 'x-api-key: [API Key]' \
@@ -230,8 +231,8 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 --header 'Authorization: [authorization_token]'
 
 ```
-##### 2.4.3 Response
-###### 2.4.3.1 JSON schema
+#### 4.3 HTTP response
+##### 4.3.1 JSON schema
 |Name           |Type                             
 |------------   |---------                        
 |projectId      |String                          
@@ -239,7 +240,7 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 |filesCount     |Integer                          
 |fileDetails    |JSON array of fileDetails schema
 
-###### 2.4.3.2 fileDetails JSON schema
+##### 4.3.2 fileDetails JSON schema
 |Name                 |Type         
 |------------         |---------    
 |fileName             |String       
@@ -249,10 +250,8 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 
 **\* fileTimestamp is optional.
 
-###### 2.4.3.3 Sample Response
-|Code             |Response
-|-----------------|-----------------------------
-|200              |
+##### 4.3.3 Sample response
+
 ```
 {
     "projectId": "abcd",
@@ -274,21 +273,20 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
     ]
 }
 ```
-|4xx              |{"message":"error message"}
 
-#### 2.5 Commit Transaction
+### 5 Commit transaction
 After checking that the file has uploaded successfully, use the **\(Scan Transaction API\)** to commit the file for scan and transfer.
 
 ![Display Step5](./images/Sandbox_filescan.jpg)
 
-##### 2.5.1 Resource Information
+#### 5.1 Resource information
 |Method      |POST
 |------------|--------------------------------------------------------------------
 |URL         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{{sessionid}}/scan
 |What it does|Commits the transaction for scan and transfer
 
-##### 2.5.2 Request
-###### 2.5.2.1 Headers
+#### 5.2 HTTP request
+##### 5.2.1 Headers
 |Name                |Type     |Purpose                                  
 |------------        |---------|------------                             
 |x-api-key           |String   |API Key assigned to an individual project
@@ -296,8 +294,8 @@ After checking that the file has uploaded successfully, use the **\(Scan Transac
 |x-apigw-api-id      |String   |API Gateway Id
 
 
-##### 2.5.3 Response
-###### 2.5.3.1 JSON schema
+#### 5.3 HTTP response
+##### 5.3.1 JSON schema
 |Name           |Type                             
 |------------   |---------                        
 |projectId      |String                           
@@ -305,16 +303,14 @@ After checking that the file has uploaded successfully, use the **\(Scan Transac
 |filesCount     |Integer                          
 |fileDetails    |JSON array of fileDetails schema 
 
-###### 2.5.3.2 fileDetails JSON schema
+##### 5.3.2 fileDetails JSON schema
 |Name                 |Type        
 |------------         |---------    
 |fileName             |String       
 |fileStatus           |String       
 
-###### 2.5.3.3 Sample Response
-|Code             |Response
-|-----------------|-----------------------------
-|200              |
+##### 5.3.3 Sample response
+
 ```
 {
     "projectId": "abcd",
@@ -332,42 +328,42 @@ After checking that the file has uploaded successfully, use the **\(Scan Transac
     ]
 }
 ```
-|4xx              |
 
 
-### 3. Notification
+
+### 6. Notification
 After the scan and transfer is complete, files will be available for download. CFT system will send a notification to the receiver via Webhook.*
 
 *(Webhook needs to be configured by receiver)
 
 
 
-### 4. Receive Files
+## Receiver
 
-#### 4.1 Authentication 
-Obtain authorization token.
+### 1 Authentication 
+Refer steps given above.
 
-#### 4.2 Download File
+### 2 Download File
 You need to obtain secure URLs to download the file, use the **Download Transaction API.**
 
 ![Display Step5](./images/Sandbox_download.jpg)
 
-##### 4.2.1 Resource Information
+#### 2.1 Resource information
 |Method      |GET
 |------------|------------------------------------------
 |URL         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{transactionid}/download
 |What it does|Provides secured URLs to download files in a transaction
 
-##### 4.2.2 Request
-###### 4.2.2.1 Headers
+#### 2.2 HTTP request
+##### 2.2.1 Headers
 |Name                |Type     |Purpose                                  
 |------------        |---------|------------                             
 |x-api-key           |String   |API Key assigned to an individual project
 |authorization_token |String   |Authorization token
 |x-apigw-api-id      |String   |API Gateway Id                              
 
-##### 4.2.3 Response
-###### 4.2.3.1 JSON schema
+#### 2.3 HTTP response
+##### 2.3.1 JSON schema
 |Name            |Type                              
 |------------    |---------                         
 |projectId       |String                            
@@ -375,7 +371,7 @@ You need to obtain secure URLs to download the file, use the **Download Transact
 |filesCount      |Integer                           
 |downloadUrls    |JSON array of downloadUrls schema 
 
-###### 4.2.3.2 downloadUrls JSON schema
+##### 2.3.2 downloadUrls JSON schema
 |Name                 |Type          
 |------------         |---------    
 |fileName             |String      
@@ -385,10 +381,11 @@ You need to obtain secure URLs to download the file, use the **Download Transact
 
 **\* Only available when file is copied to clean bucket**
 
-###### 4.2.3.3 Sample Response Payload
-|Code             |Response
-|-----------------|-----------------------------
-|200              | "projectId": "gt-enp",
+##### 2.3.3 Sample response payload
+
+```
+
+"projectId": "gt-enp",
     "transactionId": "2a94862a-2a5e-4e85-bf38-98a587c08da1",
     "filesCount": 1,
     "downloadUrls": [
@@ -400,31 +397,28 @@ You need to obtain secure URLs to download the file, use the **Download Transact
         }
     ]
 }
-|4xx              |
 
+```
 
-#### 4.3 Send Acknowledgement
-Use the acknowledgment API to notify CFT about the files downloaded. This is optional.
+### 3 Send Acknowledgement
+Use the acknowledgment API to notify CFT about the files downloaded. This step is optional.
 
 ![Display Step5](./images/Sandbox_acktran
 '.jpg)
 
-##### 4.3.1 Resource Information
+#### 3.1 Resource information
 |Method      |PUT
 |------------|-------------------------
 |URL         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{transactionid}/ack
 |What it does|Notifies Sender about the files downloaded in a transaction
 
-##### 4.3.2 Request
-###### 4.3.2.1 Headers
-Refer 2.2.1 \(of Sender\)
-
-##### 4.3.3 Response
-###### 4.3.3.1 Sample Response
-|Code             |Response
-|-----------------|-----------------------------
-|200              |
-|4xx              |
+#### 3.2 HTTP request
+##### 3.2.1 Headers
+|Name                |Type     |Purpose                                  
+|------------        |---------|------------                             
+|x-api-key           |String   |API Key assigned to an individual project
+|authorization_token |String   |Authorization token
+|x-apigw-api-id      |String   |API Gateway Id  
 
 
 ## Support
