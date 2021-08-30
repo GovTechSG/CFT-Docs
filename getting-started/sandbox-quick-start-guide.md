@@ -14,7 +14,7 @@ We will send you an email with your API credentials and account information.
 
 # Getting Started
 
-## Sandbox Credentials
+## Sandbox Credentials<a name="sandbox-credentials"></a>
 Refer to your welcome email for the following information:
 
 - [API Key](glossary.md)
@@ -28,29 +28,32 @@ Refer to your welcome email for the following information:
 We recommend Postman for its user-friendly, simple interface. It supports most HTTP methods and several status codes for you to verify your response.
 
 ### 1. Install Postman Application
-Download and install [Postman.](www.postman.com)
+Download and install [Postman.](https:///www.postman.com)
 
 ### 2. Import CFT API v1 Collection and Sandbox Environment
 - Click **Collections -> Import -> Folder -> \"CFT API v1.postman_collection.json\*"**
 - Click **Environment -> Import -> Folder -> \"Sandbox (Internet).postman_environment.json\*"**
 
-*See Sandbox Credentials
+*See [Sandbox Credentials](#sandbox-credentials)
 
 ## REST APIs
 The REST APIs are implemented using HTTP Protocol.
 
 See image below to understand API usage during the file transfer process.
 
-![Display API](./images/Sandbox_API_usage.png)
+![Display API](./images/Sandbox_API_usage_1.png)
+
+Fig. 1 - API usage sequence
+
+
+File transfers in CFT involve a Sender and a Receiver. The Sender and Receiver can be an application or a backend system.
 
 ## Sender
-
-To upload files to CFT server proceed as follows: 
 
 ### 1 Authentication
 Before you can start using APIs to send and receive files, you will need to authenticate yourself. You can do this by invoking the **(GET JWT(KeyCloak)) API** and providing your sandbox credentials. This API supports OAuth protocol. 
 
-![Display Step1](./images/Sandbox_Auth.png)
+![Display Step1](./images/Sandbox_auth_1.png)
 
 You will receive an authorization token valid for 30 mins.
 
@@ -114,8 +117,7 @@ Use this API to receive a secure URL to upload your files. Provide the authoriza
 
 You will receive a "transaction_id" and a secure URL valid for 30 minutes.
 
-*!>To get md5Checksum hash the file, use the following command:
-openssl md5 -binary \[fileName\] | base64
+?>**To get md5Checksum, use the following command: openssl md5 -binary \[fileName\] | base64**
 
 
 ![Display Step2](./images/Sandbox_CreateTran1.png)
@@ -339,13 +341,12 @@ After the scan and transfer is complete, files will be available for download. C
 *(Webhook needs to be configured by receiver)
 
 
-
 ## Receiver
 
 To download files follow the steps shown below:
 
 ### 1 Authentication 
-Refer steps given above.
+Refer Authentication.
 
 ### 2 Download File
 You need to obtain secure URLs to download the file, use the **Download Transaction API.**
