@@ -37,16 +37,16 @@ Download and install [Postman.](https:///www.postman.com)
 ## REST APIs
 The REST APIs are implemented using HTTP Protocol. Listed below are the steps for API usage to send and receive files in CFT sandbox.
 
-- Step 1: Sender exchanges API credentials for the authorization token, refer to Authentication.
-- Step 2: Use the authorization token to request for a secure upload URL, refer to Create transaction.
-- Step 3: Upload file.
-- Step 4: Check if the file upload is successful, refer to View transaction status.
-- Step 5: Send the file for scan and transfer, refer to Commit transaction.
+- Step 1: Sender exchanges API credentials for the authorization token, refer to [Authentication.](#authentication)
+- Step 2: Use the authorization token to request for a secure upload URL, refer to [Create transaction.][#create-transaction]
+- Step 3: [Upload file.](#upload-file)
+- Step 4: Check if the file upload is successful, refer to [View transaction status.](#view-transaction-status)
+- Step 5: Send the file for scan and transfer, refer to [Commit transaction.](#commit-transaction)
 - Step 6: CFT will notify Receiver that the file is available for download.
-- Step 7: Obtain authorization token and request for a secure download URL, refer to Download file. 
-- Step 8: Download file and notify Sender, refer to Send Acknowledgement.
+- Step 7: Obtain authorization token and request for a secure download URL, refer to [Download file.](#download-file)
+- Step 8: Download file and notify Sender, refer to [Send Acknowledgement.](#send-acknowledgement)
 
-### Step 1: Authentication
+### Step 1: [Authentication](<a name="authentication"></a>)
 Before you can start using APIs to send and receive files, you will need to authenticate yourself. You can do this by invoking the **(GET JWT(KeyCloak)) API** and providing your API credentials(Client Id and Secret). This API supports OAuth protocol. 
 
 ![Display Step1](./images/Sandbox_auth_1.png)
@@ -108,7 +108,7 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 
 ```
 
-### Step 2: Create transaction
+### Step 2: [Create transaction](<a name="create-transaction"></a>)
 Use this API to receive a secure URL to upload your files. Provide the authorization token (obtained earlier), name of the files to be uploaded (required), and their md5Checksum (optional)*.
 
 You will receive a "transaction_id" and a secure URL valid for 30 minutes.
@@ -187,7 +187,7 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 ```
     
 
-### Step 3: Upload file
+### Step 3: [Upload file](<a name="upload-file"></a>)
 Upload your file to the URL obtained in the previous section. (Section 2 - Create transaction)
 ```
 curl --location --request PUT '[uploadUrl]' \
@@ -196,7 +196,7 @@ curl --location --request PUT '[uploadUrl]' \
 --data-binary '/path/[fileName]'
 ```
 
-### Step 4: View transaction status
+### Step 4: [View transaction status]<a name="view-transaction-status"></a>
 To know if the file has been successfully uploaded, invoke the **\(Transaction Status API\).** Provide your authorization_token in the request body.
 
 \(Important: If there is more than one file, all files need to be uploaded before you call the Transaction Status API.\)
@@ -268,7 +268,7 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 }
 ```
 
-### Step 5: Commit transaction
+### Step 5: [Commit transaction](<a name="commit-transaction"></a>)
 After checking that the file has uploaded successfully, use the **\(Scan Transaction API\)** to commit the file for scan and transfer.
 
 #### 5.1 Resource information
@@ -327,7 +327,7 @@ After the scan and transfer is complete, files will be available for download. C
 *(Webhook needs to be configured by receiver)
 
 
-### Step 7: Download File
+### Step 7: [Download File](<a name="download-file"></a>)
 You need to obtain secure URLs to download the file, use the **Download Transaction API.**
 
 #### 7.1 Resource information
@@ -382,7 +382,7 @@ You need to obtain secure URLs to download the file, use the **Download Transact
 
 ```
 
-### Step 8: Send Acknowledgement
+### Step 8: [Send Acknowledgement](<a name="send-acknowledgement"></a>)
 Use the acknowledgment API to notify Sender about the files downloaded. This step is optional.
 
 #### 8.1 Resource information
