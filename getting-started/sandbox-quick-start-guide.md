@@ -2,23 +2,21 @@
 
 **Cloud File Transfer (CFT)** [sandbox](glossary.md) is a test environment that is almost identical to our production environment except that it supports only internet to internet transfers.
 
-In the following sections you will learn how to use APIs in the sandbox to send and receive files. \(Includes resource information on each of the API endpoints, request headers, response schema, sample request and response payloads!\)
+In the following sections you will learn how to use APIs in the sandbox to send and receive files. (Includes resource information on each of the API endpoints, request headers, response schema, sample request and response payloads!)
 
 Try out our APIs and start transferring files in minutes!
 
 
-If you haven't yet signed up, fill up the [onboarding form.](https://form.gov.sg/#!/60a4cca76179d60012cdacac/preview)
-
-We will send you an email with your API credentials and account information.
+If you haven't yet signed up, fill up the [onboarding form.](https://form.gov.sg/#!/60a4cca76179d60012cdacac/preview) 
 
 
 # Getting Started
 
-## Sandbox Credentials<a name="sandbox-credentials"></a>
-Refer to your welcome email for the following information:
+## Sandbox Account Information<a name="sandbox-account-info"></a>
+Refer to your welcome email for the following:
 
 - [API Key](glossary.md)
-- [Client Id and Secret](glossary.md)
+- [API credentials - Client Id and Secret](glossary.md)
 - [API Gateway Id](glossary.md)
 - Sandbox (Internet).postman_environment.json*
 - CFT API v1.postman_collection.json*
@@ -34,24 +32,22 @@ Download and install [Postman.](https:///www.postman.com)
 - Click **Collections -> Import -> Folder -> \"CFT API v1.postman_collection.json\*"**
 - Click **Environment -> Import -> Folder -> \"Sandbox (Internet).postman_environment.json\*"**
 
-*See [Sandbox Credentials](#sandbox-credentials)
+*See [Sandbox Account Information](#sandbox-account-info)
 
 ## REST APIs
-The REST APIs are implemented using HTTP Protocol.
+The REST APIs are implemented using HTTP Protocol. Listed below are the steps for API usage to send and receive files in CFT sandbox.
 
-See image below to understand API usage during the file transfer process.
+- Step 1: Sender exchanges API credentials for the authorization token, refer to Authentication.
+- Step 2: Use the authorization token to request for a secure upload URL, refer to Create transaction.
+- Step 3: Upload file.
+- Step 4: Check if the file upload is successful, refer to View transaction status.
+- Step 5: Send the file for scan and transfer, refer to Commit transaction.
+- Step 6: CFT will notify Receiver that the file is available for download.
+- Step 7: Obtain authorization token and request for a secure download URL, refer to Download file. 
+- Step 8: Download file and notify Sender, refer to Send Acknowledgement.
 
-![Display API](./images/Sandbox_API_usage_1.png)
-
-Fig. 1 - API usage sequence
-
-
-File transfers in CFT involve a Sender and a Receiver. The Sender and Receiver can be an application or a backend system.
-
-## Sender
-
-### 1 Authentication
-Before you can start using APIs to send and receive files, you will need to authenticate yourself. You can do this by invoking the **(GET JWT(KeyCloak)) API** and providing your sandbox credentials. This API supports OAuth protocol. 
+### Step 1: Authentication
+Before you can start using APIs to send and receive files, you will need to authenticate yourself. You can do this by invoking the **(GET JWT(KeyCloak)) API** and providing your API credentials(Client Id and Secret). This API supports OAuth protocol. 
 
 ![Display Step1](./images/Sandbox_auth_1.png)
 
@@ -112,15 +108,12 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 
 ```
 
-### 2 Create transaction
+### Step 2: Create transaction
 Use this API to receive a secure URL to upload your files. Provide the authorization token (obtained earlier), name of the files to be uploaded (required), and their md5Checksum (optional)*.
 
 You will receive a "transaction_id" and a secure URL valid for 30 minutes.
 
 ?>**To get md5Checksum, use the following command: openssl md5 -binary \[fileName\] | base64**
-
-
-![Display Step2](./images/Sandbox_CreateTran1.png)
 
 #### 2.1 Resource information
 |Method      |POST
@@ -194,7 +187,7 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 ```
     
 
-### 3 Upload file
+### Step 3: Upload file
 Upload your file to the URL obtained in the previous section. (Section 2 - Create transaction)
 ```
 curl --location --request PUT '[uploadUrl]' \
@@ -202,16 +195,13 @@ curl --location --request PUT '[uploadUrl]' \
 --header 'Content-Type: text/plain' \
 --data-binary '/path/[fileName]'
 ```
-![Display Step3](./images/Sandbox_fileupload.jpg)
 
-### 4 View transaction status
+### Step 4: View transaction status
 To know if the file has been successfully uploaded, invoke the **\(Transaction Status API\).** Provide your authorization_token in the request body.
 
 \(Important: If there is more than one file, all files need to be uploaded before you call the Transaction Status API.\)
 
 You will receive a status of the transaction including the uploaded files.
-
-![Display Step4](./images/Sandbox_transtatus.jpg)
 
 #### 4.1 Resource information
 |Method      |GET
@@ -278,10 +268,8 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 }
 ```
 
-### 5 Commit transaction
+### Step 5: Commit transaction
 After checking that the file has uploaded successfully, use the **\(Scan Transaction API\)** to commit the file for scan and transfer.
-
-![Display Step5](./images/Sandbox_filescan.jpg)
 
 #### 5.1 Resource information
 |Method      |POST
@@ -333,42 +321,31 @@ After checking that the file has uploaded successfully, use the **\(Scan Transac
 }
 ```
 
-
-
-### 6. Notification
-After the scan and transfer is complete, files will be available for download. CFT system will send a notification to the receiver via Webhook.*
+### Step 6: Notification
+After the scan and transfer is complete, files will be available for download. CFT system will send a notification to the Receiver via Webhook.*
 
 *(Webhook needs to be configured by receiver)
 
 
-## Receiver
-
-To download files follow the steps shown below:
-
-### 1 Authentication 
-Refer Authentication.
-
-### 2 Download File
+### Step 7: Download File
 You need to obtain secure URLs to download the file, use the **Download Transaction API.**
 
-![Display Step5](./images/Sandbox_download.jpg)
-
-#### 2.1 Resource information
+#### 7.1 Resource information
 |Method      |GET
 |------------|------------------------------------------
 |URL         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{transactionid}/download
 |What it does|Provides secured URLs to download files in a transaction
 
-#### 2.2 HTTP request
-##### 2.2.1 Headers
+#### 7.2 HTTP request
+##### 7.2.1 Headers
 |Name                |Type     |Purpose                                  
 |------------        |---------|------------                             
 |x-api-key           |String   |API Key assigned to an individual project
 |authorization_token |String   |Authorization token
 |x-apigw-api-id      |String   |API Gateway Id                              
 
-#### 2.3 HTTP response
-##### 2.3.1 JSON schema
+#### 7.3 HTTP response
+##### 7.3.1 JSON schema
 |Name            |Type                              
 |------------    |---------                         
 |projectId       |String                            
@@ -376,7 +353,7 @@ You need to obtain secure URLs to download the file, use the **Download Transact
 |filesCount      |Integer                           
 |downloadUrls    |JSON array of downloadUrls schema 
 
-##### 2.3.2 downloadUrls JSON schema
+##### 7.3.2 downloadUrls JSON schema
 |Name                 |Type          
 |------------         |---------    
 |fileName             |String      
@@ -386,7 +363,7 @@ You need to obtain secure URLs to download the file, use the **Download Transact
 
 **\* Only available when file is copied to clean bucket**
 
-##### 2.3.3 Sample response payload
+##### 7.3.3 Sample response payload
 
 ```
 
@@ -405,26 +382,19 @@ You need to obtain secure URLs to download the file, use the **Download Transact
 
 ```
 
-### 3 Send Acknowledgement
-Use the acknowledgment API to notify CFT about the files downloaded. This step is optional.
+### Step 8: Send Acknowledgement
+Use the acknowledgment API to notify Sender about the files downloaded. This step is optional.
 
-![Display Step5](./images/Sandbox_acktran
-'.jpg)
-
-#### 3.1 Resource information
+#### 8.1 Resource information
 |Method      |PUT
 |------------|-------------------------
 |URL         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{transactionid}/ack
 |What it does|Notifies Sender about the files downloaded in a transaction
 
-#### 3.2 HTTP request
-##### 3.2.1 Headers
+#### 8.2 HTTP request
+##### 8.2.1 Headers
 |Name                |Type     |Purpose                                  
 |------------        |---------|------------                             
 |x-api-key           |String   |API Key assigned to an individual project
 |authorization_token |String   |Authorization token
 |x-apigw-api-id      |String   |API Gateway Id  
-
-
-## Support
-Support is delivered over telegram channel and during office hours.
