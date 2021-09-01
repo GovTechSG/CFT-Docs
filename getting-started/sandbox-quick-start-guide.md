@@ -1,8 +1,8 @@
-# INTRODUCTION
+# Introduction
 
-**Cloud File Transfer (CFT)** [sandbox](glossary.md) is a test environment that is almost identical to our production environment except that it supports only internet to internet transfers.
+**Cloud File Transfer (CFT)** [sandbox](glossary.md) is a test environment that is almost identical to our production environment. However, the test environment is limited to internet to internet transfers.
 
-In the following sections you will learn how to use APIs in the sandbox to send and receive files. (Includes resource information on each of the API endpoints, request headers, response schema, sample request and response payloads!)
+In the following sections you will learn how to use our APIs in the CFT sandbox to send and receive files. (Includes resource information on each of the API endpoints, request headers, response schema, sample request and response payloads!)
 
 Try out our APIs and start transferring files in minutes!
 
@@ -23,7 +23,7 @@ Refer to your welcome email for the following:
 *Requires Postman application to be installed.
 
 ## Setup Test Environment
-We recommend Postman for its user-friendly, simple interface. It supports most HTTP methods and several status codes for you to verify your response.
+We recommend Postman for its user-friendly and simple interface. It supports most HTTP methods and has several status codes for you to verify your response.
 
 ### 1. Install Postman Application
 Download and install [Postman.](https:///www.postman.com)
@@ -34,20 +34,24 @@ Download and install [Postman.](https:///www.postman.com)
 
 *See [Sandbox Account Information](#sandbox-account-info)
 
-## REST APIs
-The REST APIs are implemented using HTTP Protocol. Listed below are the steps for API usage to send and receive files in CFT sandbox.
+## REST APIs and their usage
+The REST APIs are implemented using HTTP Protocol. Refer steps below for the sequence of API usage to send and receive files in CFT sandbox.
 
-- Step 1: Sender exchanges API credentials for the authorization token, refer to [Authentication.](#authentication)
-- Step 2: Use the authorization token to request for a secure upload URL, refer to [Create transaction.][#create-transaction]
+- Step 1: **Sender** exchanges API credentials for the authorization token, refer to [Authentication.](#authentication)
+- Step 2: Use the authorization token to request for a secure upload URL, refer to [Create transaction.](#create-transaction
 - Step 3: [Upload file.](#upload-file)
 - Step 4: Check if the file upload is successful, refer to [View transaction status.](#view-transaction-status)
 - Step 5: Send the file for scan and transfer, refer to [Commit transaction.](#commit-transaction)
-- Step 6: CFT will notify Receiver that the file is available for download.
+- Step 6: CFT will notify **Receiver** that the file is available for download, refer to [Notification.](#notification)
 - Step 7: Obtain authorization token and request for a secure download URL, refer to [Download file.](#download-file)
-- Step 8: Download file and notify Sender, refer to [Send Acknowledgement.](#send-acknowledgement)
+- Step 8: Download file and notify CFT, refer to [Send Acknowledgement.](#send-acknowledgement)
 
-### Step 1: [Authentication](<a name="authentication"></a>)
-Before you can start using APIs to send and receive files, you will need to authenticate yourself. You can do this by invoking the **(GET JWT(KeyCloak)) API** and providing your API credentials(Client Id and Secret). This API supports OAuth protocol. 
+### Step 1: [Authentication]<a name="authentication"></a>
+Before you can start using APIs to send and receive files, you will need to authenticate yourself. You can do this by invoking the **(GET JWT(KeyCloak)) API** and providing your **\*API credentials(Client Id and Secret).** This API supports OAuth protocol.
+
+ *See [Sandbox Account Information](#sandbox-account-info)
+
+
 
 ![Display Step1](./images/Sandbox_auth_1.png)
 
@@ -108,7 +112,7 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 
 ```
 
-### Step 2: [Create transaction](<a name="create-transaction"></a>)
+### Step 2: [Create transaction]<a name="create-transaction"></a>
 Use this API to receive a secure URL to upload your files. Provide the authorization token (obtained earlier), name of the files to be uploaded (required), and their md5Checksum (optional)*.
 
 You will receive a "transaction_id" and a secure URL valid for 30 minutes.
@@ -187,7 +191,7 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 ```
     
 
-### Step 3: [Upload file](<a name="upload-file"></a>)
+### Step 3: [Upload file]<a name="upload-file"></a>
 Upload your file to the URL obtained in the previous section. (Section 2 - Create transaction)
 ```
 curl --location --request PUT '[uploadUrl]' \
@@ -199,9 +203,10 @@ curl --location --request PUT '[uploadUrl]' \
 ### Step 4: [View transaction status]<a name="view-transaction-status"></a>
 To know if the file has been successfully uploaded, invoke the **\(Transaction Status API\).** Provide your authorization_token in the request body.
 
-\(Important: If there is more than one file, all files need to be uploaded before you call the Transaction Status API.\)
-
 You will receive a status of the transaction including the uploaded files.
+
+?>Important: If there is more than one file, all files need to be uploaded before you call the Transaction Status API.
+
 
 #### 4.1 Resource information
 |Method      |GET
@@ -240,9 +245,9 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 |fileName             |String       
 |fileStatus           |String       
 |transactionTimestamp |String       
-|fileTimestamp\*      |String      
+|fileTimestamp*      |String      
 
-**\* fileTimestamp is optional.
+\* fileTimestamp is optional.
 
 ##### 4.3.3 Sample response
 
@@ -268,7 +273,7 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 }
 ```
 
-### Step 5: [Commit transaction](<a name="commit-transaction"></a>)
+### Step 5: [Commit transaction]<a name="commit-transaction"></a>
 After checking that the file has uploaded successfully, use the **\(Scan Transaction API\)** to commit the file for scan and transfer.
 
 #### 5.1 Resource information
@@ -321,13 +326,13 @@ After checking that the file has uploaded successfully, use the **\(Scan Transac
 }
 ```
 
-### Step 6: Notification
+### Step 6: [Notification]<a name="notification"></a>
 After the scan and transfer is complete, files will be available for download. CFT system will send a notification to the Receiver via Webhook.*
 
-*(Webhook needs to be configured by receiver)
+\*Webhook needs to be configured by receiver
 
 
-### Step 7: [Download File](<a name="download-file"></a>)
+### Step 7: [Download File]<a name="download-file"></a>
 You need to obtain secure URLs to download the file, use the **Download Transaction API.**
 
 #### 7.1 Resource information
@@ -382,14 +387,14 @@ You need to obtain secure URLs to download the file, use the **Download Transact
 
 ```
 
-### Step 8: [Send Acknowledgement](<a name="send-acknowledgement"></a>)
-Use the acknowledgment API to notify Sender about the files downloaded. This step is optional.
+### Step 8: [Send Acknowledgement]<a name="send-acknowledgement"></a>
+Optional: Use the acknowledgment API to notify CFT about the files downloaded.
 
 #### 8.1 Resource information
 |Method      |PUT
 |------------|-------------------------
 |URL         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{transactionid}/ack
-|What it does|Notifies Sender about the files downloaded in a transaction
+|What it does|Notifies CFT about the files downloaded in a transaction
 
 #### 8.2 HTTP request
 ##### 8.2.1 Headers
@@ -398,3 +403,7 @@ Use the acknowledgment API to notify Sender about the files downloaded. This ste
 |x-api-key           |String   |API Key assigned to an individual project
 |authorization_token |String   |Authorization token
 |x-apigw-api-id      |String   |API Gateway Id  
+
+
+## Support
+Support is delivered over Telegram channel and during office hours.
