@@ -1,8 +1,8 @@
 # Introduction
 
-**Cloud File Transfer (CFT)** [sandbox](glossary.md) is a test environment that is almost identical to our production environment. However, the test environment is limited to internet to internet transfers.
+**Cloud File Transfer (CFT)** [sandbox](glossary.md) is a test environment that is almost identical to our production environment. Here, you can try out the CFT APIs for file transfers between systems in the internet zone.
 
-In the following sections you will learn how to use our APIs in the CFT sandbox to send and receive files. (Includes resource information on each of the API endpoints, request headers, response schema, sample request and response payloads!)
+In the following sections, you will learn how to use our APIs in the CFT sandbox to send and receive files. You will also find resource information on each of the API endpoints, request headers, response schema, sample request and response payloads!
 
 Try out our APIs and start transferring files in minutes!
 
@@ -20,7 +20,8 @@ Refer to your welcome email for the following:
 - [API Gateway Id](glossary.md)
 - Sandbox (Internet).postman_environment.json*
 - CFT API v1.postman_collection.json*
-*Requires Postman application to be installed.
+
+?>***Requires Postman application to be installed.**
 
 ## Setup Test Environment
 We recommend Postman for its user-friendly and simple interface. It supports most HTTP methods and has several status codes for you to verify your response.
@@ -32,24 +33,24 @@ Download and install [Postman.](https:///www.postman.com)
 - Click **Collections -> Import -> Folder -> \"CFT API v1.postman_collection.json\*"**
 - Click **Environment -> Import -> Folder -> \"Sandbox (Internet).postman_environment.json\*"**
 
-*See [Sandbox Account Information](#sandbox-account-info)
+?>***Refer [Sandbox Account Information.](#sandbox-account-info)**
 
 ## REST APIs and their usage
-The REST APIs are implemented using HTTP Protocol. Refer steps below for the sequence of API usage to send and receive files in CFT sandbox.
+The REST APIs are implemented using HTTP Protocol. Listed below are the steps for API usage to send and receive files in the CFT sandbox.
 
 - Step 1: **Sender** exchanges API credentials for the authorization token, refer to [Authentication.](#authentication)
-- Step 2: Use the authorization token to request for a secure upload URL, refer to [Create transaction.](#create-transaction
+- Step 2: Use the authorization token to request for a secure upload URL, refer to [Create transaction.](#create-transaction)
 - Step 3: [Upload file.](#upload-file)
 - Step 4: Check if the file upload is successful, refer to [View transaction status.](#view-transaction-status)
 - Step 5: Send the file for scan and transfer, refer to [Commit transaction.](#commit-transaction)
 - Step 6: CFT will notify **Receiver** that the file is available for download, refer to [Notification.](#notification)
 - Step 7: Obtain authorization token and request for a secure download URL, refer to [Download file.](#download-file)
-- Step 8: Download file and notify CFT, refer to [Send Acknowledgement.](#send-acknowledgement)
+- Step 8: Download file and notify CFT, refer to [Send Acknowledgement.](#send-acknowledgement) **This step is optional.**
 
 ### Step 1: [Authentication]<a name="authentication"></a>
 Before you can start using APIs to send and receive files, you will need to authenticate yourself. You can do this by invoking the **(GET JWT(KeyCloak)) API** and providing your **\*API credentials(Client Id and Secret).** This API supports OAuth protocol.
 
- *See [Sandbox Account Information](#sandbox-account-info)
+?>***Refer [Sandbox Account Information.](#sandbox-account-info)**
 
 
 
@@ -77,9 +78,9 @@ This token is required to:
 |Authorization    |String   |Basic Auth of Client Id and Secret
 |x-apigw-api-id   |String   |API Gateway Id**
 
-**\*Unless mentioned otherwise, all headers are required.**
+?>**\*Unless mentioned otherwise, all headers are required.**
 
-****API Gateway Id needs to be physically entered if not hardcoded by Postman.**
+?>****API Gateway Id needs to be physically entered if not hardcoded by Postman.**
 
 
 ##### 1.2.2 Sample request
@@ -117,7 +118,7 @@ Use this API to receive a secure URL to upload your files. Provide the authoriza
 
 You will receive a "transaction_id" and a secure URL valid for 30 minutes.
 
-?>**To get md5Checksum, use the following command: openssl md5 -binary \[fileName\] | base64**
+?>***To get md5Checksum, use the following command: openssl md5 -binary \[fileName\] | base64.**
 
 #### 2.1 Resource information
 |Method      |POST
@@ -205,7 +206,7 @@ To know if the file has been successfully uploaded, invoke the **\(Transaction S
 
 You will receive a status of the transaction including the uploaded files.
 
-?>Important: If there is more than one file, all files need to be uploaded before you call the Transaction Status API.
+?>**Important: If there is more than one file, all files need to be uploaded before you call the Transaction Status API.**
 
 
 #### 4.1 Resource information
@@ -329,7 +330,7 @@ After checking that the file has uploaded successfully, use the **\(Scan Transac
 ### Step 6: [Notification]<a name="notification"></a>
 After the scan and transfer is complete, files will be available for download. CFT system will send a notification to the Receiver via Webhook.*
 
-\*Webhook needs to be configured by receiver
+?>***Webhook needs to be configured by the Receiver.**
 
 
 ### Step 7: [Download File]<a name="download-file"></a>
@@ -366,7 +367,7 @@ You need to obtain secure URLs to download the file, use the **Download Transact
 |downloadUrl\*        |String       
 |validFor\*           |String      
 
-**\* Only available when file is copied to clean bucket**
+?>**\* Only available when file is copied to clean bucket.**
 
 ##### 7.3.3 Sample response payload
 
@@ -406,4 +407,4 @@ Optional: Use the acknowledgment API to notify CFT about the files downloaded.
 
 
 ## Support
-Support is delivered over Telegram channel and during office hours.
+Support is delivered over [Telegram channel](https://t.me/joinchat/Upwvp_0nIEtjOGNl) and during office hours.
