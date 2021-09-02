@@ -407,4 +407,4 @@ Optional: Use the acknowledgment API to notify CFT about the files downloaded.
 
 
 ## Support
-Support is delivered over [Telegram channel](https://t.me/joinchat/Upwvp_0nIEtjOGNl) and during office hours.
+Support is delivered over [Telegram channel](https://t.me/joinchat/Upwvp_0nIEtjOGNl) and during office hours. (Mon - Fri, 0930am - 0530pm)
