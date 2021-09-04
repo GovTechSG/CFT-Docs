@@ -1,6 +1,6 @@
 # GLOSSARY
 
-This page provides a brief explanation of the key terms used in Cloud File Transfer  
+This page provides a brief explanation of the key terms used in Cloud File Transfer.
 
 ## API
 Application Programming Interface. Refers to a set of functions and procedures that allows two applications to interact with each other programmatically in order to access the features or data of an operating system, application or other service. 
@@ -9,7 +9,7 @@ Application Programming Interface. Refers to a set of functions and procedures t
 Refers to a URL of a server or service, that is, the location from which APIs can access the API resources that they need to carry out the function.
 
 ## API Gateway
-An API management tool that sits between a client and a collection of backend services. It accepts all application programming interface (API) calls, aggregates the various services required to fulfill them, and returns the appropriate result.
+An API management tool that sits between a client and a collection of backend services. It accepts all API calls, aggregates the various services required to fulfil them, and returns the appropriate result.
 
 ## API Key
 A unique identifier used by CFT to authenticate a calling program. It is assigned to an individual project and used for rate limiting.
@@ -37,7 +37,7 @@ Amazon Web Services. It is the world’s most comprehensive and broadly adopted 
 Refers to the API credentials, required to generate an authorization token to make API calls.
 
 ## CFT
-Cloud File Transfer. A centralized, fully managed file transfer service for the whole of government (WOG). CFT is a part of the SG Tech Stack (SGTS) and is hosted on the Government Commercial Cloud (GCC).
+Cloud File Transfer. A centralised, fully managed file transfer service for the whole-of-government (WOG). CFT is a part of the Singapore Government Tech Stack (SGTS) and is hosted on the Government Commercial Cloud (GCC).
 
 ## CDR
 Content Disarm and Reconstruct also known as Threat Extraction, proactively protects against known and unknown threats contained in documents by removing executable content.
@@ -75,9 +75,9 @@ Pretty Good Privacy is an encryption program that provides cryptographic privacy
 A REST API is an API that conforms to the design principles of the REST, or representational state transfer architectural style.
 
 ## Sandbox
-CFT sandbox environment is a secure environment to try out CFT APIs. The sandbox supports file transfers in the internet zone between systems.
+The CFT sandbox is a secure test environment for you to try out CFT APIs for file transfers between systems in the internet zone.
 
-## SG Tech Stack (SGTS)
+## Singapore Government Tech Stack (SGTS)
 SGTS consists of a series of common applications and platforms built by the Government that helps agencies build compliant applications easily.
 
 ## Amazon S3
@@ -87,7 +87,7 @@ Amazon Simple Storage Service is an object storage service that offers industry-
 Streaming SIMD Extensions is a processor technology that enables single instruction multiple data. It enables the instructions to handle multiple data elements.
 
 ## TechPass
-A Single Sign-On, Identity & Access Management solution for developer services in SGTS, enabling users to transition seamlessly between services, while providing downstream services a seamless onboarding and consumption experience.
+A Single Sign-On, Identity & Access Management solution for developer services in SGTS, enabling users to transition seamlessly between services, while providing downstream services for a seamless onboarding and consumption experience.
 
 ## Webhook
 A way for an application to provide other applications with real-time information.
