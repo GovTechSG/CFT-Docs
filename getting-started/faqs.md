@@ -6,9 +6,9 @@
 
 **What is Cloud File Transfer (CFT)?**
 
-A centralized, fully managed file transfer service for the whole of government (WOG).
+A centralised, fully managed file transfer service for the whole-of-government (WOG).
 
-CFT is a part of the SG Tech Stack (SGTS) and is hosted on the Government Commercial Cloud (GCC).
+This service is a part of the Singapore Government Tech Stack (SGTS) and is hosted on the Government Commercial Cloud (GCC).
 
 Core capabilities:
 
@@ -20,7 +20,7 @@ Core capabilities:
 
 **What are the benefits of using CFT?**
 
-CFT can benefit agencies who require to:
+CFT can benefit agencies who need to:
 
 - Transfer large files across zones
 - Move files securely
@@ -29,28 +29,29 @@ CFT can benefit agencies who require to:
 - Audit and monitor their file transfer activity
 - Accelerate digitization of government services
 
-**Who are the end users?**
+**Will CFT be available for my use?**
 
 CFT is available for government agencies, their business partners, and vendors.
 
 **What are the different integration options?**
 
-CFT will be available for the following integration options:
+CFT will support the following integration options:
 
-1. CFT for Backend Systems - For file transfers between systems.
-2. CFT for Web and Mobile Applications - For file transfers between an end-user and a system.
+- CFT for Backend Systems - File transfers between systems.
+- CFT for Web and Mobile Applications - File transfers between end-user and system.
 
 **What type of encryption does CFT support?**
 
 CFT supports industry and IM8 compliant standards for: 
 
-- Encryption at rest:......TBC
+- Encryption at rest:
+
+Data is encrypted at-rest on the commercial cloud hosting environment with Amazon Web Services (AWS) Simple Storage Service Server Side Encryption Key Management Service (S3 SSE-KMS) (IM8 8.3/S2)
 
 
-- Encryption in transit:.......TBC
+- Encryption in transit:
 
-
-(Files in CFT are encrypted in transit and at rest with industry-standard schemes like HTTPS and Amazon Web Services (AWS) Simple Storage Service Server Side Encryption Key Management Service (S3-SSE-KMS))
+HTTPS over Transport Layer Security version 1.2 (TLS 1.2) and above (IM8 3.1/S3)
 
 **What are the requirments to use CFT?**
 
@@ -58,7 +59,7 @@ CFT supports industry and IM8 compliant standards for: 
 
 **When will it be available?**
 
-CFT for Backend Systems will be Generally Available in ......
+CFT for Backend Systems will be Generally Available in (Zen to confirm)
 
 ### Data Classification
 
@@ -90,8 +91,8 @@ Fourteen days, after which the files will be purged.
 
 **What happens if the file contains malware?**
 
-1. CFT for Backend Systems - File will be moved to dirty bucket , file status will be updated to ‘FileCopiedToDirtyBucket’ 
-2. CFT for Web and Mobile Applications - TBC
+- CFT for Backend Systems - File will be moved to dirty bucket , file status will be updated to ‘FileCopiedToDirtyBucket’ 
+- CFT for Web and Mobile Applications - TBC
 
 **I need more help. How do I contact you?**
 
@@ -101,22 +102,22 @@ Send us an email at [enquiries_CFT@tech.gov.sg](enquiries_CFT@tech.gov.sg) and w
 
 **How do I integrate CFT with my application?**
 
-1. For CFT for Backend Systems, refer to [Integration guide](integration-guide-cft-for-backend-systems) and the API specs
-2. For CFT for Web and Mobile Applications refer to [Integration guide](integration-guide-cft-for-web-and-mobile-apps)
+- For CFT for Backend Systems, refer to [Integration guide](integration-guide-cft-for-backend-systems) and the API specs
+- For CFT for Web and Mobile Applications refer to [Integration guide](integration-guide-cft-for-web-and-mobile-applications)
 
 ### Subscription
 
 **Where can I find the pricing information?**
 
-TBC
+Please contact [Support](mailto:enquiries_CFT@tech.gov.sg) for more information. (Zen to advise)
 
 **How do I modify my subscription tier options?**
 
-Contact [Support.](mailto:enquiries_CFT@tech.gov.sg)
+Please contact [Support](mailto:enquiries_CFT@tech.gov.sg) for more information.
 
 **How do I download billing reports?**
 
-Refer to TechPay for further details.
+Please contact [Support](mailto:enquiries_CFT@tech.gov.sg) for more information.
 
 **I am interested in trying out CFT service, do you offer a trial?**
 
@@ -133,7 +134,9 @@ Please follow the steps below to sign up:
 
 **How do I terminate my subscription?**
 
-Contact [Support.](mailto:enquiries_CFT@tech.gov.sg)
+Please contact [Support](mailto:enquiries_CFT@tech.gov.sg) for more information.
+
+
 
 ## Customer Support
 
@@ -182,7 +185,7 @@ Here are a couple of troubleshooting steps:
 
 - Check if workflow status is active on the portal.
 
-If you need any assistance, please take note of the x-cft-trace-id request header and send us an email at [enquiries_CFT@tech.gov.sg](enquiries_CFT@tech.gov.sg)
+If you need any assistance, please take note of the x-cft-trace-id request header and contact [Support](mailto:enquiries_CFT@tech.gov.sg)
 
 **I am not able to receive files**
 
@@ -190,11 +193,11 @@ Here are a couple of troubleshooting steps:
 
 - Check if workflow status is active on the portal.
 
-If you need any assistance, please take note of the x-cft-trace-id request header and send us an email at [enquiries_CFT@tech.gov.sg](enquiries_CFT@tech.gov.sg)
+If you need any assistance, please take note of the x-cft-trace-id request header and contact [Support](mailto:enquiries_CFT@tech.gov.sg)
 
 **How will I be notified if my files fail to transfer?**
 
-TBC
+Please contact [Support](mailto:enquiries_CFT@tech.gov.sg) for more information.
 
 
 
