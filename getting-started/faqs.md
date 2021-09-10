@@ -29,6 +29,10 @@ CFT can benefit agencies who need to:
 - Audit and monitor their file transfer activity
 - Accelerate digitization of government services
 
+**What is cross-zone file transfer?**
+
+The IM8 policy requires applications to be separated into internet and intranet zones. Transfering files from one zone to another is refered to as a cross-zone file transfer. 
+
 **Will CFT be available for my use?**
 
 CFT is available for government agencies, their business partners, and vendors.
