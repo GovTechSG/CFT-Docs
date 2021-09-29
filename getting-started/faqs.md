@@ -63,7 +63,7 @@ HTTPS over Transport Layer Security version 1.2 (TLS 1.2) and above (IM8 3.1/S3)
 
 **When will it be available?**
 
-CFT for Backend Systems will be Generally Available in (Zen to confirm)
+CFT for Backend Systems will be Generally Available from end 2021.
 
 ### Data Classification
 
@@ -113,7 +113,7 @@ Send us an email at [enquiries_CFT@tech.gov.sg](enquiries_CFT@tech.gov.sg) and w
 
 **Where can I find the pricing information?**
 
-Please contact [Support](mailto:enquiries_CFT@tech.gov.sg) for more information. (Zen to advise)
+Please contact [Support](mailto:enquiries_CFT@tech.gov.sg) for more information.
 
 **How do I modify my subscription tier options?**
 
