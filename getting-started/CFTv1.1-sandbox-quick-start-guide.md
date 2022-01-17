@@ -1,10 +1,8 @@
 # Introduction
 
-**Cloud File Transfer (CFT)** is an API-driven service in the Singapore Government Tech Stack (SGTS) that powers secure, compliant cross-zone file transfers.
+**Cloud File Transfer (CFT)** is an API-driven service for secure cross-zone file transfers. It is a part of the service layer in Singapore Government Tech Stack (SGTS).
 
-The CFT sandbox is a test environment that is almost identical to our production environment. Here, you can try out the CFT APIs for file transfers between systems in the internet zone.
-
-In the following sections, you will learn how to use our APIs in the sandbox.
+CFT Sandbox is a test environment and supports Internet zone file transfers only. In the following sections, you will learn how to use CFT APIs in the sandbox environment.
 
 # Getting Started
 
@@ -19,9 +17,9 @@ Sign up for a sandbox account by filling up our [onboarding form.](https://form.
 
 Upon successful signup, a sandbox account will be created and you will receive a welcome email containing:
 
-- [API Key](glossary.md)
-- [API credentials - Client Id and Secret](glossary.md)
-- [API Gateway Id](glossary.md)
+- API Key
+- API credentials - Client Id and Secret
+- API Gateway Id
 - Postman environment file - Sandbox (Internet).postman_environment.json
 - Postman API collections file - CFT API v1.postman_collection.json
 
@@ -87,16 +85,16 @@ In the following sections, you will find resource information on each of the API
 
 #### 1.1 Resource information
 |Method      |POST
-|------------|---------------------------
-|URL         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/auth
-|What it does|Provides a short-lived Authorization token to call CFT APIs
+|:------------|:---------------------------
+|**API endpoint**         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/auth
+|**Purpose** |Provides a short-lived Authorization token to call CFT APIs
 
 #### 1.2 HTTP request
 ##### 1.2.1 Headers
 ?>**Note: Unless mentioned otherwise, all headers are required.**
 
 |Name             |Type     |Purpose                                  
-|------------     |---------|------------                             
+|:------------     |:---------|:------------                             
 |x-api-key        |String   |API Key assigned to an individual project
 |Authorization    |String   |Basic Auth of Client Id and Secret
 |x-apigw-api-id   |String   |API Gateway Id **(To be entered manually if not hardcoded by Postman)**
@@ -114,7 +112,7 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 #### 1.3 HTTP response
 ##### 1.3.1 JSON schema
 |Name                    |Type     
-|------------            |---------
+|:------------            |:---------
 |authorization_token     |String
 |expires_in              |Integer
 |token_type              |String
@@ -148,7 +146,7 @@ The response and [status code](#standard-http-status-codes) is shown in a separa
 
 ### Step 2: Create transaction
 After being authenticated successfully, you need to request for a secured URL to upload your files. Invoke the **Create Transaction API** and provide the following in the request body:
-- Name of the files to be uploaded (required)
+- Name of the files to be uploaded (required).
 - and md5Checksum (optional) of the file. Use CLI command: " **openssl md5 -binary \[fileName\] | base64 "** to get MD5 checksum of the file.
 
 ?>**Important - The authorization token, API Key and API Gateway Id are automatically included in the request header.**
@@ -157,21 +155,21 @@ After being authenticated successfully, you need to request for a secured URL to
 
 #### 2.1 Resource information
 |Method      |POST
-|------------|----------------------------------------------------------------------
-|URL         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions
-|What it does|Creates a transaction and returns secured URLs to upload files
+|:------------|:----------------------------------------------------------------------
+|**API endpoint**         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions
+|**Purpose** |Creates a transaction and returns secured URLs to upload files
 
 #### 2.2 HTTP request
 ##### 2.2.1 Headers
 |Name                |Type     |Purpose                                  
-|------------        |---------|------------                             
+|:------------        |:---------|:------------                             
 |x-api-key           |String   |API Key assigned to an individual project
 |Authorization |String   |Authorization token
 |x-apigw-api-id      |String   |API Gateway Id
 
 ##### 2.2.2 JSON schema 
 |Name             |Type             |Purpose
-|------------     |---------        |---------
+|:------------     |:---------        |:---------
 |fileDetails      |JSON array       |fileDetails JSON schema 
 |fileName         |String           |file names to be uploaded with extension
 |md5Checksum      |String           |md5checksum of the file
@@ -196,15 +194,15 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 #### 2.3 HTTP response
 ##### 2.3.1 JSON schema
 |Name           |Type                    
-|------------   |---------              
+|:------------   |:---------              
 |projectId      |String                 
-|transactionId  |Integer                
+|transactionId  |String                
 |filesCount     |Integer                
 |uploadUrls     |uploadUrls JSON schema
 
 ##### 2.3.2 uploadUrls JSON schema
 |Name           |Type                    
-|------------   |---------              
+|:------------   |:---------              
 |fileName       |String                 
 |uploadUrl      |String                 
 |validFor       |String                 
@@ -276,14 +274,14 @@ You will receive a status of the transaction including the uploaded file, the tr
 
 #### 4.1 Resource information
 |Method      |GET
-|------------|-----------------------------------------
-|URL         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{transactionid}/status
-|What it does|Returns the status of all files uploaded in a transaction
+|:------------|:-----------------------------------------
+|**API endpoint**         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{transactionid}/status
+|**Purpose** |Returns the status of all files uploaded in a transaction
 
 #### 4.2 HTTP request
 ##### 4.2.1 Headers
 |Name                |Type     |Purpose                                  
-|------------        |---------|------------                             
+|:------------        |:---------|:------------                             
 |x-api-key           |String   |API Key assigned to an individual project
 |Authorization |String   |Authorization token
 |x-apigw-api-id      |String   |API Gateway Id
@@ -299,7 +297,7 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 #### 4.3 HTTP response
 ##### 4.3.1 JSON schema
 |Name           |Type                             
-|------------   |---------                        
+|:------------   |:---------                        
 |projectId      |String                          
 |transactionId  |String                           
 |filesCount     |Integer                          
@@ -307,7 +305,7 @@ curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandb
 
 ##### 4.3.2 fileDetails JSON schema
 |Name                 |Type         
-|------------         |---------    
+|:------------         |:---------    
 |fileName             |String       
 |fileStatus           |String       
 |transactionTimestamp |String       
@@ -365,14 +363,14 @@ After checking that the file has been successfully uploaded, use the **Scan Tran
 
 #### 5.1 Resource information
 |Method      |POST
-|------------|--------------------------------------------------------------------
-|URL         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{{transactionid}}/scan
-|What it does|Commits the transaction for scan and transfer
+|:------------|:--------------------------------------------------------------------
+|**API endpoint**         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{{transactionid}}/scan
+|**Purpose** |Commits the transaction for scan and transfer
 
 #### 5.2 HTTP request
 ##### 5.2.1 Headers
 |Name                |Type     |Purpose                                  
-|------------        |---------|------------                             
+|:------------        |:---------|:------------                             
 |x-api-key           |String   |API Key assigned to an individual project
 |Authorization |String   |Authorization token
 |x-apigw-api-id      |String   |API Gateway Id
@@ -381,7 +379,7 @@ After checking that the file has been successfully uploaded, use the **Scan Tran
 #### 5.3 HTTP response
 ##### 5.3.1 JSON schema
 |Name           |Type                             
-|------------   |---------                        
+|:------------   |:---------                        
 |projectId      |String                           
 |transactionId  |String                           
 |filesCount     |Integer                          
@@ -389,7 +387,7 @@ After checking that the file has been successfully uploaded, use the **Scan Tran
 
 ##### 5.3.2 fileDetails JSON schema
 |Name                 |Type        
-|------------         |---------    
+|:------------         |:---------    
 |fileName             |String       
 |fileStatus           |String       
 
@@ -435,16 +433,16 @@ CFT system will send a notification with download URLs to the Receiver via Webho
 #### 6.1 JSON schema
 
 |Name   |Type   |
-|-------|-----|
+|:-------|:-----|
 |projectId|String|
 |transactionid|String|
-|filesCount|Int|
+|filesCount|Integer|
 |downloadUrls|JSON array of downloadUrls schema|
 
 #### 6.2 DownloadUrls JSON schema
 
 |Name|Type|
-|-----|----|
+|:-----|:----|
 |fileName|String|
 |fileStatus|String|
 |downloadUrl |String|
@@ -500,14 +498,14 @@ Invoke the **Download Transaction API.** You will need to authenticate yourself 
 
 #### 7.1 Resource information
 |Method      |GET
-|------------|------------------------------------------
-|URL         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{transactionid}/download
-|What it does|Provides secured URLs to download files in a transaction
+|:------------|:------------------------------------------
+|API endpoint         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{transactionid}/download
+|Purpose |Provides secured URLs to download files in a transaction
 
 #### 7.2 HTTP request
 ##### 7.2.1 Headers
 |Name                |Type     |Purpose                                  
-|------------        |---------|------------                             
+|:------------        |:---------|:------------                             
 |x-api-key           |String   |API Key assigned to an individual project
 |Authorization |String   |Authorization token
 |x-apigw-api-id      |String   |API Gateway Id                              
@@ -515,7 +513,7 @@ Invoke the **Download Transaction API.** You will need to authenticate yourself 
 #### 7.3 HTTP response
 ##### 7.3.1 JSON schema
 |Name            |Type                              
-|------------    |---------                         
+|:------------    |:---------                         
 |projectId       |String                            
 |transactionId   |String                            
 |filesCount      |Integer                           
@@ -523,7 +521,7 @@ Invoke the **Download Transaction API.** You will need to authenticate yourself 
 
 ##### 7.3.2 downloadUrls JSON schema
 |Name                 |Type          
-|------------         |---------    
+|:------------         |:---------    
 |fileName             |String      
 |fileStatus           |String      
 |downloadUrl (only available when files are clean)        |String       
@@ -579,14 +577,14 @@ Receiver app may call the acknowledgement API to notify CFT, once all the files 
 
 #### 8.1 Resource information
 |Method      |PUT
-|------------|-------------------------
-|URL         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{transactionid}/ack
-|What it does|Notify CFT once all the files are downloaded successfully in a transaction and status will be updated to "FileDownloaded".
+|:------------|:-------------------------
+|**API endpoint**         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{transactionid}/ack
+|**Purpose**|Notify CFT once all the files are downloaded successfully in a transaction and status will be updated to "FileDownloaded".
 
 #### 8.2 HTTP request
 ##### 8.2.1 Headers
 |Name                |Type     |Purpose                                  
-|------------        |---------|------------                             
+|:------------        |:---------|:------------                             
 |x-api-key           |String   |API Key assigned to an individual project
 |Authorization |String   |Authorization token
 |x-apigw-api-id      |String   |API Gateway Id  
