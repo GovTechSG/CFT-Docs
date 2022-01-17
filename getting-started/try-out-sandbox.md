@@ -21,9 +21,5 @@ Onboarding to CFT sandbox is a simple process.
 3. Refer the [sandbox-quick-start-guide] to learn how to use our APIs to send and receive files.
 3. You can also refer the [OpenAPI specifications](https://docs.developer.gov.sg/docs/cft-rest-api-documentation/) or call the APIs from applications.
 
-
-## Ready for Production?
-[Sign up for a CFT production](https://form.gov.sg/#!/603cff5e399059001248f7d4/preview) to start transferring files on your live applications.
-
 ## Support
 Support is delivered over telegram channel and during office hours.
