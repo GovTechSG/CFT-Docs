@@ -1,4 +1,4 @@
-* [Overview](/)
-* Getting Started
-    * [Try out CFT Sandbox](getting-started/try-out-sandbox)
-    * [Sandbox Quick Start Guide](getting-started/CFTv1.1-sandbox-quick-start-guide)
+- **OVERVIEW**
+  - [About Cloud File Transfer](overview.md)
+- **GETTING STARTED**
+  - [**CFTv1.1 Quick Start Guide**](getting-started/CFTv1.1-sandbox-quick-start-guide.md)
