@@ -1,26 +1,32 @@
 # Introduction
 
-**Cloud File Transfer (CFT)** is an API-driven service for secure cross-zone file transfers. It is a part of the service layer in Singapore Government Tech Stack (SGTS).
+**Cloud File Transfer (CFT)** is an API-driven service for secure cross-zone file transfers. It is a part of the service layer in the Singapore Government Tech Stack (SGTS)
 
-CFT Sandbox is a test environment and supports Internet zone file transfers only. In the following sections, you will learn how to use CFT APIs in the sandbox environment.
+# Test Environments
 
-# Getting Started
+|Environment |Description|Link
+|------|-------|------|
+|Staging|Hosted in GCC2.0, presently supports file transfers in the internet zone. Plans are on to support intranet zone in future.|https://api-staging.gdscft.govtechstack.sg/staging|
+|Sandbox|Supports Internet zone file transfers only. This environment will be available until **30-March-2022.** After which, new users will be onboarded directly to the staging environment to try out CFT APIs.|https://api-sandbox.gdscft.govtechstack.sg/sandbox
+
+
+?> **Important:** **If you intend to perform load-testing, do inform us in advance.**
 
 ## What you will need
 Before you start testing, ensure you have the following:
 
-1. A sandbox account - Required for access to APIs in the test environment.
+1. A test account - Required for access to APIs in the test environment.
 2. Postman tool - For testing purposes.
 
-### Sandbox Account
-Sign up for a sandbox account by filling up our [onboarding form.](https://form.gov.sg/#!/60a4cca76179d60012cdacac/preview)
+### Test Account
+Sign up for a test account by filling up our [onboarding form.](https://form.gov.sg/#!/60a4cca76179d60012cdacac/preview)
 
-Upon successful signup, a sandbox account will be created and you will receive a welcome email containing:
+Upon successful signup, a test account will be created and you will receive a welcome email containing:
 
 - API Key
 - API credentials - Client Id and Secret
 - API Gateway Id
-- Postman environment file - Sandbox (Internet).postman_environment.json
+- Postman environment file - CFT-Internet.postman_environment.json
 - Postman API collections file - CFT API v1.postman_collection.json
 
 
@@ -30,16 +36,16 @@ Upon successful signup, a sandbox account will be created and you will receive a
 
 2. Create a Postman account.
 
-3. Login and import the test environment and test API collection received during [signup](#sandbox-account)
+3. Login and import the test environment and test API collection received during [signup](#test-account)
 - Click **Collections -> Import -> Folder -> \"CFT API v1.postman_collection.json\"**
-- Click **Environment -> Import -> Folder -> \"Sandbox (Internet).postman_environment.json\"**
+- Click **Environment -> Import -> Folder -> \"CFT-Internet.postman_environment.json\"**
 
 Your Postman GUI should now look like this:
 
 ![Display Postman_environment](./images/Postman_envt.png)
 
 ## REST APIs and their usage
-The REST APIs are implemented using HTTP Protocol. Listed below is the API usage sequence to send and receive files in the sandbox.
+The REST APIs are implemented using HTTP Protocol. Listed below is the API usage sequence to send and receive files.
 
 **SEND FILES**
 - Step 1: You will need to authenticate yourself to access the APIs. Exchange your API credentials (received during [signup](#sandbox-account)) for an Authorization token, refer to [Authentication.](#authentication)
@@ -86,7 +92,7 @@ In the following sections, you will find resource information on each of the API
 #### 1.1 Resource information
 |Method      |POST
 |:------------|:---------------------------
-|**API endpoint**         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/auth
+|**API endpoint**         |/v1/cft/auth
 |**Purpose** |Provides a short-lived Authorization token to call CFT APIs
 
 #### 1.2 HTTP request
@@ -103,7 +109,7 @@ In the following sections, you will find resource information on each of the API
 You can direcly invoke the APIs in the collection or use cURL commands as shown below:
 
 ```
-curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/auth' \ 
+curl --location --request POST '/v1/cft/auth' \ 
 --header 'x-api-key: [API Key]' \ 
 --header 'x-apigw-api-id: [API Gateway Id]' \ 
 --header 'Authorization: Basic [Client Id and Secret]' 
@@ -156,7 +162,7 @@ After being authenticated successfully, you need to request for a secured URL to
 #### 2.1 Resource information
 |Method      |POST
 |:------------|:----------------------------------------------------------------------
-|**API endpoint**         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions
+|**API endpoint**         |/v1/cft/transactions
 |**Purpose** |Creates a transaction and returns secured URLs to upload files
 
 #### 2.2 HTTP request
@@ -176,7 +182,7 @@ After being authenticated successfully, you need to request for a secured URL to
 
 ##### 2.2.3 Sample request payload
 ```
-curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions' \
+curl --location --request POST '/v1/cft/transactions' \
 --header  'Authorization: [authorization_token]' \
 --header 'Content-Type: application/json' \
 --header 'x-api-key: [API Key]' \
@@ -275,7 +281,7 @@ You will receive a status of the transaction including the uploaded file, the tr
 #### 4.1 Resource information
 |Method      |GET
 |:------------|:-----------------------------------------
-|**API endpoint**         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{transactionid}/status
+|**API endpoint**         |/v1/cft/transactions/{transactionid}/status
 |**Purpose** |Returns the status of all files uploaded in a transaction
 
 #### 4.2 HTTP request
@@ -288,7 +294,7 @@ You will receive a status of the transaction including the uploaded file, the tr
 
 ##### 4.2.2 Sample Request Payload
 ```
-curl --location --request POST 'https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{{session_id}}/status' \
+curl --location --request POST '/v1/cft/transactions/{{session_id}}/status' \
 --header 'x-api-key: [API Key]' \
 --header 'x-apigw-api-id: [API Gateway Id]' \
 --header 'Authorization: [authorization_token]'
@@ -364,7 +370,7 @@ After checking that the file has been successfully uploaded, use the **Scan Tran
 #### 5.1 Resource information
 |Method      |POST
 |:------------|:--------------------------------------------------------------------
-|**API endpoint**         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{{transactionid}}/scan
+|**API endpoint**         |/v1/cft/transactions/{{transactionid}}/scan
 |**Purpose** |Commits the transaction for scan and transfer
 
 #### 5.2 HTTP request
@@ -499,7 +505,7 @@ Invoke the **Download Transaction API.** You will need to authenticate yourself 
 #### 7.1 Resource information
 |Method      |GET
 |:------------|:------------------------------------------
-|API endpoint         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{transactionid}/download
+|API endpoint         |/v1/cft/transactions/{transactionid}/download
 |Purpose |Provides secured URLs to download files in a transaction
 
 #### 7.2 HTTP request
@@ -578,7 +584,7 @@ Receiver app may call the acknowledgement API to notify CFT, once all the files 
 #### 8.1 Resource information
 |Method      |PUT
 |:------------|:-------------------------
-|**API endpoint**         |https://api-sandbox.gdscft.govtechstack.sg/sandbox/v1/cft/transactions/{transactionid}/ack
+|**API endpoint**         |/v1/cft/transactions/{transactionid}/ack
 |**Purpose**|Notify CFT once all the files are downloaded successfully in a transaction and status will be updated to "FileDownloaded".
 
 #### 8.2 HTTP request
