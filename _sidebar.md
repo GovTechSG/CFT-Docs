@@ -1,5 +1,8 @@
-* [Overview](/)
-* Getting Started
-    * [Try out CFT Sandbox](getting-started/try-out-sandbox)
-    * [Sandbox Quick Start Guide](getting-started/CFTv1.1-sandbox-quick-start-guide)
-<!-- test -->
+- [Home](home.md)
+- [Firewall clearance](firewall-clearance.md)
+- Firewall test
+    - [HTTPS](https-firewall.md)
+    - [SFTP](sftp-firewall.md)
+- [Whitelisting](whitelisting.md)
+- SFTP
+    - [Job script samples](sftp/job-script.md)
