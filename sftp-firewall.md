@@ -19,41 +19,53 @@
 
 ##  Firewall rules testing 
 
-To perform firewall rules testing, enter the following commands via the command prompt, using [CFT endpoints](#prerequisites):
+To perform firewall rules testing, enter the following commands using **your SFTP client command prompt**:
 
-```
-nslookup {endpoint}
-```
-
-```
-nslookup {endpoint} 10.120.1.103 (forwarder)
-```
-
-```
-nslookup {endpoint} 10.122.1.103 (forwarder)
-```
-
-### Expected result
-
-Verify that you get the following expected result.
-
-- For SSH only:
+1. First, enter these commands to resolve CFT SFTP FQDN through WOG DNS server.
 
     ```
-    Non-authoritative answer:
-    Name:  sftp.in.cft.stack.gov.sg
-    Addresses:  10.211.0.134
-                10.211.0.157
+    nslookup {endpoint}
     ```
-- For SSH + password:
 
     ```
-    Non-authoritative answer:
-
-    Name:    sftp-pw.in.cft.stack.gov.sg
-    Addresses:  10.211.0.138
-                10.211.0.155
+    nslookup {endpoint} 10.120.1.103 (forwarder)
     ```
+
+    ```
+    nslookup {endpoint} 10.122.1.103 (forwarder)
+    ```
+
+    Refer to the [endpoint values](#prerequisites).
+
+    **Expected result**
+
+    Verify that you get the following expected result.
+
+    - For SSH only:
+
+        ```
+        Non-authoritative answer:
+        Name:  sftp.in.cft.stack.gov.sg
+        Addresses:  10.211.0.134
+                    10.211.0.157
+        ```
+    - For SSH + password:
+
+        ```
+        Non-authoritative answer:
+
+        Name:    sftp-pw.in.cft.stack.gov.sg
+        Addresses:  10.211.0.138
+                    10.211.0.155
+        ```
+
+2. Enter the following command to test the connection to the CFT SFTP server.
+
+    ```
+    telnet <CFT SFTP server IP address> 22
+    ```
+
+     If the connection fails, you will see an error message indicating the reason.
 
 <!-- 
 # Connectivity test
