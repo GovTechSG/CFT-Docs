@@ -1,4 +1,4 @@
-# HTTPS Firewall Rules Testing
+# HTTPS Firewall Rules Testing (Intranet)
 
 ## Prerequisites
 

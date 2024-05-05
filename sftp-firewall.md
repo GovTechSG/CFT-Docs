@@ -1,4 +1,4 @@
-# SFTP Client Firewall Rules Testing
+# SFTP Client Firewall Rules Testing (Intranet)
 
 ## Prerequisites
 
