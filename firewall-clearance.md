@@ -1,10 +1,12 @@
-# CFT Endpoints Whitelisting
+# Tenant Firewall Clearance
 
+<!-- 
 This diagram shows the CFT infrastructure.
 
 ![firewall-clearances](assets/firewall-clearances.png)
+-->
 
-Tenants may need to allow or whitelist CFT endpoints on your tenant/agency firewalls.
+Tenants may need to allow or **whitelist CFT endpoints on your tenant/agency firewalls**.
 
 ?> **Note:** If you have not configured webhook notifications or you do not have a SFTP Server tenant system, these whitelisting steps are not required on your end.
 
