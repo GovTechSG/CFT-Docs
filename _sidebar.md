@@ -1,8 +1,6 @@
 - [Home](home.md)
 - [Tenant Whitelisting](whitelisting.md)
-    - [HTTPS](https-firewall.md)
-    - [SFTP](sftp-firewall.md)
-- [Tenant Firewall clearance](firewall-clearance.md)
-
-- SFTP Scheduler
-    - [Job script samples](sftp/job-script.md)
+- [Tenant Firewall Clearance](firewall-clearance.md)
+- [HTTPS Client Firewall Test](https-firewall.md)
+- [SFTP Client Firewall Test](sftp-firewall.md)
+- [SFTP Job Script Samples](sftp/job-script.md)

@@ -8,7 +8,7 @@ This diagram shows the CFT infrastructure.
 
 Tenants may need to allow or **whitelist CFT endpoints on your tenant/agency firewalls**.
 
-?> **Note:** If you have not configured webhook notifications or you do not have a SFTP Server tenant system, these whitelisting steps are not required on your end.
+?> **Note:** If you have not configured webhook notifications or you do not have a SFTP Server tenant system, these steps are not required on your end.
 
 ## Whitelist the CFT Notification Server Endpoints
 

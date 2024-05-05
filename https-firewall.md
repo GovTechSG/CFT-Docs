@@ -1,5 +1,7 @@
 # HTTPS Firewall Rules Testing (Intranet)
 
+If you have completed [whitelisting requirements](https://docs.developer.tech.gov.sg/docs/cft-additional-docs/whitelisting) and you want to test **HTTPS Client connection to CFT intranet**, follow the steps in this section.
+
 ## Prerequisites
 
 Use the following endpoint:
