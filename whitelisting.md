@@ -2,6 +2,11 @@
 
 Refer to this page for the whitelisting requirements needed to access CFT intranet or internet.
 
+- [Whitelisting for tenant system to connect to CFT Internet zone](#connect-to-cft-internet-zone)
+- [Whitelisting for tenant system to connect to CFT Intranet zone](#connect-to-cft-intranet-zone)
+    - [HTTPS Firewall Rules Testing (Intranet)](https://docs.developer.tech.gov.sg/docs/cft-additional-docs/https-firewall)
+    - [SFTP Client Firewall Rules Testing (Intranet)](https://docs.developer.tech.gov.sg/docs/cft-additional-docs/sftp-firewall)
+
 ## Connect to CFT Internet zone
 
 If your system needs to connect to CFT internet zone, CFT needs to whitelist your Public IP address. Perform the action required below.
@@ -33,3 +38,7 @@ To test the incoming connectivity from tenant to CFT intranet, refer to:
 | If you are calling APIs from the internet zone:<br><br>• Raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) and provide your **Public IP** address for whitelisting. <br><br>• Raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) for VPC Private Link setup.<br><br>• Whitelist CFT’s Public IP address if you enabled Webhook Notifications in the admin portal. | If you are calling APIs from the intranet zone: <br><br>• Please raise your CLZ Firewall Whitelisting request to **GovTech AFM SR Admin** at afm_sr_admin@tech.gov.sg for the following cases:<br>&nbsp;&nbsp; - Agency needs to connect CFT Intranet APIs from GEN network. <br>&nbsp;&nbsp; - Agency’s SFTP client needs to connect  CFT Intranet SFTP server from GEN network. <br>&nbsp;&nbsp;- CFT’s SFTP client needs to connect to Agency’s SFTP server in GEN network<br>• If your CIDR IPs have been migrated from GCC1.0 to GCC2.0, no need to setup VPC Private Link. <br><br>**Note:** This is also required if you enabled Webhook Notifications in the admin portal. |
 
 -->
+
+## What's next
+
+You may need to allow or [whitelist CFT endpoints on your tenant/agency firewalls](https://docs.developer.tech.gov.sg/docs/cft-additional-docs/firewall-clearance).
