@@ -2,10 +2,11 @@
 
 Refer to this page for the whitelisting requirements needed to access CFT intranet or internet.
 
-- [Whitelisting for tenant system to connect to CFT Internet zone](#connect-to-cft-internet-zone)
-- [Whitelisting for tenant system to connect to CFT Intranet zone](#connect-to-cft-intranet-zone)
-    - [HTTPS Firewall Rules Testing (Intranet)](https://docs.developer.tech.gov.sg/docs/cft-additional-docs/https-firewall)
-    - [SFTP Client Firewall Rules Testing (Intranet)](https://docs.developer.tech.gov.sg/docs/cft-additional-docs/sftp-firewall)
+- To connect to CFT zones, do the following:
+    - [Request CFT **internet** zone whitelisting](#connect-to-cft-internet-zone)
+    - [Request CFT **intranet** zone whitelisting](#connect-to-cft-intranet-zone)
+- To allow CFT webhooks and CFT SFTP Client to connect to your tenant system:
+    - [Whitelist CFT endpoints on your tenant/agency firewalls](https://docs.developer.tech.gov.sg/docs/cft-additional-docs/firewall-clearance)
 
 ## Connect to CFT Internet zone
 
@@ -13,7 +14,7 @@ If your system needs to connect to CFT internet zone, CFT needs to whitelist you
 
 !> **Note:** This is only required for accessing CFT APIs from locations outside of Singapore.
 
-| Agency's System Environment | CFT Zone | Action required |
+| Agency's System | CFT Zone | Action required |
 |---|---|---|
 | Internet, Public SaaS, Commercial Cloud | Internet | Raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) and provide your **Public IP address** for whitelisting. |
 
@@ -21,7 +22,7 @@ If your system needs to connect to CFT internet zone, CFT needs to whitelist you
 
 If your system needs to connect to CFT intranet zone, perform the action required based on your system environment.
 
-| Agency's System Environment | CFT Zone | Action required |
+| Agency's System | CFT Zone | Action required |
 |---|---|---|
 | GPC, GDC, Agency DC (GEN) | Intranet | Raise a CLZ Firewall Whitelisting request to GovTech AFM SR Admin at afm_sr_admin@tech.gov.sg. |
 | GCC1.0, GCC2.0 on Google Cloud/Azure Cloud | Intranet | Raise a CLZ Firewall Whitelisting request to GovTech AFM SR Admin at afm_sr_admin@tech.gov.sg. |
@@ -41,4 +42,4 @@ To test the incoming connectivity from tenant to CFT intranet, refer to:
 
 ## What's next
 
-You may need to allow or [whitelist CFT endpoints on your tenant/agency firewalls](https://docs.developer.tech.gov.sg/docs/cft-additional-docs/firewall-clearance).
+You may need to allow or [whitelist CFT endpoints on your tenant/agency firewalls](https://docs.developer.tech.gov.sg/docs/cft-additional-docs/firewall-clearance ).
