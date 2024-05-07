@@ -19,14 +19,12 @@ This diagram illustrates CFT Firewall configuration, depicting the various conne
 
 Depending on your system and zone, perform the whitelisting steps required.
 
-- CFT HTTPS Server Whitelisting 
-- CFT SFTP Server Whitelisting
-- CFT SFTP Client Whitelisting 
-- CFT Notification (Webhooks) Server Whitelisting 
+- [CFT HTTPS Server Whitelisting](#cft-https-server-whitelisting)
+- [CFT SFTP Server Whitelisting](#cft-sftp-server-whitelisting)
+- [CFT SFTP Client Whitelisting](#cft-sftp-client-whitelisting)
+- [CFT Notification (Webhooks) Server Whitelisting](#cft-notification-webhooks-server-whitelisting)
 
 ## CFT HTTPS Server Whitelisting
-
-To connect to CFT HTTPS API server, perform the steps required.
 
 | CFT Zone | Tenant Action |
 |---|---|
@@ -37,8 +35,6 @@ To connect to CFT HTTPS API server, perform the steps required.
 
 ## CFT SFTP Server Whitelisting
 
-To connect to CFT SFTP server, perform the steps required.
-
 | CFT Zone | Tenant Action |
 |---|---|
 | **Internet** | Raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) to whitelist **your Tenant SFTP Client** on CFT.
@@ -46,8 +42,6 @@ To connect to CFT SFTP server, perform the steps required.
 | | If you are on GCC1.0 or GCC2.0 on AWS, raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) for VPC Private Link setup. |
 
 ## CFT SFTP Client Whitelisting
-
-To connect to CFT SFTP Client, perform the steps required.
 
 | CFT Zone | Tenant Action |
 |---|---|
@@ -58,8 +52,6 @@ To connect to CFT SFTP Client, perform the steps required.
 | | If you are on GCC1.0 or GCC2.0 on AWS, raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) for VPC Private Link setup. | -->
 
 ## CFT Notification (Webhooks) Server Whitelisting
-
-To connect to CFT Notification (Webhooks) Server, perform the steps required.
 
 | CFT Zone | Tenant Action |
 |---|---|
@@ -87,7 +79,7 @@ To connect to CFT Notification (Webhooks) Server, perform the steps required.
 
 ## What's next
 
-- To validate the firewall rules from tenant system **to CFT intranet**, refer to:
+- To validate the firewall rules **from tenant system to CFT intranet**, refer to:
     - [HTTPS Firewall Rules Testing (Intranet)](https://docs.developer.tech.gov.sg/docs/cft-additional-docs/https-firewall)
     - [SFTP Client Firewall Rules Testing (Intranet)](https://docs.developer.tech.gov.sg/docs/cft-additional-docs/sftp-firewall)
 
