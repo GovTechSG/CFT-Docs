@@ -6,13 +6,23 @@ This diagram shows the CFT infrastructure.
 ![firewall-clearances](assets/firewall-clearances.png)
 -->
 
-Tenants may need to allow or **whitelist CFT endpoints on your tenant/agency firewalls**.
+Tenants may need to allow or **whitelist CFT IPs on your tenant/agency firewalls**.
 
-## Are these steps required?
+![firewall-clearances](assets/firewall-clearances.png)
 
-If you have not configured webhook notifications or you do not have a SFTP Server tenant system, these steps are not required on your end.
+You can refer to this list of CFT IPs for firewall clearance on tenant/agency side.
 
-## Whitelist the CFT Notification Server Endpoints
+|  Internet  |  Intranet  |
+|---|---|
+| **Webhook (IP1):**<br>18.143.30.35:443 | **Webhook (IP5)**:<br>10.211.0.128/28:443<br>10.211.0.144/28:443<br>10.211.0.160/28:443<br>10.211.0.176/28:443  |
+| **HTTPS API (IP2):**<br>13.215.24.12:443<br>13.251.95.103:443<br>54.179.172.253:443  | **HTTPS API (IP6)**:<br>10.211.0.128/28:443<br>10.211.0.144/28:443  |
+| **SFTP Server (IP3):**<br>18.143.254.126:22<br>54.255.69.2:22<br>13.214.73.225:22  | **SFTP Server (IP7):**<br>10.211.0.128/26:22  |
+| **SFTP Client (IP4):**<br>54.255.110.113  | **SFTP Client (IP8):**<br>10.211.0.128/28:22<br>10.211.0.144/28:22<br>10.211.0.160/28:22<br>10.211.0.176/28:22  |
+
+
+<!-- 
+
+## Whitelist the CFT Notification Server IPs
 
 To **allow webhook file transfer notifications from CFT**, whitelist the following endpoints.
 - Internet: 
@@ -34,7 +44,7 @@ To **allow the CFT SFTP Client to connect to the tenant SFTP Server**, whitelist
     - 10.211.0.160/28:22<br>
     - 10.211.0.176/28:22 
 
-<!-- 
+
 ## Internet zone 
 
 If your system is located in the internet zone, refer to the following CFT internet endpoints.

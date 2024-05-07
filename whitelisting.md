@@ -1,40 +1,63 @@
 # Tenant Whitelisting Requirements
 
-Refer to this page for the whitelisting requirements needed to access CFT intranet or internet.
+This diagram illustrates CFT Firewall configuration, depicting the various connections between CFT and Tenant systems and zones.
 
-<!-- TO DELETE
-- To connect to CFT zones, do the following:
-    - [Request CFT **internet** zone whitelisting](#connect-to-cft-internet-zone)
-    - [Request CFT **intranet** zone whitelisting](#connect-to-cft-intranet-zone)
-- To allow CFT webhooks and CFT SFTP Client to connect to your tenant system:
-    - [Whitelist CFT endpoints on your tenant/agency firewalls](https://docs.developer.tech.gov.sg/docs/cft-additional-docs/firewall-clearance)
--->
+![firewall-clearances](assets/firewall-clearances.png)
 
-## Connect to CFT HTTPS APIs
+<details><summary><b>View a complete reference list of CFT endpoints</b></summary>
+
+|  Internet  |  Intranet  |
+|---|---|
+| **Webhook (IP1):**<br>18.143.30.35:443 | **Webhook (IP5)**:<br>10.211.0.128/28:443<br>10.211.0.144/28:443<br>10.211.0.160/28:443<br>10.211.0.176/28:443  |
+| **HTTPS API (IP2):**<br>13.215.24.12:443<br>13.251.95.103:443<br>54.179.172.253:443  | **HTTPS API (IP6)**:<br>10.211.0.128/28:443<br>10.211.0.144/28:443  |
+| **SFTP Server (IP3):**<br>18.143.254.126:22<br>54.255.69.2:22<br>13.214.73.225:22  | **SFTP Server (IP7):**<br>10.211.0.128/26:22  |
+| **SFTP Client (IP4):**<br>54.255.110.113  | **SFTP Client (IP8):**<br>10.211.0.128/28:22<br>10.211.0.144/28:22<br>10.211.0.160/28:22<br>10.211.0.176/28:22  |
+
+</details>
+
+<br>
+
+Depending on your system and zone, perform the whitelisting steps required.
+
+- CFT HTTPS Server Whitelisting 
+- CFT SFTP Server Whitelisting
+- CFT SFTP Client Whitelisting 
+- CFT Notification (Webhooks) Server Whitelisting 
+
+## CFT HTTPS Server Whitelisting
+
+To connect to CFT HTTPS API server, perform the steps required.
 
 | CFT Zone | Tenant Action |
 |---|---|
-| **Internet** | Whitelisting is not required because CFT APIs are public and accessible within Singapore for all public IPs.<br><br>However, if you want to access CFT APIs from outside of Singapore, you need to raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) with your details.
-| **Intranet** | If you are accessing from GEN network (GDC or GPC), raise a CLZ Firewall Whitelisting request to GovTech AFM SR Admin at afm_sr_admin@tech.gov.sg. <br><br>If you are on GCC1.0 or GCC2.0 on AWS, raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) for VPC Private Link setup. If your CIDR IPs have been migrated from GCC1.0 to GCC2.0, there is no need to set up VPC Private Link.|
+| **Internet** | None. Whitelisting is not required because CFT APIs are public and accessible within Singapore for all public IPs.<!-- However, if you want to access CFT APIs from outside of Singapore, you need to raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) with your details.-->
+| **Intranet** | If you are accessing from GPC, GDC, Agency DC (GEN network) or from GCC1.0, GCC2.0 on Google Cloud/Azure Cloud: <br><br>• Raise a CLZ Firewall Whitelisting request to GovTech AFM SR Admin at afm_sr_admin@tech.gov.sg and include your system details and CFT HTTPS Intranet IPs (IP6): <Br>&nbsp;&nbsp;- **10.211.0.128/28:443**<br>&nbsp;&nbsp;- **10.211.0.144/28:443**
+| | If you are on GCC1.0 or GCC2.0 on AWS, raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) for VPC Private Link setup. |
 
-<!-- TO DELETE
-| Agency's System | CFT Zone | Action required |
-|---|---|---|
-| Internet, Public SaaS, Commercial Cloud | Internet | Raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) and provide your **Public IP address** for whitelisting. | -->
 
-## Connect to CFT SFTP Server
+## CFT SFTP Server Whitelisting
 
 | CFT Zone | Tenant Action |
 |---|---|
-| **Internet** | Raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) to whitelist your Tenant SFTP Client on CFT.
-| **Intranet** | If you are accessing from GEN network (GDC or GPC), raise a CLZ Firewall Whitelisting request to GovTech AFM SR Admin at afm_sr_admin@tech.gov.sg. <br><br>If you are on GCC1.0 or GCC2.0 on AWS, raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) for VPC Private Link setup. If your CIDR IPs have been migrated from GCC1.0 to GCC2.0, there is no need to set up VPC Private Link.|
+| **Internet** | Raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) to whitelist **your Tenant SFTP Client** on CFT.
+| **Intranet** | If you are accessing from GPC, GDC, Agency DC (GEN network) or from GCC1.0, GCC2.0 on Google Cloud/Azure Cloud: <br><br>• Raise a CLZ Firewall Whitelisting request to GovTech AFM SR Admin at afm_sr_admin@tech.gov.sg and include your system details and CFT SFTP Server (IP7): <Br>&nbsp;&nbsp;- **10.211.0.128/26:22**
+| | If you are on GCC1.0 or GCC2.0 on AWS, raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) for VPC Private Link setup. |
 
-## Receive Webhook Notifications
+## CFT SFTP Client Whitelisting
 
 | CFT Zone | Tenant Action |
 |---|---|
-| **Internet** | Whitelisting is not required.
+| **Internet** | Raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) to whitelist **your Tenant SFTP Server** on CFT.
+| **Intranet** | If you are accessing from GPC, GDC, Agency DC (GEN network) or from GCC1.0, GCC2.0 on Google Cloud/Azure Cloud: <br><br>• Raise a CLZ Firewall Whitelisting request to GovTech AFM SR Admin at afm_sr_admin@tech.gov.sg and include your system details and CFT SFTP Client IPd(IP8): <Br>&nbsp;&nbsp;- **10.211.0.128/28:22**<br>&nbsp;&nbsp;- **10.211.0.144/28:22**<br>&nbsp;&nbsp;- **10.211.0.160/28:22**<br>&nbsp;&nbsp;- **10.211.0.176/28:22**
+| | If you are on GCC1.0 or GCC2.0 on AWS, raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) for VPC Private Link setup. |
+
+## CFT Notification (Webhooks) Server Whitelisting
+
+| CFT Zone | Tenant Action |
+|---|---|
+| **Internet** | None. Whitelisting is not required.
 | **Intranet** | If you are accessing from GEN network (GDC or GPC), raise a CLZ Firewall Whitelisting request to GovTech AFM SR Admin at afm_sr_admin@tech.gov.sg. <br><br>If you are on GCC1.0 or GCC2.0 on AWS, raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) for VPC Private Link setup. If your CIDR IPs have been migrated from GCC1.0 to GCC2.0, there is no need to set up VPC Private Link.|
+
 
 <!-- TO DELETE?
 | Agency's System | CFT Zone | Action required |
