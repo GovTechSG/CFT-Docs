@@ -14,7 +14,7 @@ Refer to this page for the whitelisting requirements needed to access CFT intran
 
 | CFT Zone | Tenant Action |
 |---|---|
-| **Internet** | CFT APIs are public and accessible with in Singapore for all public IPs, so **whitelisting is not required**. However, if you want to access CFT APIs from outside of Singapore, you need to raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) with your details.
+| **Internet** | Whitelisting is not required because CFT APIs are public and accessible within Singapore for all public IPs.<br><br>However, if you want to access CFT APIs from outside of Singapore, you need to raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) with your details.
 | **Intranet** | If you are accessing from GEN network (GDC or GPC), raise a CLZ Firewall Whitelisting request to GovTech AFM SR Admin at afm_sr_admin@tech.gov.sg. <br><br>If you are on GCC1.0 or GCC2.0 on AWS, raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) for VPC Private Link setup. If your CIDR IPs have been migrated from GCC1.0 to GCC2.0, there is no need to set up VPC Private Link.|
 
 <!-- TO DELETE
