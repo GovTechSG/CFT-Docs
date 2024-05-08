@@ -4,7 +4,7 @@ This diagram illustrates CFT Firewall configuration, depicting the various conne
 
 ![firewall-clearances](assets/firewall-clearances.png)
 
-<details><summary><b>View a complete reference list of CFT endpoints</b></summary>
+<details><summary><b>View a complete reference list of CFT IPs</b></summary>
 
 |  Internet  |  Intranet  |
 |---|---|
