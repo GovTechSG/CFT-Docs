@@ -42,7 +42,7 @@ export HOST_KEY_CHECK="-oStrictHostKeyChecking=no"
 export PUB_KEY_ACCEPTED_KEY_TYPES="-o PubkeyAcceptedKeyTypes=+ssh-rsa"
 export IDENTITY_FILE="-oIdentityFile=./id_rsa"
 
-# connect to sftp server and run commands
+# PULL files from Agency/Partner SFTP server
 echo "=================================================="
 echo "#### Connect to SFTP Server and pull file ####"
 # if Sender Zone is INTERNET, uncomment below:
@@ -50,7 +50,7 @@ echo "#### Connect to SFTP Server and pull file ####"
 
 sftp ${HOST_KEY_ALGORITHM} ${HOST_KEY_CHECK} ${PUB_KEY_ACCEPTED_KEY_TYPES} ${IDENTITY_FILE} -o "${PROXY}" ${SFTP_SERVER_USERNAME}@${SFTP_SERVER_HOSTNAME} <<EOF
 lcd ./$INCOMING
-get *.txt
+get *
 exit
 EOF
 echo "SFTP GET : " $?
@@ -64,19 +64,20 @@ ls -ltr ./$INCOMING
 printf "\n"
 
 # check if files exists
+# fail the job, if no files were downloaded
 INCOMING_OUTPUT=$(ls -ltr ./$INCOMING)
-
 if [[ $INCOMING_OUTPUT = "total 0" ]]; then
+  # To FAIL job - pipe message to STDERR "&2" and exit script
   echo "no files in directory">&2;
   exit;
 fi
 
 printf "\n"
 
-# Copy files of Workflow to CFT
+# UPLOAD Workflow files to CFT
 echo "=================================================="
 echo "#### Upload file to CFT ####"
-# if Receiver Zone is INTERNET - replace "S3_BUCKET_INCOMING__IZ" to -> "S3_BUCKET_INCOMING__EZ"
+# if Sender Zone is INTERNET - replace "S3_BUCKET_INCOMING__IZ" to -> "S3_BUCKET_INCOMING__EZ"
 if [ -n "${S3_BUCKET_INCOMING__IZ}" ]; then
     aws s3 sync ./$INCOMING "s3://${S3_BUCKET_INCOMING__IZ}/workflows/${WORKFLOW_ID}/files"
 fi
@@ -127,7 +128,7 @@ export HOST_KEY_CHECK="-oStrictHostKeyChecking=no"
 export PUB_KEY_ACCEPTED_KEY_TYPES="-o PubkeyAcceptedKeyTypes=+ssh-rsa"
 export IDENTITY_FILE="-oIdentityFile=./id_rsa"
 
-# Download Workflow files from CFT
+# DOWNLOAD Workflow files from CFT
 echo "=================================================="
 echo "#### Download Workflow files from CFT ####"
 # if Receiver Zone is INTERNET - replace "S3_BUCKET_CLEAN__IZ" to -> "S3_BUCKET_CLEAN__EZ"
@@ -144,16 +145,18 @@ ls -ltr ./$OUTGOING
 printf "\n"
 
 # check if files exists
+# fail the job, if no files were downloaded
 OUTGOING_OUTPUT=$(ls -ltr ./$OUTGOING)
 
 if [[ $OUTGOING_OUTPUT = "total 0" ]]; then
+  # To FAIL job - pipe message to STDERR "&2" and exit script
   echo "no files in directory">&2;
   exit;
 fi
 
 printf "\n"
 
-# Push files to Agency/Partner SFTP server
+# PUSH files to Agency/Partner SFTP server
 echo "=================================================="
 echo "#### Connect to SFTP Server and push files ####"
 # if Receiver Zone is INTERNET, uncomment below:
