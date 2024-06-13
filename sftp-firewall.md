@@ -69,6 +69,17 @@ To perform firewall rules testing, enter the following commands using **your SFT
 
      If the connection fails, you will see an error message indicating the reason.
 
+
+3. In case you are not able to connect using step 2, enter the following command.
+
+    ```
+    sftp {cft-sftp-host-name}:22
+    ```
+
+    If the connection is successful, you will be prompted for a username and password. 
+    
+    If the connection fails, you will see an error message indicating the reason.
+
 <!-- 
 # Connectivity test
 
