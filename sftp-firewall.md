@@ -70,25 +70,12 @@ To perform firewall rules testing, enter the following commands using **your SFT
      If the connection fails, you will see an error message indicating the reason.
 
 
-3. In case you are not able to connect using step 2, enter the following command.
+3. Alternatively, you may also use `sftp` to test the connection to the CFT SFTP server.
 
     ```
-    sftp {cft-sftp-host-name}:22
+    sftp <cft_sftp_server_hostname>:22
     ```
 
-    If the connection is successful, you will be prompted for a username and password. 
-    
-    If the connection fails, you will see an error message indicating the reason.
+    If the connection is successful, you will see response from our server, e.g., *permission denied* or a password prompt.
 
-<!-- 
-# Connectivity test
-
-Enter the following command to connect to the CFT SFTP Server:
-
-```
-sftp <username>@<hostname>
-```
-
-username isYour SFTP Username. This is generated in Step 1: Set up the application.
-
--->
+    If the connection is not successful, you will get a timeout.
