@@ -18,13 +18,13 @@ Refer to the setup details below.
 
 | Parameter | Value |
 |--|--|
-| Name tag | *Any desired name tag* |
+| Name tag | Any desired name tag |
 | Service Category | Other endpoint services |
-| Service name | - `com.amazonaws.vpce.ap-southeast-1.vpce-svc-085a917dea19e8abd` (API)<br>- `com.amazonaws.vpce.ap-southeast-1.vpce-svc-066531d21cca304d2`(SFTP)<br>-  `com.amazonaws.vpce.ap-southeast-1.vpce-svc-0f9a0b5d5fc6d1fc7`(SFTP using password authentication) |
-| VPC | *Select **intranet VPC** ONLY, provisioned via GCC CMP portal.* |
-| Subnets | *Any desired AZs and intranet VPC subnet IDs for the VPCE* <br><br>**Note:**  Utilising multiple AZs improves the robustness of the private link. CFT Cloud Intranet supports AZ1, AZ2, and AZ3 in the ap-southeast region. |
-| Security Groups | *Select or create an appropriate Security Group that will allow your egress resource to reach the VPCE* |
-| Tags | *Any desired tags* |
+| Service name | - API: `com.amazonaws.vpce.ap-southeast-1.vpce-svc-085a917dea19e8abd` )<br>- SFTP: `com.amazonaws.vpce.ap-southeast-1.vpce-svc-066531d21cca304d2`<br>- SFTP (Password auth): `com.amazonaws.vpce.ap-southeast-1.vpce-svc-0f9a0b5d5fc6d1fc7` |
+| VPC | **intranet VPC** ONLY, provisioned via GCC CMP portal. |
+| Subnets | Any desired AZs and intranet VPC subnet IDs for the VPCE* <br><br>**Note:**  Utilising multiple AZs improves the robustness of the private link. CFT Cloud Intranet supports AZ1, AZ2, and AZ3 in the ap-southeast region. |
+| Security Groups | An appropriate Security Group that will allow your egress resource to reach the VPCE |
+| Tags | Any desired tags |
 
     Upon successful creation of the VPC Endpoint, CFT will receive a pending request.
 
