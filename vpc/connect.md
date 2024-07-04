@@ -20,13 +20,13 @@ Refer to the setup details below.
 |--|--|
 | Name tag | Any desired name tag |
 | Service Category | Other endpoint services |
-| Service name | - API: `com.amazonaws.vpce.ap-southeast-1.vpce-svc-085a917dea19e8abd` )<br>- SFTP: `com.amazonaws.vpce.ap-southeast-1.vpce-svc-066531d21cca304d2`<br>- SFTP (Password auth): `com.amazonaws.vpce.ap-southeast-1.vpce-svc-0f9a0b5d5fc6d1fc7` |
+| Service name | • API: `com.amazonaws.vpce.ap-southeast-1.vpce-svc-085a917dea19e8abd`<br><br>• SFTP: `com.amazonaws.vpce.ap-southeast-1.vpce-svc-066531d21cca304d2`<br><br>• SFTP (Password auth): `com.amazonaws.vpce.ap-southeast-1.vpce-svc-0f9a0b5d5fc6d1fc7` |
 | VPC | **intranet VPC** ONLY, provisioned via GCC CMP portal. |
 | Subnets | Any desired AZs and intranet VPC subnet IDs for the VPCE* <br><br>**Note:**  Utilising multiple AZs improves the robustness of the private link. CFT Cloud Intranet supports AZ1, AZ2, and AZ3 in the ap-southeast region. |
 | Security Groups | An appropriate Security Group that will allow your egress resource to reach the VPCE |
 | Tags | Any desired tags |
 
-    Upon successful creation of the VPC Endpoint, CFT will receive a pending request.
+Upon successful creation of the VPC Endpoint, CFT will receive a pending request.
 
 ## Step 3: Notify CFT to approve the request
 
@@ -70,14 +70,14 @@ Test the connectivity. Use any of the following ways:
 
     - `nslookup api.in.cft.stack.gov.sg` for API 
     - `nslookup sftp.in.cft.stack.gov.sg` for SFTP
-    - `nslookup sftp-pw.in.cft.stack.gov.sg` for SFTP Password Authentication 
+    - `nslookup sftp-pw.in.cft.stack.gov.sg` for SFTP (Password auth)
 
 - Use `curl` to attempt access to CFT Intranet API/SFTP/SFTP PW servers. A successful connection should return an HTTP response code 200.
 
     - `curl -vk https://api.in.cft.stack.gov.sg` for API
     - `curl -vk https://sftp.in.cft.stack.gov.sg` for SFTP
-    - `curl -vk https://sftp-pw.in.cft.stack.gov.sg` for SFTP Password Authentication 
+    - `curl -vk https://sftp-pw.in.cft.stack.gov.sg` for SFTP (Password auth) 
 
-- Ue `sftp`: `sftp <cft_sftp_server_hostname>:22`
+- Ue `sftp` to test the connection: `sftp <cft_sftp_server_hostname>:22`
 
 ?> **Note:** Ensure that the necessary security group rules and NACLS are allowed for connectivity between your instance and the endpoint.
