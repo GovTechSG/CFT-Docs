@@ -1,6 +1,8 @@
 # Connecting to the CFT VPC Endpoint
 
-!> **Note:**  This guide applies to tenants hosted on the **GCC1.0/2.0 AWS Intranet** compartment only.
+!> **Note:**  This guide applies to tenants hosted on the **GCC 1.0 Intranet** and **GCC 2.0 AWS Intranet** compartment only.
+
+?> Note: If you need more help with any of the steps below, you can [reach out to us](http://go.gov.sg/cft-sm) for assistance.
 
 To connect to the CFT Virtual Private Cloud (VPC) Endpoint Service, follow these steps:
 
