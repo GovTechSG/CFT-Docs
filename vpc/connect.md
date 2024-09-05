@@ -85,7 +85,7 @@ Test the connectivity. Use any of the following ways.
     - `curl -vk https://sftp.in.cft.stack.gov.sg` for SFTP
     - `curl -vk https://sftp-pw.in.cft.stack.gov.sg` for SFTP (Password auth) 
 
-### Option 3: Use sftp commands
+### Option 3: Use sftp command
 
 - Use `sftp` to test the connection: `sftp <cft_sftp_server_hostname>:22`
 
