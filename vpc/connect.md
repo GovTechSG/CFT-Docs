@@ -87,5 +87,5 @@ Use `curl` to attempt access to CFT Intranet API server. A successful connection
 ### Option 3: Use sftp commands
 
 Use `sftp` to test the connection: 
-- `sftp sftp.in.cft.stack.gov.sg:22` for SFTP
-- `sftp sftp-pw.in.cft.stack.gov.sg:22` for SFTP (Password auth)
+- `sftp sftp.in.cft.stack.gov.sg` for SFTP
+- `sftp sftp-pw.in.cft.stack.gov.sg` for SFTP (Password auth)
