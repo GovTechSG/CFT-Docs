@@ -66,26 +66,27 @@ Create an entry in `in.cft.stack.gov.sg` zone to map the following.
 
 ## Step 6: Test connectivity
 
-Test the connectivity. Use any of the following ways.
+Test the connectivity to the VPCE through any of the following options.
 
 ?> **Note:** Ensure that the necessary security group rules and NACLS are allowed for connectivity between your instance and the endpoint.
 
 ### Option 1: Use nslookup commands
 
-- Use `nslookup` on your egress resource to verify DNS resolution:
+Use `nslookup` on your egress resource to verify DNS resolution:
 
-    - `nslookup api.in.cft.stack.gov.sg` for API 
-    - `nslookup sftp.in.cft.stack.gov.sg` for SFTP
-    - `nslookup sftp-pw.in.cft.stack.gov.sg` for SFTP (Password auth)
+- `nslookup api.in.cft.stack.gov.sg` for API 
+- `nslookup sftp.in.cft.stack.gov.sg` for SFTP
+- `nslookup sftp-pw.in.cft.stack.gov.sg` for SFTP (Password auth)
 
 ### Option 2: Use curl commands
-- Use `curl` to attempt access to CFT Intranet API/SFTP/SFTP PW servers. A successful connection should return an HTTP response code 200.
 
-    - `curl -vk https://api.in.cft.stack.gov.sg` for API
-    - `curl -vk https://sftp.in.cft.stack.gov.sg` for SFTP
-    - `curl -vk https://sftp-pw.in.cft.stack.gov.sg` for SFTP (Password auth) 
+Use `curl` to attempt access to CFT Intranet API/SFTP/SFTP PW servers. A successful connection should return an HTTP response code 200.
+
+- `curl -vk https://api.in.cft.stack.gov.sg` for API
+- `curl -vk https://sftp.in.cft.stack.gov.sg` for SFTP
+- `curl -vk https://sftp-pw.in.cft.stack.gov.sg` for SFTP (Password auth) 
 
 ### Option 3: Use sftp command
 
-- Use `sftp` to test the connection: `sftp <cft_sftp_server_hostname>:22`
+Use `sftp` to test the connection: `sftp <cft_sftp_server_hostname>:22`
 
