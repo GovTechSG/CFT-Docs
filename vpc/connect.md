@@ -80,12 +80,12 @@ Use `nslookup` on your egress resource to verify DNS resolution:
 
 ### Option 2: Use curl command
 
-Use `curl` to attempt access to CFT Intranet API/SFTP/SFTP PW servers. A successful connection should return an HTTP response code 200.
+Use `curl` to attempt access to CFT Intranet API server. A successful connection should return an HTTP response code 200.
 
 - `curl -vk https://api.in.cft.stack.gov.sg` for API
 
 ### Option 3: Use sftp commands
 
 Use `sftp` to test the connection: 
-- `sftp https://sftp.in.cft.stack.gov.sg:22` for SFTP
-- `sftp https://sftp-pw.in.cft.stack.gov.sg:22` for SFTP (Password auth)
+- `sftp sftp.in.cft.stack.gov.sg:22` for SFTP
+- `sftp sftp-pw.in.cft.stack.gov.sg:22` for SFTP (Password auth)
