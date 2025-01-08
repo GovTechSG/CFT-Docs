@@ -2,9 +2,11 @@
 
 !> **Important:** Pricing below is provisional and subject to change pending approval.
 
-CFT cost recovery begins FY25. We kindly request your assistance in obtaining feedback from your stakeholders on our proposed pricing structure. Please share your feedback using the [CFT Usage and Pricing Survey](https://form.gov.sg/671dfd83e0339adec428ccfa) or reach out to **Brian Liu (Product Manager)** at brian_liu@tech.gov.sg.
+CFT cost recovery begins FY25. 
+
+We kindly request your assistance in obtaining feedback from your stakeholders on our proposed pricing structure. Please share your feedback using the [CFT Usage and Pricing Survey](https://form.gov.sg/671dfd83e0339adec428ccfa) or reach out to **Brian Liu (Product Manager)** at brian_liu@tech.gov.sg.
  
-# Cost formula 
+## Cost formula 
 **Proposed CFT Pricing (per month) = Cost Per Transfer + Cost per GB**
  
 Please refer to Tables 1 and 2 below for the cost breakdown. 
@@ -31,9 +33,9 @@ Computation = *(1,000 x **1.25**) + (9,000 x **0.25**) + (90,000 x **0.05**) + (
 
 ➡️ **Total Cost Per Transfer for the month =  $8,020** 
 
-## Cost 2: Cost per GB pricing based on feature usage
+## Cost 2: Cost per GB pricing
 
-CFT Cost Per GB is based on the features used per Workflow. 
+CFT Cost Per GB is based on the **features** used per Workflow. 
 
 **Example 2** 
 
@@ -48,7 +50,7 @@ Computation = *(2 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
 
 ## Total Cost
 
-**Total Monthly Cost** = [Cost Per Transfer](#cost-1-cost-per-transfer) + [Cost per GB](#cost-2-cost-per-gb-pricing-based-on-feature-usage)
+**Total Monthly Cost** = [Cost Per Transfer](#cost-1-cost-per-transfer) + [Cost per GB](#cost-2-cost-per-gb-pricing)
 
 - **Cost Per Transfer**: $8,020 (See example 1 above)
 - **Cost Per GB**: $25 (See example 2 above)
