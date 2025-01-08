@@ -7,7 +7,7 @@ CFT cost recovery begins FY25.
 We kindly request your assistance in obtaining feedback from your stakeholders on our proposed pricing structure. Please share your feedback using the [CFT Usage and Pricing Survey](https://form.gov.sg/671dfd83e0339adec428ccfa) or reach out to **Brian Liu (Product Manager)** at brian_liu@tech.gov.sg.
  
 ## Cost formula 
-**Proposed CFT Pricing (per month) = Cost Per Transfer + Cost per GB**
+**Proposed CFT Pricing (per month) = Cost per transfer + Cost per GB**
  
 Please refer to Tables 1 and 2 below for the cost breakdown. 
  
@@ -17,9 +17,9 @@ Please refer to Tables 1 and 2 below for the cost breakdown.
 
 ## Cost 1: Cost per transfer
 
-![pricing](/assets/indicative-pricing-table1.png)
+The Cost per transfer rate is *progressive* based on the number of files.
 
-The Cost Per Transfer rate is *progressive* based on the number of files.
+![pricing](/assets/indicative-pricing-table1.png)
 
 **Example 1**
 
@@ -33,13 +33,13 @@ Based on Table 1, the total number of files will be broken down into: 102,000 fi
 
 Computation = *(1,000 x **1.25**) + (9,000 x **0.25**) + (90,000 x **0.05**) + (2,000 x **0.01**)*
 
-➡️ **Total Cost Per Transfer for the month =  $8,020** 
+➡️ **Total Cost per transfer for the month =  $8,020** 
 
 ## Cost 2: Cost per GB pricing
 
-![pricing](/assets/indicative-pricing-table2.png)
+CFT Cost per GB is based on the **features** used per Workflow. 
 
-CFT Cost Per GB is based on the **features** used per Workflow. 
+![pricing](/assets/indicative-pricing-table2.png)
 
 **Example 2** 
 
@@ -50,14 +50,14 @@ CFT Cost Per GB is based on the **features** used per Workflow.
 
 Computation = *(2 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
 
-➡️ **Total Cost Per GB for the Month: $25**
+➡️ **Total Cost per GB for the Month: $25**
 
 ## Total Cost
 
-**Total Monthly Cost** = [Cost Per Transfer](#cost-1-cost-per-transfer) + [Cost per GB](#cost-2-cost-per-gb-pricing)
+**Total Monthly Cost** = [Cost per transfer](#cost-1-cost-per-transfer) + [Cost per GB](#cost-2-cost-per-gb-pricing)
 
-- **Cost Per Transfer**: $8,020 (See example 1 above)
-- **Cost Per GB**: $25 (See example 2 above)
+- **Cost per transfer**: $8,020 (See example 1 above)
+- **Cost per GB**: $25 (See example 2 above)
 
 **Total Monthly Cost** = $8,020 + $25
 
