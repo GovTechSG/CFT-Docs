@@ -1,4 +1,5 @@
 - [Home](home.md)
+- Indicative Pricing
 - Whitelisting
     - [Tenant Whitelisting](whitelisting.md)
     - [Tenant Firewall Clearance](firewall-clearance.md)
