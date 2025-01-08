@@ -17,6 +17,8 @@ Please refer to Tables 1 and 2 below for the cost breakdown.
 
 ## Cost 1: Cost per transfer
 
+![pricing](/assets/indicative-pricing-table1.png)
+
 The Cost Per Transfer rate is *progressive* based on the number of files.
 
 **Example 1**
@@ -49,6 +51,8 @@ Computation = *(2 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
 ➡️ **Total Cost Per GB for the Month: $25**
 
 ## Total Cost
+
+![pricing](/assets/indicative-pricing-table2.png)
 
 **Total Monthly Cost** = [Cost Per Transfer](#cost-1-cost-per-transfer) + [Cost per GB](#cost-2-cost-per-gb-pricing)
 
