@@ -37,6 +37,8 @@ Computation = *(1,000 x **1.25**) + (9,000 x **0.25**) + (90,000 x **0.05**) + (
 
 ## Cost 2: Cost per GB pricing
 
+![pricing](/assets/indicative-pricing-table2.png)
+
 CFT Cost Per GB is based on the **features** used per Workflow. 
 
 **Example 2** 
@@ -51,8 +53,6 @@ Computation = *(2 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
 ➡️ **Total Cost Per GB for the Month: $25**
 
 ## Total Cost
-
-![pricing](/assets/indicative-pricing-table2.png)
 
 **Total Monthly Cost** = [Cost Per Transfer](#cost-1-cost-per-transfer) + [Cost per GB](#cost-2-cost-per-gb-pricing)
 
