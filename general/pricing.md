@@ -67,7 +67,7 @@ Computation = *(2 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
 
 ➡️ **Total Monthly Cost= $8,045**
 
-### Low-volume monthly transfer example
+## Low-volume monthly transfer example
 
 ### Cost 1: Cost per transfer
 
