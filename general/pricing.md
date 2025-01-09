@@ -1,8 +1,8 @@
 # CFT indicative pricing
 
-> Please be informed that while our pricing methodology and structure have been substantially finalised, the figures presented are currently undergoing review and may be subject to modification. We value your patience and understanding during this process.<br><br>
-> We assure you that Tenants will be provided with sufficient advance notice prior to the implementation of any charges. Further details will be communicated once CFT's pricing has received approval and the billing mechanism (i.e., TechBiz) has been fully developed.<br><br>
-> We remain committed to keeping you informed throughout this process and appreciate your continued engagement.
+?> Please be informed that while our pricing methodology and structure have been substantially finalised, the figures presented are currently undergoing review and may be subject to modification. We value your patience and understanding during this process.<br><br>
+?> We assure you that Tenants will be provided with sufficient advance notice prior to the implementation of any charges. Further details will be communicated once CFT's pricing has received approval and the billing mechanism (i.e., TechBiz) has been fully developed.<br><br>
+?> We remain committed to keeping you informed throughout this process and appreciate your continued engagement.
 
 We kindly request your assistance in obtaining feedback from your stakeholders on our proposed pricing structure. Please share your feedback using the [CFT Usage and Pricing Survey](https://form.gov.sg/671dfd83e0339adec428ccfa) or reach out to **Brian Liu (Product Manager)** at brian_liu@tech.gov.sg.
 
