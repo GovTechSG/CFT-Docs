@@ -4,6 +4,8 @@ You can refer to the following bash script samples for [SFTP scheduled jobs](htt
 
 !> **Important:** These sample scripts provide a generic template. Please review and adjust the script accordingly to align with your agency needs.
 
+!> **Important**: When the **File Archive** feature is enabled, using the `lcd` command in your SFTP job script may result in incorrect file paths. To prevent this, avoid using the `lcd` command when File Archive is enabled.
+
 ## SFTP Scheduler as Sender
 
 ``` shell
