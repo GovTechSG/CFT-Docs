@@ -13,7 +13,7 @@ We kindly request your assistance in obtaining feedback from your stakeholders o
 ## Cost formula 
 **Proposed CFT Pricing (per month) = Cost per transfer + Cost per GB**
  
-Please refer to Tables 1 and 2 below for the cost breakdown. 
+Please refer to Tables 1 and 2 below for the cost breakdown.  (Click the image to enlarge.)
  
 ![pricing](/assets/indicative-pricing.png)
 
