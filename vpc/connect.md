@@ -70,6 +70,8 @@ Test the connectivity to the VPCE through any of the following options.
 
 ?> **Note:** Ensure that the necessary security group rules and NACLS are allowed for connectivity between your instance and the endpoint.
 
+!> **Important:** Before proceeding with any of the options below, make sure you have completed [Step 4](#step-4-create-a-private-hosted-zone) and [Step 5](#step-5-add-your-vpce-record). Skipping these steps and calling the CFT APIs directly will result in an error.
+
 ### Option 1: Use nslookup commands
 
 Use `nslookup` on your egress resource to verify DNS resolution:
