@@ -1,13 +1,14 @@
 # Configuring static routes for routing via GCCI Common Services Transit Gateway to CFT
 
-!> **Important:** This guide applies to tenants hosted on **GCC 2.0 AWS Intranet compartment only**.
+!> **Important:** This guide applies only to tenants hosted on **GCC 2.0 AWS Intranet compartment only**.
 
-?> **Note:** If you need more help with any of the steps below, you can [reach out to us](http://go.gov.sg/cft-sm) for assistance.
+?> **Note:** If you need assistance with any of the steps below, you can [reach out to us](http://go.gov.sg/cft-sm).
 
+Follow these steps to configure static routes for routing via GCCI Common Services Transit Gateway to CFT:
 
-To configure static routes for routing via GCCI Common Services Transit Gateway to CFT, follow these steps:
+**Step 1. Identify your Intranet subnet(s)**
 
-**Step 1.	Identify your Intranet Subnet(s) in a GCC 2.0-provisioned Intranet VPC that are hosting the resources interfacing with CFT, either as a Sender or Receiver**
+Identify the Intranet Subnet(s) in your GCC 2.0-provisioned Intranet VPC that host resources interfacing with CFT (as either Sender or Receiver). 
 
 - The Intranet Subnet(s) CIDR range **must** be provided by GCC 2.0 team.
 - The Intranet Subnet(s) **must** have a CIDR range that is either in the `10.211.0.0/16` or `10.219.0.0/16`, or `10.209.64.0/18`, or `10.188.0.0/16` supernet.
@@ -17,7 +18,9 @@ To configure static routes for routing via GCCI Common Services Transit Gateway 
  
     <small>Example of an Intranet subnet in a GCC 2.0 Intranet VPC within the 10.211.0.0/16 supernet</small>
 
-**Step 2. Identify the specific Route table(s) that are associated with your Intranet Subnet(s) containing the resources that are interfacing with CFT, either as a Sender or a Receiver**
+**Step 2. Identify associated route tables**
+
+Identify the specific Route table(s) that are associated with your Intranet subnet(s) containing the resources that are interfacing with CFT (as either as a Sender or a Receiver).
 
 - The relevant Route table(s) **must not** be the Main Route table, which cannot be edited.
  
@@ -27,9 +30,11 @@ To configure static routes for routing via GCCI Common Services Transit Gateway 
 
 - The relevant Route table(s) will **usually (not always)** include a route to `tgw-08ae6ac62a2d95bcf` (GCCI Intranet Transit Gateway for GEN Connectivity).
 
-- If you do not have a “non-Main” Route table(s) associated with the relevant Intranet Subnet(s), you would first have to create the “non-Main” Route table(s) and associate it with the relevant Intranet Subnet(s).
+- If you don't have a “non-Main” Route table(s) associated with the relevant Intranet Subnet(s), you would first have to create the “non-Main” Route table(s) and associate it with the relevant Intranet Subnet(s).
 
-**Step 3. Configure the static routes on the relevant Route table(s) to route to CFT Intranet subnet(s) via GCCI Common Services Transit Gateway (tgw-047cffe7907f10f3f)**
+**Step 3. Configure static routes**
+
+Configure the static routes on the relevant Route table(s) to route to CFT Intranet subnet(s) via **GCCI Common Services Transit Gateway (tgw-047cffe7907f10f3f)**.
 
 1. For routing to CFT Staging Intranet VPC, configure the following static route on the relevant Route table(s).
     - **Destination:** `10.209.93.128/25`
