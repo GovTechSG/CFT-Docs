@@ -6,5 +6,5 @@
     - Intranet Firewall Test
         - [HTTPS Client Firewall Test](https-firewall.md)
         - [SFTP Client Firewall Test](sftp-firewall.md)
-- [Connecting to CFT VPCE](/vpc/connect.md)
+- [Configure routes via transit gateway](/tgw/configure-routes.md)
 - [SFTP Job Script Samples](sftp/job-script.md)
