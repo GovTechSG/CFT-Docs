@@ -36,11 +36,7 @@ Identify the specific Route table(s) that are associated with your Intranet subn
 
 Configure the static routes on the relevant Route table(s) to route to CFT Intranet subnet(s) via **GCCI Common Services Transit Gateway (tgw-047cffe7907f10f3f)**.
 
-1. For routing to CFT Staging Intranet VPC, configure the following static route on the relevant Route table(s).
-    - **Destination:** `10.209.93.128/25`
-    - **Target:** `Transit Gateway tgw-047cffe7907f10f3f`
-
-2. For routing to CFT Production Intranet VPC, configure the following static route on the relevant Route table(s).
+For routing to CFT Production Intranet VPC, configure the following static route on the relevant Route table(s).
 
     **Destination:** `10.211.0.128/26`
     **Target:** `Transit Gateway tgw-047cffe7907f10f3f`
