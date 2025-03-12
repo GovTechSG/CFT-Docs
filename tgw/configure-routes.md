@@ -52,7 +52,7 @@ If you encounter the following error message, it means you have tried to configu
 
 ## Step 4: Test connectivity
 
-Test the connectivity to the tansit gateway through any of the following options.
+Test the connectivity through any of the following options.
 
 ### Option 1: Use nslookup commands
 
