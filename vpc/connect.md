@@ -1,5 +1,5 @@
 
-!> CFT has upgraded from VPCe to AWS Transit Gateway (TGW). For tenants hosted on the **GCC 2.0 AWS Intranet** compartment, check the guide for [Configuring static routes for routing via GCCI Common Services Transit Gateway to CFT](/tgw/configure-routes.md).
+!> CFT has upgraded from VPCE to AWS Transit Gateway (TGW). For tenants hosted on the **GCC 2.0 AWS Intranet** compartment, check the guide for [Configuring static routes for routing via GCCI Common Services Transit Gateway to CFT](/tgw/configure-routes.md).
 
 <!-- 
 
