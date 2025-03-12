@@ -38,8 +38,8 @@ Configure the static routes on the relevant Route table(s) to route to CFT Intra
 
 For routing to CFT Production Intranet VPC, configure the following static route on the relevant Route table(s).
 
-    **Destination:** `10.211.0.128/26`
-    **Target:** `Transit Gateway tgw-047cffe7907f10f3f`
+**Destination:** `10.211.0.128/26`
+**Target:** `Transit Gateway tgw-047cffe7907f10f3f`
 
 If you encounter the following error message, it means you have tried to configure the static routes on a Main Route table. Please refer to Step 2 to select or create a Non-Main Route table.
  
