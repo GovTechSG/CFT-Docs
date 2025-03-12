@@ -6,7 +6,7 @@
 
 Follow these steps to configure static routes for routing via GCCI Common Services Transit Gateway to CFT:
 
-**Step 1. Identify your Intranet subnet(s)**
+## Step 1: Identify your Intranet subnet(s)
 
 Identify the Intranet Subnet(s) in your GCC 2.0-provisioned Intranet VPC that host resources interfacing with CFT (as either Sender or Receiver). 
 
@@ -18,7 +18,7 @@ Identify the Intranet Subnet(s) in your GCC 2.0-provisioned Intranet VPC that ho
  
     <small>Example of an Intranet subnet in a GCC 2.0 Intranet VPC within the 10.211.0.0/16 supernet</small>
 
-**Step 2. Identify associated route tables**
+## Step 2: Identify associated route tables
 
 Identify the specific Route table(s) that are associated with your Intranet subnet(s) containing the resources that are interfacing with CFT (as either as a Sender or a Receiver).
 
@@ -32,7 +32,7 @@ Identify the specific Route table(s) that are associated with your Intranet subn
 
 - If you don't have a “non-Main” Route table(s) associated with the relevant Intranet Subnet(s), you would first have to create the “non-Main” Route table(s) and associate it with the relevant Intranet Subnet(s).
 
-**Step 3. Configure static routes**
+## Step 3: Configure static routes
 
 Configure the static routes on the relevant Route table(s) to route to CFT Intranet subnet(s) via **GCCI Common Services Transit Gateway (tgw-047cffe7907f10f3f)**.
 
@@ -49,4 +49,38 @@ If you encounter the following error message, it means you have tried to configu
 
 - **Destination:** `10.0.0.0/<X>`
 - **Target:** `Transit Gateway tgw-047cffe7907f10f3f`
+
+## Step 4: Test connectivity
+
+Test the connectivity to the tansit gateway through any of the following options.
+
+### Option 1: Use nslookup commands
+
+Use `nslookup` on your egress resource to verify DNS resolution:
+
+- `nslookup api.in.cft.stack.gov.sg` for API 
+- `nslookup sftp.in.cft.stack.gov.sg` for SFTP
+- `nslookup sftp-pw.in.cft.stack.gov.sg` for SFTP (Password auth)
+
+### Option 2: Use curl command
+
+Use `curl` to attempt access to CFT Intranet API server. A successful connection should return an HTTP response code 200.
+
+- `curl -v https://api.in.cft.stack.gov.sg` for API
+
+    ![https](/assets/tgw-https-success.png)
+
+    <small>Example of a successful connectivity test</small>
+
+### Option 3: Use sftp commands
+
+Use `sftp` to test the connection: 
+- `sftp sftp.in.cft.stack.gov.sg` for SFTP
+- `sftp sftp-pw.in.cft.stack.gov.sg` for SFTP (Password auth)
+
+    ![https](/assets/tgw-sftp-success.png)
+
+    <small>Example of a successful connectivity test</small>
+
+
 

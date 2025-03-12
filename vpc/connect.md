@@ -1,4 +1,10 @@
+
+!> CFT has upgraded from VPCe to AWS Transit Gateway (TGW). For tenants hosted on the **GCC 2.0 AWS Intranet** compartment, check the guide for [Configuring static routes for routing via GCCI Common Services Transit Gateway to CFT](/tgw/configure-routes.md).
+
+<!-- 
+
 # Connecting to the CFT VPC Endpoint
+
 
 !> **Note:**  This guide applies to tenants hosted on the **GCC 1.0 Intranet** and **GCC 2.0 AWS Intranet** compartment only.
 
@@ -89,3 +95,4 @@ Use `curl` to attempt access to CFT Intranet API server. A successful connection
 Use `sftp` to test the connection: 
 - `sftp sftp.in.cft.stack.gov.sg` for SFTP
 - `sftp sftp-pw.in.cft.stack.gov.sg` for SFTP (Password auth)
+-->
