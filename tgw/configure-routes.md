@@ -82,5 +82,8 @@ Use `sftp` to test the connection:
 
     <small>Example of a successful connectivity test</small>
 
+## Troubleshooting
 
+If you are unable to resolve DNS for CFT FQDN, you need to associate GEN VPC to GCCI Route 53 Profile. Refer to [GCC Documentation](
+https://docs.developer.tech.gov.sg/docs/gcc-technical-documentation/hosting-model/aws-annex?id=annex-3).
 
