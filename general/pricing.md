@@ -8,6 +8,9 @@ We assure you that Tenants will be provided with sufficient advance notice prior
 
 We kindly request your assistance in obtaining feedback from your stakeholders on our proposed pricing structure. Please share your feedback using the [CFT Usage and Pricing Survey](https://form.gov.sg/671dfd83e0339adec428ccfa) or reach out to **Brian Liu (Product Manager)** at brian_liu@tech.gov.sg.
 
+## Production and Non-Production Charges
+
+All transfers processed in CFT are chargeable. CFT does not differentiate between Production and Non-Production transfers, as the services consumed remain the same between the two environments.
 
  
 ## Cost formula 
