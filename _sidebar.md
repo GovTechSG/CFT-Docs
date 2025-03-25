@@ -1,10 +1,13 @@
 - [Home](home.md)
-- [CFT Pricing](general/pricing.md)
-- Whitelisting
-    - [Tenant Whitelisting](whitelisting.md)
-    - [Tenant Firewall Clearance](firewall-clearance.md)
-    - Intranet Firewall Test
-        - [HTTPS Client Firewall Test](https-firewall.md)
-        - [SFTP Client Firewall Test](sftp-firewall.md)
-- [Configure routes via transit gateway](/tgw/configure-routes.md)
-- [SFTP Job Script Samples](sftp/job-script.md)
+- General
+    - [CFT Pricing](general/pricing.md)
+- Prerequisites
+    - Whitelisting
+        - [Tenant Whitelisting](whitelisting.md)
+        - [Tenant Firewall Clearance](firewall-clearance.md)
+        - Intranet Firewall Test
+            - [HTTPS Client Firewall Test](https-firewall.md)
+            - [SFTP Client Firewall Test](sftp-firewall.md)
+    - [Configure routes via transit gateway](/tgw/configure-routes.md)
+- SFTP
+    - [SFTP Job Script Samples](sftp/job-script.md)
