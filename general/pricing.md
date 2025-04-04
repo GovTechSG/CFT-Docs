@@ -2,40 +2,63 @@
 
 !> CFT will implement billing through [TechBiz](https://www.developer.tech.gov.sg/products/categories/platform/techbiz/overview.html) starting **1 July 2025**. This page outlines the proposed and indicative pricing to help you plan accordingly. Additional details about TechBiz onboarding will be shared soon.
 
-?> Please be informed that while our pricing methodology and structure have been substantially finalised, the figures presented are currently undergoing review and may be subject to modification. We value your patience and understanding during this process.<br><br>
-We assure you that Tenants will be provided with sufficient advance notice prior to the implementation of any charges. Further details will be communicated once CFT's pricing has received approval and the TechBiz billing mechanism has been fully developed.<br><br>
- We remain committed to keeping you informed throughout this process and appreciate your continued engagement.
+?> Please be informed that while our pricing methodology and structure have been substantially finalised, the figures presented are currently undergoing review and may be subject to modification. We value your patience and understanding during this process.
 
-## Proposed and Indicative pricing
+## CFT Cost
 
-There are two pricing structures provided: **Proposed Pricing** (our intended structure) and **Indicative Pricing** (the maximum potential cost). 
+To calculate for total CFT cost per month, there are two components to be considered. The Cost Per Transfer and the Cost Per GB (feature usage).
 
-**For AOR and budgeting purposes, please use the indicative pricing values.** 
+**CFT Cost = [Cost per Transfer](#cost-per-transfer) + [Cost per GB](#cost-per-gb)**
 
-###  Cost formula 
+The rates for each component are shown in the tables below.
 
-**Monthly CFT Cost = Cost per Transfer + Cost per GB**
- 
-Please refer to Tables 1 and 2 below for the cost breakdown.  (Click the image to enlarge.)
- 
 ![pricing](/assets/indicative-pricing.png)
+ 
+(Click the image to enlarge.)
 
-<center><small><b>For AOR or budgeting purposes, use the values in the indicative pricing column. </b></small></center>
+### Cost Per Transfer
 
-?> **Note:** Monthly transfer counts are based on the total files uploaded by Sender Applications in your CFT Project's Workflows.
+The Cost Per Transfer rates are progressive based on the number of files sent. 
 
-### High-volume monthly transfer example
+?> **Note:** Monthly transfer counts are based on the total files uploaded by Sender Applications in your CFT Project's Workflows. Each zipped folder is counted as a single file transfer.
 
-The examples provided follow the Proposed pricing structure.
-
-#### Cost 1: Cost per transfer
-
-The Cost per transfer rate is *progressive* based on the number of files.
 
 ![pricing](/assets/indicative-pricing-table1.png)
+
+
+
 <center><small><b>For AOR or budgeting purposes, use the values in the indicative pricing column. </b></small></center>
 
-**Example 1**
+
+### Cost Per GB
+
+The Cost per GB is based on the features enabled or used per Workflow and the total size of the transfers (GB). 
+
+?> Note: The size of a zipped folder is calculated based on the total size of its extracted contents, not the compressed size.
+
+![pricing](/assets/indicative-pricing-table2.png)
+<center><small><b>For AOR or budgeting purposes, use the values in the indicative pricing column. </b></small></center>
+
+## Understanding Proposed and Indicative Pricing Rates
+
+From the cost tables above, there are two pricing rates provided.
+
+**Proposed Pricing**
+- These are our intended rates that are currently pending approval
+
+**Indicative Pricing**
+- These represent the upper range of the potential approved cost 
+- These provide a conservative estimate for AOR and budgeting purposes
+
+## Sample Computations
+
+The following sample computations provide a quick insight into how 
+
+### High-volume Monthly Transfer Sample
+
+<u>Cost 1: Cost per transfer</u>
+
+Note: The example provided is calculated using the Proposed Pricing numbers.
 
 - In January 2024:
     - 10,000 files transferred in "Workflow A" 
@@ -49,14 +72,9 @@ Computation = *(1,000 x **1.25**) + (9,000 x **0.25**) + (90,000 x **0.05**) + (
 
 ➡️ **Total Cost per transfer for the month =  $8,020** 
 
-#### Cost 2: Cost per GB pricing
+<u>Cost 2: Cost per GB pricing</u>
 
-CFT Cost per GB is based on the **features** used per Workflow. 
-
-![pricing](/assets/indicative-pricing-table2.png)
-<center><small><b>For AOR or budgeting purposes, use the values in the indicative pricing column. </b></small></center>
-
-**Example 2** 
+Note: The example provided is calculated using the Proposed Pricing numbers.
 
 - You have 3 Workflows:
     - Workflow1 utilised 2 GB, with $2.50/GB rate
@@ -67,24 +85,24 @@ Computation = *(2 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
 
 ➡️ **Total Cost per GB for the Month: $25**
 
-#### Total Cost
+<u>>Total Cost</u>
 
-**Total Monthly Cost** = [Cost per transfer](#cost-1-cost-per-transfer) + [Cost per GB](#cost-2-cost-per-gb-pricing)
+**Total Monthly Cost** = Cost per transfer + Cost per GB
 
 - **Cost per transfer**: $8,020 (See example 1 above)
 - **Cost per GB**: $25 (See example 2 above)
 
 **Total Monthly Cost** = $8,020 + $25
 
-➡️ **Total Monthly Cost= $8,045**
+➡️ **Final Monthly Cost= $8,045**
 
-### Low-volume monthly transfer example
+### Low-volume Monthly Transfer Sample
 
-The examples provided follow the Proposed pricing structure.
+<u>Cost 1: Cost per transfer</u>
 
-#### Cost 1: Cost per transfer
+**Example**
 
-**Example 3**
+Note: The example provided is calculated using the Proposed Pricing numbers.
 
 - In Jan '24:
     - 10 files transferred in "Workflow A" 
@@ -92,14 +110,13 @@ The examples provided follow the Proposed pricing structure.
     - 30 files transferred in "Workflow C"
 - **Total Files:** 45 files <br>
 
-
 Computation = *(45 x **1.25**)*
 
 ➡️ **Total Cost per transfer for the month =  $56.25** 
 
-#### Cost 2: Cost per GB pricing
+<u>Cost 2: Cost per GB pricing</u>
 
-**Example 4** 
+**Example** 
 
 - You have 3 Workflows:
     - Workflow1 utilised 10 GB, with $2.50/GB rate
@@ -110,16 +127,16 @@ Computation = *(10 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
 
 ➡️ **Total Cost per GB for the Month: $45**
 
-#### Total Cost
+<u>Total Cost</u>
 
-**Total Monthly Cost** = [Cost per transfer](#cost-1-cost-per-transfer) + [Cost per GB](#cost-2-cost-per-gb-pricing)
+**Total Monthly Cost** = Cost per transfer + Cost per GB
 
 - **Cost per transfer**: $8,020 (See example 1 above)
 - **Cost per GB**: $25 (See example 2 above)
 
 **Total Monthly Cost** = $56.25 + $45 
 
-➡️ **Total Monthly Cost= $101.25**
+➡️ **Final Monthly Cost= $101.25**
 
 ## Billing Timeline
 
