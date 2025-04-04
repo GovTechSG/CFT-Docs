@@ -1,6 +1,6 @@
 # CFT Pricing
 
-!> CFT will implement billing through [TechBiz](https://www.developer.tech.gov.sg/products/categories/platform/techbiz/overview.html) starting **1 July 2025**. This page outlines the proposed and indicative pricing to help you plan accordingly. Additional details about TechBiz onboarding will be shared soon.
+!> CFT will implement billing through [TechBiz](https://www.developer.tech.gov.sg/products/categories/platform/techbiz/overview.html) starting **1 July 2025**. This page outlines the proposed and indicative pricing rates to help you plan accordingly. Additional details about TechBiz onboarding will be shared soon.
 
 ?> Please be informed that while our pricing methodology and structure have been substantially finalised, the figures presented are currently undergoing review and may be subject to modification. We value your patience and understanding during this process.
 
@@ -10,11 +10,15 @@ To calculate for total CFT cost per month, there are two components to be consid
 
 **CFT Cost = [Cost per Transfer](#cost-per-transfer) + [Cost per GB](#cost-per-gb)**
 
-The rates for each component are shown in the tables below.
+The rates for each cost component are shown in the tables below. 
+
+
 
 ![pricing](/assets/indicative-pricing.png)
  
 (Click the image to enlarge.)
+
+Note that while final pricing rates are still being reviewed, there are Proposed Pricing and Indicative Pricing rates provided. Refer to [Understanding Proposed and Indicative Pricing Rates](#understanding-proposed-and-indicative-pricing-rates) to learn more.
 
 ### Cost Per Transfer
 
