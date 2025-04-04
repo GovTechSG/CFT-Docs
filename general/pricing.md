@@ -6,11 +6,11 @@
 We assure you that Tenants will be provided with sufficient advance notice prior to the implementation of any charges. Further details will be communicated once CFT's pricing has received approval and the TechBiz billing mechanism has been fully developed.<br><br>
  We remain committed to keeping you informed throughout this process and appreciate your continued engagement.
 
-## Proposed and indicative pricing
+## Proposed and Indicative pricing
 
-There are two pricing structures provided: **proposed pricing** (our intended structure) and **indicative pricing** (the maximum potential cost). 
+There are two pricing structures provided: **Proposed Pricing** (our intended structure) and **Indicative Pricing** (the maximum potential cost). 
 
-**For AOR and budgeting purposes, please use the indicative pricing values.**
+**For AOR and budgeting purposes, please use the indicative pricing values.** 
 
 ###  Cost formula 
 
@@ -25,6 +25,8 @@ Please refer to Tables 1 and 2 below for the cost breakdown.  (Click the image t
 ?> **Note:** Monthly transfer counts are based on the total files uploaded by Sender Applications in your CFT Project's Workflows.
 
 ### High-volume monthly transfer example
+
+The examples provided follow the Proposed pricing structure.
 
 #### Cost 1: Cost per transfer
 
@@ -77,6 +79,8 @@ Computation = *(2 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
 ➡️ **Total Monthly Cost= $8,045**
 
 ### Low-volume monthly transfer example
+
+The examples provided follow the Proposed pricing structure.
 
 #### Cost 1: Cost per transfer
 
