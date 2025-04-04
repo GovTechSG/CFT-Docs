@@ -59,7 +59,7 @@ From the cost tables in the previous sections, there are two pricing rates provi
 
 The following sample computations provide a quick insight into how 
 
-### High-volume Monthly Transfer Sample
+### Sample 1: High-volume Monthly Transfers
 
 <u>Cost 1: Cost per transfer</u>
 
@@ -86,7 +86,7 @@ Note: The example provided is calculated using the [Proposed Pricing numbers](#u
     - Workflow2 utilised 10 GB, with $1.50/GB rate
     - Workflow3 utilised 5 GB, with $1.00/GB rate
 
-Computation = *(2 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
+Computation using [Table 2](#cost-per-gb) = *(2 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
 
 ➡️ **Total Cost per GB for the Month: $25**
 
@@ -101,11 +101,11 @@ Computation = *(2 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
 
 ➡️ **Final Monthly Cost= $8,045**
 
-### Low-volume Monthly Transfer Sample
+### Sample 2: Low-volume Monthly Transfers
 
 <u>Cost 1: Cost per transfer</u>
 
-Note: The example provided is calculated using the [Proposed Pricing numbers](#cost-per-transfer).
+Note: The example provided is calculated using the [Proposed Pricing numbers](#understanding-proposed-and-indicative-pricing-rates).
 
 - In Jan '24:
     - 10 files transferred in "Workflow A" 
@@ -113,18 +113,20 @@ Note: The example provided is calculated using the [Proposed Pricing numbers](#c
     - 30 files transferred in "Workflow C"
 - **Total Files:** 45 files <br>
 
-Computation = *(45 x **1.25**)*
+Computation using [Table 1](#cost-per-transfer) = *(45 x **1.25**)*
 
 ➡️ **Total Cost per transfer for the month =  $56.25** 
 
 <u>Cost 2: Cost per GB pricing</u>
+
+Note: The example provided is calculated using the [Proposed Pricing numbers](#understanding-proposed-and-indicative-pricing-rates).
 
 - You have 3 Workflows:
     - Workflow1 utilised 10 GB, with $2.50/GB rate
     - Workflow2 utilised 10 GB, with $1.50/GB rate
     - Workflow3 utilised 5 GB, with $1.00/GB rate
 
-Computation = *(10 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
+Computation using [Table 2](#cost-per-gb) = *(10 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
 
 ➡️ **Total Cost per GB for the Month: $45**
 
