@@ -57,7 +57,7 @@ From the cost tables in the previous sections, there are two pricing rates provi
 
 ## Sample Computations
 
-The following sample computations provide a quick insight into how 
+Use these examples to estimate your CFT costs based on your current usage.
 
 ### Sample 1: High-volume Monthly Transfers
 
