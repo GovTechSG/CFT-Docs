@@ -10,13 +10,12 @@ To calculate for total CFT cost per month, there are two components to be consid
 
 **CFT Cost = [Cost per Transfer](#cost-per-transfer) + [Cost per GB](#cost-per-gb)**
 
-The rates for each cost component are shown in the tables below. 
-
-
 
 ![pricing](/assets/indicative-pricing.png)
  
-(Click the image to enlarge.)
+*(Click the image to enlarge.)*
+
+The following sections will give a more detailed breakdown on these components.
 
 Note that while final pricing rates are still being reviewed, there are Proposed Pricing and Indicative Pricing rates provided. Refer to [Understanding Proposed and Indicative Pricing Rates](#understanding-proposed-and-indicative-pricing-rates) to learn more.
 
