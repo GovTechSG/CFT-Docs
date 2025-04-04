@@ -1,17 +1,20 @@
 # CFT Pricing
 
-!> From 1 July 2025, CFT will officially start billing using the  [TechBiz](https://www.developer.tech.gov.sg/products/categories/platform/techbiz/overview.html) service management tool. On this page, you will find CFT proposed and indicative pricing details to help you prepare and plan for billing. We will also be sharing more details on how to onboard and use TechBiz soon.
+!> CFT will implement billing through [TechBiz](https://www.developer.tech.gov.sg/products/categories/platform/techbiz/overview.html) starting **1 July 2025**. This page outlines the proposed and indicative pricing to help you plan accordingly. Additional details about TechBiz onboarding will be shared soon.
 
 ?> Please be informed that while our pricing methodology and structure have been substantially finalised, the figures presented are currently undergoing review and may be subject to modification. We value your patience and understanding during this process.<br><br>
-We assure you that Tenants will be provided with sufficient advance notice prior to the implementation of any charges. Further details will be communicated once CFT's pricing has received approval and the billing mechanism (i.e., TechBiz) has been fully developed.<br><br>
+We assure you that Tenants will be provided with sufficient advance notice prior to the implementation of any charges. Further details will be communicated once CFT's pricing has received approval and the TechBiz billing mechanism has been fully developed.<br><br>
  We remain committed to keeping you informed throughout this process and appreciate your continued engagement.
 
 ## Proposed and indicative pricing
 
-There are two pricing structures provided. Proposed pricing is the proposed structure. Indicative pricing serves as the maximum possible pricing cost that may be approved once billing starts. **For AOR and budgeting purposes, use the indicative pricing values.**
+There are two pricing structures provided: **proposed pricing** (our intended structure) and **indicative pricing** (the maximum potential cost). 
+
+**For AOR and budgeting purposes, please use the indicative pricing values.**
 
 ###  Cost formula 
-**Proposed CFT Pricing (per month) = Cost per transfer + Cost per GB**
+
+**Monthly CFT Cost = Cost per Transfer + Cost per GB**
  
 Please refer to Tables 1 and 2 below for the cost breakdown.  (Click the image to enlarge.)
  
@@ -19,7 +22,7 @@ Please refer to Tables 1 and 2 below for the cost breakdown.  (Click the image t
 
 <center><small><b>For AOR or budgeting purposes, use the values in the indicative pricing column. </b></small></center>
 
-?> **Note:** The number of file transfers per month will be based on the total number of files uploaded by the Sender Applications in your CFT Project’s Workflows.
+?> **Note:** Monthly transfer counts are based on the total files uploaded by Sender Applications in your CFT Project's Workflows.
 
 ### High-volume monthly transfer example
 
@@ -32,7 +35,7 @@ The Cost per transfer rate is *progressive* based on the number of files.
 
 **Example 1**
 
-- In Jan '24:
+- In January 2024:
     - 10,000 files transferred in "Workflow A" 
     - 5,000 files transferred in "Workflow B" 
     - 87,000 files transferred in "Workflow C"
@@ -114,17 +117,17 @@ Computation = *(10 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
 
 ➡️ **Total Monthly Cost= $101.25**
 
-## Billing timeline
+## Billing Timeline
 
-From 1 July 2025, CFT will officially start billing using the  [TechBiz](https://www.developer.tech.gov.sg/products/categories/platform/techbiz/overview.html) service management tool. From now until 1st July, you can still use CFT free of charge.
+From 1 July 2025, CFT will officially start billing using the  [TechBiz](https://www.developer.tech.gov.sg/products/categories/platform/techbiz/overview.html) service management tool. Until 30th June, you can still use CFT free of charge.
 
-## CFT environments 
+## CFT Environments 
 
 All transfers processed in CFT are chargeable. CFT does not differentiate between Production and Non-Production transfers, as the services consumed remain the same between the two environments.
 
 
-## Pricing feedback
+## Pricing Feedback
 
  **Do you have feedback on the CFT indicative pricing?**
 
-We kindly request your assistance in obtaining feedback from your stakeholders on our proposed pricing structure. Please share your feedback using the [CFT Usage and Pricing Survey](https://form.gov.sg/671dfd83e0339adec428ccfa) or reach out to **Brian Liu (Product Manager)** at brian_liu@tech.gov.sg.
+We kindly request your assistance in obtaining feedback from your stakeholders on our proposed pricing structure. Please reach out to **Brian Liu (Product Manager)** at brian_liu@tech.gov.sg.
