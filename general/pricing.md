@@ -44,7 +44,9 @@ The Cost per GB is based on the features enabled or used per Workflow and the to
 
 ## Understanding Proposed and Indicative Pricing Rates
 
-From the cost tables above, there are two pricing rates provided.
+![pricing](/assets/indicative-proposed-pricing.png)
+
+From the cost tables in the previous sections, there are two pricing rates provided.
 
 **Proposed Pricing**
 - These are our intended rates that are currently pending approval
@@ -61,7 +63,7 @@ The following sample computations provide a quick insight into how
 
 <u>Cost 1: Cost per transfer</u>
 
-Note: The example provided is calculated using the Proposed Pricing numbers.
+Note: The example provided is calculated using the [Proposed Pricing numbers](#understanding-proposed-and-indicative-pricing-rates).
 
 - In January 2024:
     - 10,000 files transferred in "Workflow A" 
@@ -69,7 +71,7 @@ Note: The example provided is calculated using the Proposed Pricing numbers.
     - 87,000 files transferred in "Workflow C"
 - **Total Files:** 102,000 files <br>
 
-Based on Table 1, the total number of files will be broken down into: 102,000 files = 1,000 files + 9,000 files + 90,000 files + 2,000 files.
+Based on [Table 1](#cost-per-transfer), the total number of files will be broken down into: 102,000 files = 1,000 files + 9,000 files + 90,000 files + 2,000 files.
 
 Computation = *(1,000 x **1.25**) + (9,000 x **0.25**) + (90,000 x **0.05**) + (2,000 x **0.01**)*
 
@@ -77,7 +79,7 @@ Computation = *(1,000 x **1.25**) + (9,000 x **0.25**) + (90,000 x **0.05**) + (
 
 <u>Cost 2: Cost per GB pricing</u>
 
-Note: The example provided is calculated using the Proposed Pricing numbers.
+Note: The example provided is calculated using the [Proposed Pricing numbers](#understanding-proposed-and-indicative-pricing-rates).
 
 - You have 3 Workflows:
     - Workflow1 utilised 2 GB, with $2.50/GB rate
@@ -92,8 +94,8 @@ Computation = *(2 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
 
 **Total Monthly Cost** = Cost per transfer + Cost per GB
 
-- **Cost per transfer**: $8,020 (See example 1 above)
-- **Cost per GB**: $25 (See example 2 above)
+- **Cost per transfer**: $8,020 
+- **Cost per GB**: $25 
 
 **Total Monthly Cost** = $8,020 + $25
 
@@ -103,7 +105,7 @@ Computation = *(2 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
 
 <u>Cost 1: Cost per transfer</u>
 
-Note: The example provided is calculated using the Proposed Pricing numbers.
+Note: The example provided is calculated using the [Proposed Pricing numbers](#cost-per-transfer).
 
 - In Jan '24:
     - 10 files transferred in "Workflow A" 
@@ -130,8 +132,8 @@ Computation = *(10 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
 
 **Total Monthly Cost** = Cost per transfer + Cost per GB
 
-- **Cost per transfer**: $8,020 (See example 1 above)
-- **Cost per GB**: $25 (See example 2 above)
+- **Cost per transfer**: $56.25
+- **Cost per GB**: $45
 
 **Total Monthly Cost** = $56.25 + $45 
 
