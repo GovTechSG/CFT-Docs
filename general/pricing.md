@@ -88,7 +88,7 @@ Computation = *(2 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
 
 ➡️ **Total Cost per GB for the Month: $25**
 
-<u>>Total Cost</u>
+<u>Total Cost</u>
 
 **Total Monthly Cost** = Cost per transfer + Cost per GB
 
@@ -103,8 +103,6 @@ Computation = *(2 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
 
 <u>Cost 1: Cost per transfer</u>
 
-**Example**
-
 Note: The example provided is calculated using the Proposed Pricing numbers.
 
 - In Jan '24:
@@ -118,8 +116,6 @@ Computation = *(45 x **1.25**)*
 ➡️ **Total Cost per transfer for the month =  $56.25** 
 
 <u>Cost 2: Cost per GB pricing</u>
-
-**Example** 
 
 - You have 3 Workflows:
     - Workflow1 utilised 10 GB, with $2.50/GB rate
