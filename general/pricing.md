@@ -1,6 +1,6 @@
 # CFT Pricing
 
-!> CFT will implement billing through [TechBiz](https://www.developer.tech.gov.sg/products/categories/platform/techbiz/overview.html) starting **1 July 2025**. This page outlines the proposed and indicative pricing rates to help you plan accordingly. Additional details about TechBiz onboarding will be shared soon.
+!> CFT will implement billing through [TechBiz](https://www.developer.tech.gov.sg/products/categories/platform/techbiz/overview.html) starting **1 July 2025**. This page outlines the [CFT cost calculation](#cft-cost) using [proposed and indicative pricing rates](#understanding-proposed-and-indicative-pricing-rates) to help you plan and budget accordingly. Additional details about TechBiz onboarding will be shared soon.
 
 ?> Please be informed that while our pricing methodology and structure have been substantially finalised, the figures presented are currently undergoing review and may be subject to modification. We value your patience and understanding during this process.
 
