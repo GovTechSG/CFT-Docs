@@ -9,7 +9,7 @@
 
 ## CFT Cost
 
-To calculate for total CFT cost per month, there are two components to be considered. The Cost Per Transfer and the Cost Per GB (feature usage).
+CFT cost is usage-based. To calculate for total CFT cost per month, there are two components to be considered. The Cost Per Transfer and the Cost Per GB (feature usage).
 
 **CFT Cost = [Cost per Transfer](#cost-per-transfer) + [Cost per GB](#cost-per-gb)**
 
