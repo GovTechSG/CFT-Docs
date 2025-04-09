@@ -4,6 +4,9 @@
 
 ?> Please be informed that while our pricing methodology and structure have been substantially finalised, the figures presented are currently undergoing review and may be subject to modification. We value your patience and understanding during this process.
 
+<small>If you are new to CFT and have pricing questions, please contact us using [this form](https://form.gov.sg/665978af9040a6be24d3978b?665982626cae0284c464a22a=Cloud+File+Transfer).
+</small>
+
 ## CFT Cost
 
 To calculate for total CFT cost per month, there are two components to be considered. The Cost Per Transfer and the Cost Per GB (feature usage).
