@@ -12,7 +12,7 @@
 CFT's monthly charges are calculated at the **Project level** and based on two components:
 
 - [Component 1: File Transfer Count](#component-1-file-transfer-count)
-- [Component 2: Data Volume + Feature Usage](#component-2-data-volume--feature-usage)
+- [Component 2: Data Volume + Feature Usage](#component-2-data-volume-feature-usage)
 
 ### Component 1: File Transfer Count
 
