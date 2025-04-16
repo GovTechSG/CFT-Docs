@@ -1,6 +1,7 @@
 - [Home](home.md)
 - General
     - [CFT Pricing](general/pricing.md)
+    - [Archived - CFT Pricing](general/pricing-v1.md)
 - Prerequisites
     - Whitelisting
         - [Tenant Whitelisting](whitelisting.md)
