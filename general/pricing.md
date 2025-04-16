@@ -1,156 +1,124 @@
-# CFT Pricing
+# Cloud File Transfer (CFT) Pricing
 
 !> CFT will implement billing through [TechBiz](https://www.developer.tech.gov.sg/products/categories/platform/techbiz/overview.html) starting **1 July 2025**. This page outlines the [CFT cost calculation](#cft-cost) using [proposed and indicative pricing rates](#understanding-proposed-and-indicative-pricing-rates) to help you plan and budget accordingly. Additional details about TechBiz onboarding will be shared soon.
 
 ?> Please be informed that while our pricing methodology and structure have been substantially finalised, the figures presented are currently undergoing review and may be subject to modification. We value your patience and understanding during this process.
 
-<small>If you are new to CFT and have pricing questions, please contact us using [this form](https://form.gov.sg/665978af9040a6be24d3978b?665982626cae0284c464a22a=Cloud+File+Transfer).
+<small>If you are completely new to CFT and have onboarding questions, please contact us using [this form](https://form.gov.sg/665978af9040a6be24d3978b?665982626cae0284c464a22a=Cloud+File+Transfer).
 </small>
 
-## CFT Cost
+##  CFT Pricing Overview
 
-CFT cost is usage-based. To calculate for total CFT cost per month, there are two components to be considered. The Cost Per Transfer and the Cost Per GB (based on feature use).
+CFT's monthly charges are calculated at the **Project level** and based on two components:
 
-**CFT Cost = [Cost per Transfer](#cost-per-transfer) + [Cost per GB](#cost-per-gb)**
+- [Component 1: File Transfer Count](#component-1-file-transfer-count)
+- [Component 2: Data Volume + Feature Usage](#component-2-data-volume-feature-usage)
 
+### Component 1: File Transfer Count
 
-![pricing](/assets/indicative-pricing.png)
- 
-*(Click the image to enlarge.)*
+You are billed based on the total number of files transferred, as uploaded from the **Sender Application**.
 
-The following sections will give a more detailed breakdown on these components.
+- Each successful file transfer is counted, including zipped folders.
+- One zipped folder is considered one file for the purposes of file transfer billing — regardless of how many files are inside.
 
-Note that while final pricing rates are still being reviewed, there are Proposed Pricing and Indicative Pricing rates provided. Refer to [Understanding Proposed and Indicative Pricing Rates](#understanding-proposed-and-indicative-pricing-rates) to learn more.
+|      Tier     |      Files in Tier          |      Price per File     |      Max Cost for Tier     |
+|---------------|-----------------------------|-------------------------|----------------------------|
+|     Tier 1    |     First 1,000 files       |     $1.25               |     $1,250.00              |
+|     Tier 2    |     Next 9,000 files        |     $0.25               |     $2,250.00              |
+|     Tier 3    |     Next 90,000 files       |     $0.05               |     $4,500.00              |
+|     Tier 4    |     Beyond 100,000 files    |     $0.01               |     Based on usage         |
 
-### Cost Per Transfer
+Example: If your project processes 120,000 files in a month:
 
-The Cost Per Transfer rates are progressive based on the number of files sent. 
+- Tier 1: 1,000 × $1.25 = $1,250.00
+- Tier 2: 9,000 × $0.25 = $2,250.00
+- Tier 3: 90,000 × $0.05 = $4,500.00
+- Tier 4: 20,000 × $0.01 = $200.00
 
-?> **Note:** Monthly transfer counts are based on the total files uploaded by Sender Applications in your CFT Project's Workflows. Each zipped folder is counted as a single file transfer.
+➡ Total File Transfer Charges = $8,200.00
 
+### Component 2: Data Volume + Feature Usage
 
-![pricing](/assets/indicative-pricing-table1.png)
+Charges are also applied based on the amount of data processed and the number of features used in each workflow.
 
+CFT Priced Feature List:
+- Scanner or Scanner-Bypass (mandatory)
+- Content Disarm & Reconstruction (CDR)
+- Encryption
+- Decryption
 
+|      Features Used     |      Price per GB     |
+|------------------------|-----------------------|
+|     1 Feature          |     $1.00             |
+|     2 Features         |     $1.50             |
+|     3 Features         |     $2.00             |
+|     4 Features         |     $2.50             |
 
-<center><small><b>For AOR or budgeting purposes, use the values in the indicative pricing column. </b></small></center>
+**Important notes:**
 
+- While each zipped folder is considered one file for file transfer count, data usage charges are calculated based on the total extracted size of the contents inside the zipped folder. For example, a 10MB zipped folder containing 100MB of extracted content will be charged based on 100MB.
+- The same costs apply across all user environments, for example, Staging and Production environments.
 
-### Cost Per GB
+## Cost calculation
 
-The Cost per GB is based on the features enabled or used per Workflow and the total size of the transfers (GB). 
+Do take note of the following guidelines: 
+- Charges are consolidated per Project per month.
+- At least 1 feature (Scanner or Scanner-Bypass) is required per file.
+- Data volume is grouped by number of features used, then **rounded up to the nearest GB** before pricing is applied.
 
-?> Note: The size of a zipped folder is calculated based on the total size of its extracted contents, not the compressed size.
+### Example
 
-![pricing](/assets/indicative-pricing-table2.png)
-<center><small><b>For AOR or budgeting purposes, use the values in the indicative pricing column. </b></small></center>
+Project Summary:
+- 120,000 total file transfers (includes zipped folders)
+- Workflows:
+    - Workflow A: 28.2 GB extracted size, 1 Feature
+    - Workflow B: 50.4 GB, 3 Features
+    - Workflow C: 10.7 GB, 4 Features
 
-## Understanding Proposed and Indicative Pricing Rates
+Calculation:
 
-![pricing](/assets/indicative-proposed-pricing.png)
+1.	File Transfer Charges = $8,200.00
+2.	Data Usage Charges (Rounded off):
+    - 1 Feature: 29 GB × $1.00 = $29.00
+    - 3 Features: 51 GB × $2.00 = $102.00
+    - 4 Features: 11 GB × $2.50 = $27.50
 
-From the cost tables in the previous sections, there are two pricing rates provided.
+    → Total Data Usage Charges = $158.50
 
-**Proposed Pricing**
-- These are our intended rates that are currently pending approval
+➡ Total Monthly Bill = $8,358.50
 
-**Indicative Pricing**
-- These represent the upper range of the potential approved cost 
-- These provide a conservative estimate for AOR and budgeting purposes
+### Additional notes
 
-## Sample Computations
+- Files that are classified as Sensitive-High, password-protected and/or encrypted in formats that cannot be scanned by CFT must use the Scanner-Bypass feature.
+- CFT pricing is applied only for successful file transfers and processed data, tracked monthly at the Project level.
 
-Use these examples to estimate your CFT costs based on your current usage.
+## Indicative pricing
 
-### Sample 1: High-volume Monthly Transfers
+The rates defined in the previous sections are the proposed rates that are currently pending approval.
 
-<u>Cost 1: Cost per transfer</u>
+The rates below are the indicative pricing rates that  represent the upper range of the potential approved cost. These provide a conservative estimate for AOR and budgeting purposes.
 
-Note: The example provided is calculated using the [Proposed Pricing numbers](#understanding-proposed-and-indicative-pricing-rates).
+<u>File Transfer Count</u>
 
-- In January 2024:
-    - 10,000 files transferred in "Workflow A" 
-    - 5,000 files transferred in "Workflow B" 
-    - 87,000 files transferred in "Workflow C"
-- **Total Files:** 102,000 files <br>
+|      Tier     |      Files in Tier          |      Indicative Price |  
+|---------------|-----------------------------|-------------------------|
+|     Tier 1    |     First 1,000 files       |     $1.25 - $1.30       |
+|     Tier 2    |     Next 9,000 files        |     $0.25 - $0.26       |   
+|     Tier 3    |     Next 90,000 files       |     $0.05 - $0.06       |   
+|     Tier 4    |     Beyond 100,000 files    |     $0.01 - $0.02       |   
 
-Based on [Table 1](#cost-per-transfer), the total number of files will be broken down into: 102,000 files = 1,000 files + 9,000 files + 90,000 files + 2,000 files.
+<u>>Data Volume + Feature Usage</u>
 
-Computation = *(1,000 x **1.25**) + (9,000 x **0.25**) + (90,000 x **0.05**) + (2,000 x **0.01**)*
-
-➡️ **Total Cost per transfer for the month =  $8,020** 
-
-<u>Cost 2: Cost per GB pricing</u>
-
-Note: The example provided is calculated using the [Proposed Pricing numbers](#understanding-proposed-and-indicative-pricing-rates).
-
-- You have 3 Workflows:
-    - Workflow1 utilised 2 GB, with $2.50/GB rate
-    - Workflow2 utilised 10 GB, with $1.50/GB rate
-    - Workflow3 utilised 5 GB, with $1.00/GB rate
-
-Computation using [Table 2](#cost-per-gb) = *(2 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
-
-➡️ **Total Cost per GB for the Month: $25**
-
-<u>Total Cost</u>
-
-**Total Monthly Cost** = Cost per transfer + Cost per GB
-
-- **Cost per transfer**: $8,020 
-- **Cost per GB**: $25 
-
-**Total Monthly Cost** = $8,020 + $25
-
-➡️ **Final Monthly Cost= $8,045**
-
-### Sample 2: Low-volume Monthly Transfers
-
-<u>Cost 1: Cost per transfer</u>
-
-Note: The example provided is calculated using the [Proposed Pricing numbers](#understanding-proposed-and-indicative-pricing-rates).
-
-- In Jan '24:
-    - 10 files transferred in "Workflow A" 
-    - 5 files transferred in "Workflow B" 
-    - 30 files transferred in "Workflow C"
-- **Total Files:** 45 files <br>
-
-Computation using [Table 1](#cost-per-transfer) = *(45 x **1.25**)*
-
-➡️ **Total Cost per transfer for the month =  $56.25** 
-
-<u>Cost 2: Cost per GB pricing</u>
-
-Note: The example provided is calculated using the [Proposed Pricing numbers](#understanding-proposed-and-indicative-pricing-rates).
-
-- You have 3 Workflows:
-    - Workflow1 utilised 10 GB, with $2.50/GB rate
-    - Workflow2 utilised 10 GB, with $1.50/GB rate
-    - Workflow3 utilised 5 GB, with $1.00/GB rate
-
-Computation using [Table 2](#cost-per-gb) = *(10 x **2.50**) + (10 x **1.5**) + (5 x **1.00**)*
-
-➡️ **Total Cost per GB for the Month: $45**
-
-<u>Total Cost</u>
-
-**Total Monthly Cost** = Cost per transfer + Cost per GB
-
-- **Cost per transfer**: $56.25
-- **Cost per GB**: $45
-
-**Total Monthly Cost** = $56.25 + $45 
-
-➡️ **Final Monthly Cost= $101.25**
+|      Features Used     |    Indicative Price per GB     |
+|------------------------|-----------------------|
+|     1 Feature          |     $1.00 - $1.05     |
+|     2 Features         |     $1.50 - $1.60     |
+|     3 Features         |     $2.00 - $2.10     |
+|     4 Features         |     $2.50 - $2.60     |
 
 ## Billing Timeline
 
 From 1 July 2025, CFT will officially start billing using the  [TechBiz](https://www.developer.tech.gov.sg/products/categories/platform/techbiz/overview.html) service management tool. Until 30th June, you can still use CFT free of charge.
-
-## CFT Environments 
-
-All transfers processed in CFT are chargeable. CFT does not differentiate between Production and Non-Production transfers, as the services consumed remain the same between the two environments.
 
 
 ## Pricing Feedback
