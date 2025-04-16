@@ -96,7 +96,7 @@ Calculation:
 
 The rates defined in the previous sections are the proposed rates that are currently pending approval.
 
-The rates below are the indicative pricing rates that  represent the upper range of the potential approved cost. These provide a conservative estimate for AOR and budgeting purposes.
+**Note:** The rates below are the indicative pricing rates that  represent the upper range of the potential approved cost. These provide a conservative estimate **for AOR and budgeting purposes**.
 
 <u>File Transfer Count</u>
 
@@ -107,7 +107,7 @@ The rates below are the indicative pricing rates that  represent the upper range
 |     Tier 3    |     Next 90,000 files       |     $0.05 - $0.06       |   
 |     Tier 4    |     Beyond 100,000 files    |     $0.01 - $0.02       |   
 
-<u>>Data Volume + Feature Usage</u>
+<u>Data Volume + Feature Usage</u>
 
 |      Features Used     |    Indicative Price per GB     |
 |------------------------|-----------------------|
