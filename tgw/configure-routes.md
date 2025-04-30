@@ -17,8 +17,7 @@ https://docs.developer.tech.gov.sg/docs/gcc-technical-documentation/hosting-mode
 Identify the Intranet Subnet(s) in your GCC 2.0-provisioned Intranet VPC that host resources interfacing with CFT (as either Sender or Receiver). 
 
 - The Intranet Subnet(s) CIDR range **must** be provided by the GCC 2.0 team.
-- The Intranet Subnet(s) **must** have a CIDR range that is within one of the following supernets:  `10.211.0.0/16` or `10.219.0.0/16`, or `10.209.64.0/18`, or `10.188.0.0/16`.<br><br> 
-?> Note: The application instance connecting to CFT must originate one of the CIDR ranges stated above.
+- The Intranet Subnet(s) **must** have a CIDR range that is within one of the following supernets:  `10.211.0.0/16` or `10.219.0.0/16`, or `10.209.64.0/18`, or `10.188.0.0/16`.<br><br>**Important:** The application instance connecting to CFT must originate one of the CIDR ranges stated above.
 - The Intranet Subnet(s) **must not** be in the range `100.x.x.x`.
 
     ![tgw](/assets/tgw.png)
