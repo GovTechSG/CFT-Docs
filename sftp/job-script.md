@@ -2,9 +2,7 @@
 
 You can refer to the following bash script samples for [SFTP scheduled jobs](https://docs.developer.tech.gov.sg/docs/cft-user-guide/sftp/sftp-scheduler).
 
-!> **Important:** These sample scripts provide a generic template. Please review and adjust the script accordingly to align with your agency needs.
-
-!> **Important**: When the **File Archive** feature is enabled, using the `lcd` command in your SFTP job script may result in incorrect file paths. To prevent this, avoid using the `lcd` command when File Archive is enabled.
+!> **Important notes:** <br>• These sample scripts provide a generic template. Please review and adjust the script accordingly to align with your agency needs.<br>• When the **File Archive** feature is enabled, using the `lcd` command in your SFTP job script may result in incorrect file paths. To prevent this, avoid using the `lcd` command when File Archive is enabled.<br>• If you have added a Vanity ID, add it as an environment variable and replace `${WORKFLOW_ID}` with `${VANITY_ID}` in the sample script.
 
 ## SFTP Scheduler as Sender
 
