@@ -5,6 +5,20 @@ These SFTP Job Scheduler Script templates help you set up SFTP transfers using t
 - [SFTP Scheduler as **Sender**](#sftp-scheduler-as-sender)
 - [SFTP Scheduler as **Receiver**](#sftp-scheduler-as-receiver)
 
+**<u>How to use these templates</u>**
+
+These scripts are basic templates that you need to adjust for your specific use:
+-  **Check your zone settings**
+    - For Internet Zone (EZ): Look for comments with `EZ` or `INTERNET`
+    - For Intranet Zone (IZ): Look for comments with `IZ` or `INTRANET`
+
+- **Check your authentication method**
+    - For SSH Key only: Use the default settings
+    - For SSH Key AND Password: Look for comments about "SSH Key AND Password"
+- **Refer to the script comments**
+  - Comments in the script (lines starting with `#`) will guide you on what to change
+  - Make changes only where the comments indicate
+
 **<u>Important notes</u>:** 
 
 - These scripts are basic templates that you need to adjust for your specific use:
