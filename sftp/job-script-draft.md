@@ -240,5 +240,5 @@ If you have configured a Custom Port, add `-P ${PortNumber}` to the SFTP command
 For example:
 
 ``` shell
-sftp ${HOST_KEY_ALGORITHM} ${HOST_KEY_CHECK} ${PUB_KEY_ACCEPTED_KEY_TYPES} ${IDENTITY_FILE} -o "${PROXY}" ${SFTP_SERVER_USERNAME}@${SFTP_SERVER_HOSTNAME} <<EOF
+sftp ${HOST_KEY_ALGORITHM} ${HOST_KEY_CHECK} ${PUB_KEY_ACCEPTED_KEY_TYPES} ${IDENTITY_FILE} -o "${PROXY}" -P ${PortNumber} ${SFTP_SERVER_USERNAME}@${SFTP_SERVER_HOSTNAME} <<EOF
 ```
