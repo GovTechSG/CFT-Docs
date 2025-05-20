@@ -1,13 +1,35 @@
-# SFTP Job Script Samples
+# SFTP Job Scheduler Script Templates
 
-You can refer to the following bash script samples for [SFTP scheduled jobs](https://docs.developer.tech.gov.sg/docs/cft-user-guide/sftp/sftp-scheduler).
+These SFTP Job Scheduler Script templates help you set up SFTP transfers using the [CFT SFTP scheduler](https://docs.developer.tech.gov.sg/docs/cft-user-guide/sftp/sftp-scheduler). Choose the appropriate template based on whether you're sending or receiving files.
 
-!> **Important notes:** <br>• These sample scripts provide a generic template. Please review and adjust the script accordingly to align with your agency needs.<br>• When the **File Archive** feature is enabled, using the `lcd` command in your SFTP job script may result in incorrect file paths. To prevent this, avoid using the `lcd` command when File Archive is enabled.<br>• If you have added a Vanity ID, add it as an environment variable and replace `${WORKFLOW_ID}` with `${VANITY_ID}` in the sample script.
+- [SFTP Scheduler as **Sender**](#sftp-scheduler-as-sender)
+- [SFTP Scheduler as **Receiver**](#sftp-scheduler-as-receiver)
+
+**<u>How to use these templates</u>**
+
+These scripts are basic templates that you need to adjust for your specific use:
+-  **Check your zone settings**
+    - For Internet Zone (EZ): Look for comments with `EZ` or `INTERNET`
+    - For Intranet Zone (IZ): Look for comments with `IZ` or `INTRANET`
+
+- **Check your authentication method**
+    - For SSH Key only: Use the default settings
+    - For SSH Key AND Password: Look for comments about "SSH Key AND Password"
+- **Refer to the script comments**
+  - Comments in the script (lines starting with `#`) will guide you on what to change
+  - Make changes only where the comments indicate
+
+**<u>Important notes</u>** 
+
+- If you have added customisations such as a Vanity ID or Custom Port, refer to [Other requirements](#other-requirements) for the changes required.
+- When the **File Archive** feature is enabled, using the `lcd` command in your SFTP job script may result in incorrect file paths. To prevent this, avoid using the `lcd` command when File Archive is enabled.
 
 ## SFTP Scheduler as Sender
 
+This is a sample template for when you have an SFTP Server configured as Sender in your workflow.
+
 ``` shell
-# updated: 16/08/24
+# Updated: 16/08/24
 
 #!/bin/bash
 echo "=================================================="
@@ -16,7 +38,7 @@ echo "=================================================="
 
 printf "\n"
 
-# env variables
+# Environment variables
 echo "=================================================="
 echo "#### Print env variables ####"
 echo "SFTP_SERVER_HOSTNAME" ${SFTP_SERVER_HOSTNAME}
@@ -28,7 +50,7 @@ echo "=================================================="
 
 printf "\n"
 
-# Create INCOMIMG folder 
+# Create INCOMING folder 
 echo "=================================================="
 echo "#### Creating Temp Folder ####"
 export INCOMING="INCOMING_`date +%Y%m%d`"
@@ -37,7 +59,7 @@ echo "=================================================="
 
 printf "\n"
 
-# sftp config
+# SFTP config
 export PROXY="ProxyCommand nc -X connect -x cft2-prd-sftp-iz-proxy-nlb-c56328f1649d5d1b.elb.ap-southeast-1.amazonaws.com:3128 %h %p"
 export HOST_KEY_ALGORITHM="-oHostKeyAlgorithms=+ssh-rsa"
 export HOST_KEY_CHECK="-oStrictHostKeyChecking=no"
@@ -98,8 +120,10 @@ echo "=================================================="
 
 ## SFTP Scheduler as Receiver
 
+This is a sample template for when you have an SFTP Server configured as a Receiver in your workflow.
+
 ``` shell
-# updated: 16/08/24
+# Updated: 16/08/24
 
 #!/bin/bash
 echo "=================================================="
@@ -129,7 +153,7 @@ echo "=================================================="
 
 printf "\n"
 
-# sftp config
+# SFTP config
 export PROXY="ProxyCommand nc -X connect -x cft2-prd-sftp-iz-proxy-nlb-c56328f1649d5d1b.elb.ap-southeast-1.amazonaws.com:3128 %h %p"
 export HOST_KEY_ALGORITHM="-oHostKeyAlgorithms=+ssh-rsa"
 export HOST_KEY_CHECK="-oStrictHostKeyChecking=no"
@@ -187,4 +211,47 @@ printf "\n"
 echo "=================================================="
 echo "SFTP script execution completed"
 echo "=================================================="
+```
+
+## Other requirements
+
+### Custom environment variables
+
+If any custom variable is added, please specify in this portion of the script. 
+
+For example, a Vanity ID variable is added below.
+
+``` shell
+# Environment variables
+echo "=================================================="
+echo "#### Print env variables ####"
+echo "SFTP_SERVER_HOSTNAME" ${SFTP_SERVER_HOSTNAME}
+echo "SFTP_SERVER_USERNAME" ${SFTP_SERVER_USERNAME}
+echo "SFTP_SERVER_AUTH_METHOD" ${SFTP_SERVER_AUTH_METHOD}
+echo "SFTP_SERVER_PORT" ${SFTP_SERVER_PORT}
+echo "WORKFLOW_ID" ${WORKFLOW_ID}
+echo "VANITY_ID" ${VANITY_ID}
+echo "=================================================="
+```
+
+### Vanity ID
+
+If you have configured a Vanity ID in your workflow, replace the `${WORKFLOW_ID}` variable with the `${VANITY_ID}` variable. Ensure that you have already added `${VANITY_ID}` as a [new environment variable](#custom-environment-variables).
+
+For example:
+
+``` shell
+if [ -n "${S3_BUCKET_CLEAN__IZ}" ]; then
+    aws s3 sync "s3://${S3_BUCKET_CLEAN__IZ}/workflows/${VANITY_ID}/files" ./$OUTGOING
+fi
+```
+
+### Custom Port
+
+If you have configured a Custom Port, add `-P ${PortNumber}` to the SFTP command. Ensure that you have already added `${PortNumber}` as a [new environment variable](#custom-environment-variables).
+
+For example:
+
+``` shell
+sftp ${HOST_KEY_ALGORITHM} ${HOST_KEY_CHECK} ${PUB_KEY_ACCEPTED_KEY_TYPES} ${IDENTITY_FILE} -o "${PROXY}" -P ${PortNumber} ${SFTP_SERVER_USERNAME}@${SFTP_SERVER_HOSTNAME} <<EOF
 ```
