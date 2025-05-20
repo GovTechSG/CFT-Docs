@@ -19,7 +19,7 @@ These scripts are basic templates that you need to adjust for your specific use:
   - Comments in the script (lines starting with `#`) will guide you on what to change
   - Make changes only where the comments indicate
 
-**<u>Important notes</u>:** 
+**<u>Important notes</u>** 
 
 - These scripts are basic templates that you need to adjust for your specific use:
   -  **Check your zone settings**
