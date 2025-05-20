@@ -7,7 +7,18 @@ These SFTP Job Scheduler Script templates help you set up SFTP transfers using t
 
 **<u>Important notes</u>:** 
 
-- These sample scripts provide a generic base template. Please review and adjust the script accordingly to align with your agency needs, e.g. for the corresponding zone (internet as EZ or intranet as IZ) and the authentication method.
+- These scripts are basic templates that you need to adjust for your specific use:
+  -  **Check your zone settings**
+      - For Internet Zone (EZ): Look for comments with `EZ` or `INTERNET`
+      - For Intranet Zone (IZ): Look for comments with `IZ` or `INTRANET`
+
+  - **Check your authentication method**
+      - For SSH Key only: Use the default settings
+      - For SSH Key AND Password: Look for comments about "SSH Key AND Password"
+  - **Refer to the script comments**
+    - Comments in the script (lines starting with `#`) will guide you on what to change
+    - Make changes only where the comments indicate
+
 - When the **File Archive** feature is enabled, using the `lcd` command in your SFTP job script may result in incorrect file paths. To prevent this, avoid using the `lcd` command when File Archive is enabled.
 - If you have added customisations such as a Vanity ID or Custom Port, refer to [Other requirements](#other-requirements) for the changes required.
 
