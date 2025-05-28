@@ -28,8 +28,8 @@ Depending on your system and zone, perform the whitelisting steps required.
 
 | CFT Zone | Tenant Action |
 |---|---|
-| **Internet** | None. Whitelisting is not required because CFT APIs are public and accessible within Singapore for all public IPs.
-| **Intranet** | If you are on GCC2.0 on AWS, follow the steps for [Configuring static routes for routing via GCCI Common Services Transit Gateway to CFT](/tgw/configure-routes.md). |
+| **Internet** | None. <br><br>CFT APIs are public and accessible within Singapore for all public IPs.
+| **Intranet** | None. <br><br> If you are on GCC2.0 on AWS, follow the steps for [Configuring static routes for routing via GCCI Common Services Transit Gateway to CFT](/tgw/configure-routes.md). |
 
 
 ## CFT SFTP Server Whitelisting
@@ -37,7 +37,7 @@ Depending on your system and zone, perform the whitelisting steps required.
 | CFT Zone | Tenant Action |
 |---|---|
 | **Internet** | Raise an SR via [CFT-SM](https://go.gov.sg/cft-sm) to whitelist **your Tenant SFTP Client** on CFT.
-| **Intranet** | If you are on GCC2.0 on AWS, follow the steps for [Configuring static routes for routing via GCCI Common Services Transit Gateway to CFT](/tgw/configure-routes.md). |
+| **Intranet** | None. <br><br> If you are on GCC2.0 on AWS, follow the steps for [Configuring static routes for routing via GCCI Common Services Transit Gateway to CFT](/tgw/configure-routes.md) |
 
 ## CFT SFTP Client Whitelisting
 
