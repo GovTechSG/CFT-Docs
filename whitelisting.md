@@ -1,6 +1,10 @@
 # Tenant Whitelisting Requirements
 
-This diagram illustrates CFT Firewall configuration, depicting the various connections between CFT and Tenant systems and zones.
+To ensure connectivity between CFT and agency systems, IP whitelisting is required in two places:
+- **On CFT side:** For agencies connecting to our servers
+- **On agency side:** For agencies to [configure their firewalls](/firewall-clearance.md) to allow traffic from CFT IPs. 
+
+This diagram illustrates the various connections between CFT and Tenant systems and zones.
 
 ![firewall-clearances](assets/firewall-clearances.png)
 
@@ -17,6 +21,49 @@ Note: This IP list corresponds to the diagram shown above.
 
 </details>
 
+Refer to the whitelisting requirements for the CFT systems you are  connecting to.
+
+
+### CFT HTTPS Server
+- **Internet:** No whitelisting required (CFT APIs are publicly accessible within Singapore).
+- **Intranet:** No whitelisting required. However, if you are on GCC2.0 on AWS, [configure static routes via GCCI Common Services Transit Gateway](/tgw/configure-routes.md)
+
+### CFT SFTP Server
+- **Internet:** Submit SR via [CFT-SM](https://go.gov.sg/cft-sm) to whitelist your agency's SFTP client
+- **Intranet:** No whitelisting required. However, if you are on GCC2.0 on AWS, [configure static routes via GCCI Common Services Transit Gateway](/tgw/configure-routes.md)
+
+### CFT SFTP Client
+- **Internet:** Submit SR via [CFT-SM](https://go.gov.sg/cft-sm) to whitelist **your agency's SFTP server**
+- **Intranet:** No whitelisting required
+
+### CFT Notification (Webhooks) Server
+- **Internet:** No whitelisting required.
+- **Intranet:** No whitelisting required.
+
+## What's next
+
+- To validate the firewall rules **from tenant system to CFT intranet**, refer to:
+    - [HTTPS Firewall Rules Testing (Intranet)](https://docs.developer.tech.gov.sg/docs/cft-additional-docs/https-firewall)
+    - [SFTP Client Firewall Rules Testing (Intranet)](https://docs.developer.tech.gov.sg/docs/cft-additional-docs/sftp-firewall)
+
+- You may need to allow or [whitelist CFT endpoints on your Tenant/Agency Firewalls](https://docs.developer.tech.gov.sg/docs/cft-additional-docs/firewall-clearance ).
+
+
+
+
+
+
+
+<!-- Back up 29 May 2025 
+
+
+# Tenant Whitelisting Requirements
+
+To ensure connectivity between CFT and agency systems, IP whitelisting is required in two places:
+- **On CFT side:** CFT maintains an IP allowlist for agencies connecting to our SFTP services
+- **On agency side:** Agencies need to configure their firewalls to allow traffic from CFT IPs. Refer to [Firewall clearance](/firewall-clearance.md).
+
+Note: Most whitelisting requirements have been removed except for SFTP connections, which still require whitelisting on the CFT side.
 <br>
 
 Depending on your system and zone, perform the whitelisting steps required.
@@ -64,7 +111,29 @@ Depending on your system and zone, perform the whitelisting steps required.
 - You may need to allow or [whitelist CFT endpoints on your Tenant/Agency Firewalls](https://docs.developer.tech.gov.sg/docs/cft-additional-docs/firewall-clearance ).
 
 
-<!-- Back up 12 July: remove CLZ FW clearance
+This diagram illustrates CFT Firewall configuration, depicting the various connections between CFT and Tenant systems and zones.
+
+![firewall-clearances](assets/firewall-clearances.png)
+
+<details><summary><b>View a complete reference list of CFT IPs</b></summary>
+
+Note: This IP list corresponds to the diagram shown above.
+
+|  | Internet | Intranet |
+|-------------|----------|-----------|
+| **Webhook/CFT<br>Notification Server** | **Internet - IP1:**<br>18.143.30.35:443 | **Intranet - IP5:**<br>10.211.0.128/28:443<br>10.211.0.144/28:443<br>10.211.0.160/28:443<br>10.211.0.176/28:443 |
+| **CFT HTTPS<br>API Server** | **Internet - IP2:**<br>13.215.24.12:443<br>13.251.95.103:443<br>54.179.172.253:443 | **Intranet - IP6:**<br>10.211.0.128/28:443<br>10.211.0.144/28:443 |
+| **CFT SFTP Server** | **Internet - IP3:**<br>*SSH Only:*<br>18.143.254.126:22<br>54.255.69.2:22<br>13.214.73.225:22<br><br>*SSH + Password:*<br>13.228.88.235:22<br>18.142.149.152:22<br>52.221.109.108:22 | **Intranet -  IP7:**<br>10.211.0.128/26:22 |
+| **CFT SFTP Client** | **Internet - IP4:**<br>54.255.110.113:22 | **Intranet - IP8:**<br>10.211.0.128/28:22<br>10.211.0.144/28:22<br>10.211.0.160/28:22<br>10.211.0.176/28:22 |
+
+</details>
+
+
+
+-->
+
+
+<!-- Back up 12 July 2024 : remove CLZ FW clearance
 
 Thiru: Got the confirmation (from Sathiya - GCC team) that CLZ FW clearance  is not required anymore for GEN (GDC/GPC) to GCC2.0 or vice-versa traffic (Agency need to clear their FW if there any) , this is effective from 28th june.
 

@@ -6,13 +6,13 @@ This diagram shows the CFT infrastructure.
 ![firewall-clearances](assets/firewall-clearances.png)
 -->
 
-Tenants may need to allow or **whitelist CFT IPs on your tenant/agency firewalls**.
+
+**Important:** To enable CFT connectivity, please ensure these IPs are whitelisted in your agency's firewall configuration.
 
 ![firewall-clearances](assets/firewall-clearances.png)
 
-This list provides the CFT IPs that require firewall clearance in your agency's network environment.
+*Note: The IP addresses listed correspond to the components shown in the architecture diagram above.*
 
-Note: This list corresponds to the diagram shown above.
 
 |  | Internet | Intranet |
 |-------------|----------|-----------|
