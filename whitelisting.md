@@ -6,7 +6,7 @@ This diagram illustrates CFT Firewall configuration, depicting the various conne
 
 <details><summary><b>View a complete reference list of CFT IPs</b></summary>
 
-You can cross-reference with the diagram above.
+Note: This IP list corresponds to the diagram shown above.
 
 |  | Internet | Intranet |
 |-------------|----------|-----------|
