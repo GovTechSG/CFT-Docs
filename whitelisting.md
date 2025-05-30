@@ -64,6 +64,33 @@ Refer to the whitelisting requirements for the CFT systems you are  connecting t
 
 
 
+### CFT HTTPS Server
+
+| Zone | Required Action |
+|------|----------------|
+| <div style="text-align: left"><strong>Internet</strong></div> | <div style="text-align: left">No whitelisting required.</div> |
+| <div style="text-align: left"><strong>Intranet</strong></div> | <div style="text-align: left">No whitelisting required.<br><br>If you are on GCC2.0 on AWS, <a href="/tgw/configure-routes.md">configure static routes via GCCI Common Services Transit Gateway</a>.</div> |
+
+### CFT SFTP Server
+
+| Zone | Required Action |
+|------|----------------|
+| <div style="text-align: left"><strong>Internet</strong></div> | <div style="text-align: left">Submit SR via <a href="https://go.gov.sg/cft-sm">CFT-SM</a> to whitelist your agency's SFTP client</div> |
+| <div style="text-align: left"><strong>Intranet</strong></div> | <div style="text-align: left">No whitelisting required.<br><br>If you are on GCC2.0 on AWS, <a href="/tgw/configure-routes.md">configure static routes via GCCI Common Services Transit Gateway</a>.</div> |
+
+### CFT SFTP Client
+
+| Zone | Required Action |
+|------|----------------|
+| <div style="text-align: left"><strong>Internet</strong></div> | <div style="text-align: left">Submit SR via <a href="https://go.gov.sg/cft-sm">CFT-SM</a> to whitelist your agency's SFTP server</div> |
+| <div style="text-align: left"><strong>Intranet</strong></div> | <div style="text-align: left">No whitelisting required</div> |
+
+### CFT Notification (Webhooks) Server
+
+| Zone | Required Action |
+|------|----------------|
+| <div style="text-align: left"><strong>Internet</strong></div> | <div style="text-align: left">No whitelisting required.</div> |
+| <div style="text-align: left"><strong>Intranet</strong></div> | <div style="text-align: left">No whitelisting required.</div> |
 
 
 
