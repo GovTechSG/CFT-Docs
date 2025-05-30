@@ -8,6 +8,7 @@ This diagram illustrates the various connections between CFT and Tenant systems 
 
 ![firewall-clearances](assets/firewall-clearances.png)
 
+<!-- 
 <details><summary><b>View a complete reference list of CFT IPs</b></summary>
 
 Note: This IP list corresponds to the diagram shown above.
@@ -20,6 +21,8 @@ Note: This IP list corresponds to the diagram shown above.
 | **CFT SFTP Client** | **Internet - IP4:**<br>54.255.110.113:22 | **Intranet - IP8:**<br>10.211.0.128/28:22<br>10.211.0.144/28:22<br>10.211.0.160/28:22<br>10.211.0.176/28:22 |
 
 </details>
+
+-->
 
 ## Whitelisting requirements
 
@@ -49,8 +52,8 @@ Refer to the whitelisting requirements for the CFT systems you are  connecting t
 
 | Zone | Required Action |
 |------|----------------|
-| **Internet** | No whitelisting required |
-| **Intranet** | No whitelisting required |
+| **Internet** | No whitelisting required. |
+| **Intranet** | No whitelisting required. |
 
 ## What's next
 
