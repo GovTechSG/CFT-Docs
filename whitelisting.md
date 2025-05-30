@@ -55,6 +55,49 @@ Refer to the whitelisting requirements for the CFT systems you are  connecting t
 | **Internet** | No whitelisting required. |
 | **Intranet** | No whitelisting required. |
 
+---
+
+### CFT HTTPS Server
+<div style="text-align: left">
+
+| Zone | Required Action |
+|------|----------------|
+| **Internet** | No whitelisting required.  |
+| **Intranet** | No whitelisting required.<br><br>If you are on GCC2.0 on AWS,  [configure static routes via GCCI Common Services Transit Gateway](/tgw/configure-routes.md).|
+
+</div>
+
+### CFT SFTP Server
+<div style="text-align: left">
+
+| Zone | Required Action |
+|------|----------------|
+| **Internet** | Submit SR via [CFT-SM](https://go.gov.sg/cft-sm) to whitelist your agency's SFTP client |
+| **Intranet** | No whitelisting required.<br><br>If you are on GCC2.0 on AWS,  [configure static routes via GCCI Common Services Transit Gateway](/tgw/configure-routes.md). |
+
+</div>
+
+### CFT SFTP Client
+<div style="text-align: left">
+
+| Zone | Required Action |
+|------|----------------|
+| **Internet** | Submit SR via [CFT-SM](https://go.gov.sg/cft-sm) to whitelist your agency's SFTP server |
+| **Intranet** | No whitelisting required |
+
+</div>
+
+### CFT Notification (Webhooks) Server
+<div style="text-align: left">
+
+| Zone | Required Action |
+|------|----------------|
+| **Internet** | No whitelisting required. |
+| **Intranet** | No whitelisting required. |
+
+</div>
+
+
 ## What's next
 
 - You may need to allow or [whitelist CFT endpoints on your Tenant/Agency Firewalls](https://docs.developer.tech.gov.sg/docs/cft-additional-docs/firewall-clearance ).
