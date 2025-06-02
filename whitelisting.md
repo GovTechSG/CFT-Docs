@@ -29,31 +29,24 @@ Note: This IP list corresponds to the diagram shown above.
 Refer to the whitelisting requirements for the CFT systems you are  connecting to.
 
 ### CFT HTTPS Server
-| Zone | Required Action |
-|------|----------------|
-| **Internet** | No whitelisting required.  |
-| **Intranet** | No whitelisting required.<br><br>If you are on GCC2.0 on AWS,  [configure static routes via GCCI Common Services Transit Gateway](/tgw/configure-routes.md).|
+- **Internet**:  No whitelisting required.  
+- **Intranet**:  No whitelisting required. However, if you are on GCC2.0 on AWS,  [configure static routes via GCCI Common Services Transit Gateway](/tgw/configure-routes.md).
 
 ### CFT SFTP Server
 
-| Zone | Required Action |
-|------|----------------|
-| **Internet** | Submit SR via [CFT-SM](https://go.gov.sg/cft-sm) to whitelist your agency's SFTP client |
-| **Intranet** | No whitelisting required.<br><br>If you are on GCC2.0 on AWS,  [configure static routes via GCCI Common Services Transit Gateway](/tgw/configure-routes.md). |
+- **Internet**:  Submit SR via [CFT-SM](https://go.gov.sg/cft-sm) to whitelist your agency's SFTP client.  
+- **Intranet**:  No whitelisting required. However, if you are on GCC2.0 on AWS,  [configure static routes via GCCI Common Services Transit Gateway](/tgw/configure-routes.md).
 
 ### CFT SFTP Client
 
-| Zone | Required Action |
-|------|----------------|
-| **Internet** | Submit SR via [CFT-SM](https://go.gov.sg/cft-sm) to whitelist your agency's SFTP server |
-| **Intranet** | No whitelisting required |
+- **Internet**:  Submit SR via [CFT-SM](https://go.gov.sg/cft-sm) to whitelist your agency's SFTP server.  
+- **Intranet**:  No whitelisting required.
 
 ### CFT Notification (Webhooks) Server
 
-| Zone | Required Action |
-|------|----------------|
-| **Internet** | No whitelisting required. |
-| **Intranet** | No whitelisting required. |
+- **Internet**:  No whitelisting required.
+- **Intranet**:  No whitelisting required.
+
 
 ## What's next
 
