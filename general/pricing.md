@@ -1,6 +1,8 @@
 # Cloud File Transfer (CFT) Pricing
 
-!> CFT will implement billing through [TechBiz](https://www.developer.tech.gov.sg/products/categories/platform/techbiz/overview.html) starting **1 July 2025**. This page outlines the [CFT cost calculation](#cft-cost) using [proposed and indicative pricing rates](#understanding-proposed-and-indicative-pricing-rates) to help you plan and budget accordingly. Additional details about TechBiz onboarding will be shared soon.
+!> CFT will implement billing through [TechBiz](https://www.developer.tech.gov.sg/products/categories/platform/techbiz/overview.html) starting **1 July 2025**. To continue using the service, all users—new and existing—must subscribe to CFT via TechBiz. Once subscribed through TechBiz, billing for CFT will be managed directly by TechBiz.
+
+This page outlines the proposed and indicative CFT pricing rates to help you plan and budget accordingly. 
 
 ?> Please be informed that while our pricing methodology and structure have been substantially finalised, the figures presented are currently undergoing review and may be subject to modification. We value your patience and understanding during this process.
 
@@ -21,7 +23,7 @@ You are billed based on the total number of files transferred, as uploaded from 
 - Each successful file transfer is counted, including zipped folders.
 - One zipped folder is considered one file for the purposes of file transfer billing — regardless of how many files are inside.
 
-|      Tier     |      Files in Tier          |      Price per File     |      Max Cost for Tier     |
+|      Tier     |      Files in Tier          |      Price per File (Proposed Rate)    |      Max Cost for Tier     |
 |---------------|-----------------------------|-------------------------|----------------------------|
 |     Tier 1    |     First 1,000 files       |     $1.25               |     $1,250.00              |
 |     Tier 2    |     Next 9,000 files        |     $0.25               |     $2,250.00              |
@@ -47,7 +49,7 @@ CFT Priced Feature List:
 - Encryption
 - Decryption
 
-|      Features Used     |      Price per GB     |
+|      Features Used     |      Price per GB (Proposed Rate)     |
 |------------------------|-----------------------|
 |     1 Feature          |     $1.00             |
 |     2 Features         |     $1.50             |
@@ -89,7 +91,11 @@ Calculation:
 
 ### Additional notes
 
-- Files that are classified as Sensitive-High, password-protected and/or encrypted in formats that cannot be scanned by CFT must use the Scanner-Bypass feature.
+<!--  Files that are classified as Sensitive-High, password-protected and/or encrypted in formats that cannot be scanned by CFT must use the Scanner-Bypass feature.
+-->
+- To help with cost computation, use the [CFT cost calculator](https://go.gov.sg/cft-pricing-calculator). This file is hosted on WOG SharePoint. Please download a copy to use the file.
+- Need to check past CFT usage? You can [raise an SR](https://go.gov.sg/cft-sm) to request project stats. 
+
 - CFT pricing is applied only for successful file transfers and processed data, tracked monthly at the Project level.
 
 ## Indicative pricing
@@ -120,9 +126,32 @@ The rates defined in the previous sections are the proposed rates that are curre
 
 From 1 July 2025, CFT will officially start billing using the  [TechBiz](https://www.developer.tech.gov.sg/products/categories/platform/techbiz/overview.html) service management tool. Until 30th June, you can still use CFT free of charge.
 
+|      Date      |    Details     |
+|------------------------|-----------------------|
+|     **16 June 2025**        |    Start of CFT Subscription via TechBiz   |
+|     **01 July 2025**         |     Billing starts for all CFT Projects subscribed via TechBiz  |
+|     **31 August 2025**        |   Deadline for CFT subscription via TechBiz*      |
+|    **01 September 2025**        |     Removal of CFT projects not subscribed via TechBiz**     |
+| **03 October 2025** | Receipt of first invoice for the past quarter (July to September)
+
+?> **Note:** We strongly encourage existing CFT users to complete subscription by 30 July 2025 to ensure that agencies can review July usage in time for any necessary AOR or budgetary adjustments ahead of end-of-quarter invoicing.
+
+\* This deadline is for existing CFT projects. New users or projects may continue to subscribe via TechBiz after this date.
+
+** CFT will assume that projects not subscribed via TechBiz by 1 September 2025 are no longer required and may remove them without further notice.
+
 
 ## Pricing Feedback
 
  **Do you have feedback on the CFT indicative pricing?**
 
 We kindly request your assistance in obtaining feedback from your stakeholders on our proposed pricing structure. Please reach out to **Brian Liu (Product Manager)** at brian_liu@tech.gov.sg.
+
+## Ready to onboard?
+
+If you have completed reviewing CFT pricing details, you can proceed to the next steps for onboarding to CFT.
+
+- Prepare for TechBiz onboarding: [go.gov.sg/cft-onboarding-reqs](https://go.gov.sg/cft-onboarding-reqs)
+
+- Subscribe to CFT via TechBiz portal: [go.gov.sg/cft-onboarding-steps](https://go.gov.sg/cft-onboarding-steps)
+
