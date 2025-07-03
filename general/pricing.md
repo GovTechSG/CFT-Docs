@@ -23,21 +23,21 @@ You are billed based on the total number of files transferred, as uploaded from 
 - Each successful file transfer is counted, including zipped folders.
 - One zipped folder is considered one file for the purposes of file transfer billing — regardless of how many files are inside.
 
-|      Tier     |      Files in Tier          |      Price per File (Proposed Rate)    |      Max Cost for Tier     |
+|      Tier     |      Files in Tier          |      Price per File (Proposed Rate in SGD)    |      Max Cost for Tier (in SGD)     |
 |---------------|-----------------------------|-------------------------|----------------------------|
-|     Tier 1    |     First 1,000 files       |     $1.25               |     $1,250.00              |
-|     Tier 2    |     Next 9,000 files        |     $0.25               |     $2,250.00              |
-|     Tier 3    |     Next 90,000 files       |     $0.05               |     $4,500.00              |
-|     Tier 4    |     Beyond 100,000 files    |     $0.01               |     Based on usage         |
+|     Tier 1    |     First 1,000 files       |     S$1.25               |     S$1,250.00              |
+|     Tier 2    |     Next 9,000 files        |     S$0.25               |     S$2,250.00              |
+|     Tier 3    |     Next 90,000 files       |     S$0.05               |     S$4,500.00              |
+|     Tier 4    |     Beyond 100,000 files    |     S$0.01               |     Based on usage         |
 
-Example: If your project processes 120,000 files in a month:
+**Example:** If your project processes 120,000 files in a month:
 
-- Tier 1: 1,000 × $1.25 = $1,250.00
-- Tier 2: 9,000 × $0.25 = $2,250.00
-- Tier 3: 90,000 × $0.05 = $4,500.00
-- Tier 4: 20,000 × $0.01 = $200.00
+- Tier 1: 1,000 × $1.25 = S$1,250.00
+- Tier 2: 9,000 × $0.25 = S$2,250.00
+- Tier 3: 90,000 × $0.05 = S$4,500.00
+- Tier 4: 20,000 × $0.01 = S$200.00
 
-➡ Total File Transfer Charges = $8,200.00
+Summing it all up ➡ **Total File Transfer Charges = S$8,200.00**
 
 ### Component 2: Data Volume + Feature Usage
 
@@ -49,12 +49,12 @@ CFT Priced Feature List:
 - Encryption
 - Decryption
 
-|      Features Used     |      Price per GB (Proposed Rate)     |
+|      Features Used     |      Price per GB (Proposed Rate in SGD)     |
 |------------------------|-----------------------|
-|     1 Feature          |     $1.00             |
-|     2 Features         |     $1.50             |
-|     3 Features         |     $2.00             |
-|     4 Features         |     $2.50             |
+|     1 Feature          |     S$1.00             |
+|     2 Features         |     S$1.50             |
+|     3 Features         |     S$2.00             |
+|     4 Features         |     S$2.50             |
 
 **Important notes:**
 
@@ -79,15 +79,15 @@ Project Summary:
 
 Calculation:
 
-1.	File Transfer Charges = $8,200.00
+1.	File Transfer Charges =  **S$8,200.00**
 2.	Data Usage Charges (Rounded off):
-    - 1 Feature: 29 GB × $1.00 = $29.00
-    - 3 Features: 51 GB × $2.00 = $102.00
-    - 4 Features: 11 GB × $2.50 = $27.50
+    - 1 Feature: 29 GB × S$1.00 = S$29.00
+    - 3 Features: 51 GB × S$2.00 = S$102.00
+    - 4 Features: 11 GB × S$2.50 = S$27.50
 
-    → Total Data Usage Charges = $158.50
+    → Total Data Usage Charges = **S$158.50**
 
-➡ Total Monthly Bill = $8,358.50
+**➡ Total Monthly Bill = S$8,358.50**
 
 ### Additional notes
 
@@ -106,21 +106,21 @@ The rates defined in the previous sections are the proposed rates that are curre
 
 <u>File Transfer Count</u>
 
-|      Tier     |      Files in Tier          |      Indicative Price |  
+|      Tier     |      Files in Tier          |      Indicative Price (in SGD) |  
 |---------------|-----------------------------|-------------------------|
-|     Tier 1    |     First 1,000 files       |     $1.25 - $1.30       |
-|     Tier 2    |     Next 9,000 files        |     $0.25 - $0.26       |   
-|     Tier 3    |     Next 90,000 files       |     $0.05 - $0.06       |   
-|     Tier 4    |     Beyond 100,000 files    |     $0.01 - $0.02       |   
+|     Tier 1    |     First 1,000 files       |     S$1.25 - S$1.30       |
+|     Tier 2    |     Next 9,000 files        |     S$0.25 - S$0.26       |   
+|     Tier 3    |     Next 90,000 files       |     S$0.05 - S$0.06       |   
+|     Tier 4    |     Beyond 100,000 files    |     S$0.01 - S$0.02       |   
 
 <u>Data Volume + Feature Usage</u>
 
-|      Features Used     |    Indicative Price per GB     |
+|      Features Used     |    Indicative Price per GB (in SGD)    |
 |------------------------|-----------------------|
-|     1 Feature          |     $1.00 - $1.05     |
-|     2 Features         |     $1.50 - $1.60     |
-|     3 Features         |     $2.00 - $2.10     |
-|     4 Features         |     $2.50 - $2.60     |
+|     1 Feature          |     S$1.00 - S$1.05     |
+|     2 Features         |     S$1.50 - S$1.60     |
+|     3 Features         |     S$2.00 - S$2.10     |
+|     4 Features         |     S$2.50 - S$2.60     |
 
 ## Billing Timeline
 
