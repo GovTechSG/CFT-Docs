@@ -2,7 +2,7 @@
 
 !> CFT will implement billing through [TechBiz](https://www.developer.tech.gov.sg/products/categories/platform/techbiz/overview.html) starting **1 July 2025**. To continue using the service, all users—new and existing—must subscribe to CFT via TechBiz. Once subscribed through TechBiz, billing for CFT will be managed directly by TechBiz.
 
-This page outlines the proposed and indicative CFT pricing rates to help you plan and budget accordingly. 
+This page outlines the proposed and indicative CFT pricing rates to help you plan and budget accordingly. For more information on subscription and billing details, refer to the [Onboarding guide](https://docs.developer.tech.gov.sg/docs/cft-user-guide/onboarding/preonboarding).
 
 ?> Please be informed that while our pricing methodology and structure have been substantially finalised, the figures presented are currently undergoing review and may be subject to modification. We value your patience and understanding during this process.
 
@@ -132,7 +132,7 @@ From 1 July 2025, CFT will officially start billing using the  [TechBiz](https:/
 |     **01 July 2025**         |     Billing starts for all CFT Projects subscribed via TechBiz  |
 |     **31 August 2025**        |   Deadline for CFT subscription via TechBiz*      |
 |    **01 September 2025**        |     Removal of CFT projects not subscribed via TechBiz**     |
-| **03 October 2025** | Receipt of first invoice for the past quarter (July to September)
+| **08 October 2025** | Receipt of first invoice for the past quarter (July to September)
 
 ?> **Note:** We strongly encourage existing CFT users to complete subscription by 30 July 2025 to ensure that agencies can review July usage in time for any necessary AOR or budgetary adjustments ahead of end-of-quarter invoicing.
 
