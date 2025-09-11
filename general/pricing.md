@@ -9,7 +9,7 @@ This page outlines the proposed and indicative CFT pricing rates to help you pla
 <small>If you are completely new to CFT and have onboarding questions, please contact us using [this form](https://form.gov.sg/665978af9040a6be24d3978b?665982626cae0284c464a22a=Cloud+File+Transfer).
 </small>
 
-##  CFT Pricing Overview
+## Overview
 
 CFT's monthly charges are calculated at the **Project level** and based on two components:
 
@@ -18,10 +18,10 @@ CFT's monthly charges are calculated at the **Project level** and based on two c
 
 ### Component 1: File Transfer Count
 
-You are billed based on the total number of files transferred, as uploaded from the **Sender Application**.
+The File Transfer Count is calculated from the total number of files **uploaded through the sender application** across all workflows in your project.
 
-- Each successful file transfer is counted, including zipped folders.
-- One zipped folder is considered one file for the purposes of file transfer billing — regardless of how many files are inside.
+> **Note:** A zipped file counts as a single file.
+
 
 |      Tier     |      Files in Tier          |      Price per File (Proposed Rate in SGD)    |      Max Cost for Tier (in SGD)     |
 |---------------|-----------------------------|-------------------------|----------------------------|

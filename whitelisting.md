@@ -29,15 +29,22 @@ Note: This IP list corresponds to the diagram shown above.
 Refer to the whitelisting requirements for the CFT systems you are  connecting to.
 
 ### CFT HTTPS Server
+
+<small> If your system is an HTTPS Client connecting to CFT HTTPS Server.</small>
+
 - **Internet**:  No whitelisting required.  
 - **Intranet**:  No whitelisting required. However, if you are on GCC2.0 on AWS,  [configure static routes via GCCI Common Services Transit Gateway](/tgw/configure-routes.md).
 
 ### CFT SFTP Server
 
+<small> If your system is an SFTP Client connecting to CFT SFTP Server.</small>
+
 - **Internet**:  Submit SR via [CFT-SM](https://go.gov.sg/cft-sm) to whitelist your agency's SFTP client.  
 - **Intranet**:  No whitelisting required. However, if you are on GCC2.0 on AWS,  [configure static routes via GCCI Common Services Transit Gateway](/tgw/configure-routes.md).
 
 ### CFT SFTP Client
+
+<small> If your system is an SFTP Server connecting to CFT SFTP Client.</small>
 
 - **Internet**:  Submit SR via [CFT-SM](https://go.gov.sg/cft-sm) to whitelist your agency's SFTP server.  
 - **Intranet**:  No whitelisting required.
