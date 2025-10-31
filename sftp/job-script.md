@@ -70,8 +70,8 @@ export IDENTITY_FILE="-oIdentityFile=./id_rsa"
 echo "=================================================="
 echo "#### Connect to SFTP Server and pull file ####"
 # if auth method is "SSH Key AND Password"
-# add "sshpass -eSFTP_SERVER_USER_PASSWORD" BEFORE "sftp ..." command
-# e.g., "sshpass -eSFTP_SERVER_USER_PASSWORD sftp ${HOST_KEY_ALGORITHM} ${HOST_KEY_CHECK} ${PUB_KEY_ACCEPTED_KEY_TYPES} ..."
+# add "sshpass -e SFTP_SERVER_USER_PASSWORD" BEFORE "sftp ..." command
+# e.g., "sshpass -e SFTP_SERVER_USER_PASSWORD sftp ${HOST_KEY_ALGORITHM} ${HOST_KEY_CHECK} ${PUB_KEY_ACCEPTED_KEY_TYPES} ..."
 
 # if Sender Zone is INTERNET, uncomment below:
 # sftp ${HOST_KEY_ALGORITHM} ${HOST_KEY_CHECK} ${PUB_KEY_ACCEPTED_KEY_TYPES} ${IDENTITY_FILE} ${SFTP_SERVER_USERNAME}@${SFTP_SERVER_HOSTNAME} <<EOF
@@ -192,8 +192,8 @@ printf "\n"
 echo "=================================================="
 echo "#### Connect to SFTP Server and push files ####"
 # if auth method is "SSH Key AND Password"
-# add "sshpass -eSFTP_SERVER_USER_PASSWORD" BEFORE "sftp ..." command
-# e.g., "sshpass -eSFTP_SERVER_USER_PASSWORD sftp ${HOST_KEY_ALGORITHM} ${HOST_KEY_CHECK} ${PUB_KEY_ACCEPTED_KEY_TYPES} ..."
+# add "sshpass -e SFTP_SERVER_USER_PASSWORD" BEFORE "sftp ..." command
+# e.g., "sshpass -e SFTP_SERVER_USER_PASSWORD sftp ${HOST_KEY_ALGORITHM} ${HOST_KEY_CHECK} ${PUB_KEY_ACCEPTED_KEY_TYPES} ..."
 
 # if Receiver Zone is INTERNET, uncomment below:
 # sftp  ${HOST_KEY_ALGORITHM} ${HOST_KEY_CHECK} ${PUB_KEY_ACCEPTED_KEY_TYPES} ${IDENTITY_FILE} ${SFTP_SERVER_USERNAME}@${SFTP_SERVER_HOSTNAME} <<EOF
