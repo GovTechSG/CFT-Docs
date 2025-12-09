@@ -145,7 +145,7 @@ From 1 July 2025, CFT will officially start billing using the  [TechBiz](https:/
 
  **Do you have feedback on the CFT indicative pricing?**
 
-We kindly request your assistance in obtaining feedback from your stakeholders on our proposed pricing structure. Please reach out to **Brian Liu (Product Manager)** at brian_liu@tech.gov.sg.
+We kindly request your assistance in obtaining feedback from your stakeholders on our proposed pricing structure. Please reach out to **Sabrina Ng** at Sabrina_NG@tech.gov.sg.
 
 ## Ready to onboard?
 
