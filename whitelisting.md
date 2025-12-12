@@ -1,4 +1,4 @@
-# Tenant Whitelisting Requirements
+# CFT Whitelisting Requirements
 
 To ensure connectivity between CFT and agency systems, IP whitelisting is required in two places:
 - **On CFT side:** For agencies connecting to our servers. Refer to [Whitelisting requirements](#whitelisting-requirements).
